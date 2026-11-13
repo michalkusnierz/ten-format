@@ -51,6 +51,7 @@ p.lead{font-size:clamp(18px,1.6vw,21px);line-height:1.55;color:var(--ink2);margi
 .strip{background:var(--orange);color:var(--ink);font-size:14px}
 .strip .wrap{display:flex;flex-wrap:wrap;gap:6px 28px;justify-content:space-between;padding-top:10px;padding-bottom:10px}
 
+@media (max-width:760px){.hide-m{display:none!important}.strip .wrap{justify-content:center;text-align:center}.nav{flex-wrap:nowrap}.nav svg{height:26px!important}.nav .links .btn{min-height:42px;padding:0 16px;font-size:14px}}
 /* nav */
 .nav{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center;padding-top:20px;padding-bottom:20px}
 .nav .links{display:flex;flex-wrap:wrap;gap:8px 26px;align-items:center;font-size:15px}
@@ -205,20 +206,16 @@ footer .col{display:flex;flex-direction:column;gap:6px}
 <button class="skip" id="skip" type="button">Pomiń</button>
 </div>
 
-<div class="strip"><div class="wrap">
-<span><strong>Black Week:</strong> cena 1990 zł zamiast 2490 zł do 30.11</span>
-<span>Wolne miejsca: <strong class="tf-left">6</strong> z 8</span>
-<span>Koniec za <span class="tf-d">--</span> d <span class="tf-h">--</span> h <span class="tf-m">--</span> min</span>
-</div></div>
+<div class="strip"><div class="wrap"><span><strong>Black Week do 30.11:</strong> 1990 zł zamiast 2490 zł</span><span class="hide-m">Zostało <strong class="tf-left">6</strong> z 8 miejsc</span></div></div>
 
 <div class="wrap nav">
 <a href="#" aria-label="10 Format, strona główna"><svg xmlns="http://www.w3.org/2000/svg" style="height:34px;width:auto;display:block" role="img" aria-label="10 Format" viewBox="235 321 1956 437"><polygon fill="#9A9A9A" points="596,410 762,540 596,670"/><path fill="#11131A" d="M255 403L362 341H408V685H503V738H255V685H350V405L255 460Z"/><path fill="#11131A" fill-rule="evenodd" d="M597 341H769L825 397V682L769 738H597L541 682V397ZM623 397L596 424V659L623 686H744L771 659V424L744 397Z"/><path fill="#11131A" d="M846.55 401.0V346.85H838.4125V341.0H861.2125V346.85H853.075V401.0ZM867.3375 401.0V341.0H878.7L882.6375 365.075L884.7 394.9625H886.2375L888.225 365.075L892.2375 341.0H903.5625V401.0H897.0V383.2625L898.2 346.85H896.4375L892.65 383.6375L889.4625 400.8125H881.4375L878.2875 383.6375L874.5 346.85H872.775L873.9 383.2625V401.0Z"/><path fill="#11131A" d="M972.5121 738.0V341.0H1114.7969V379.7075H1021.1446V518.16125H1109.2389V556.86875H1021.1446V738.0ZM1215.7381 741.721875Q1171.552 741.721875 1151.96005 724.7253125Q1132.3681 707.72875 1131.5344 668.525Q1130.9786 635.7725 1130.5617499999998 603.6403124999999Q1130.1449 571.508125 1130.1449 539.5Q1130.1449 507.491875 1130.5617499999998 475.35968749999995Q1130.9786 443.22749999999996 1131.5344 410.47499999999997Q1132.3681 371.023125 1151.96005 354.150625Q1171.552 337.278125 1215.7381 337.278125Q1260.2021 337.278125 1279.51615 354.150625Q1298.8302 371.023125 1299.9418 410.47499999999997Q1300.4976 443.22749999999996 1301.0534 475.48375Q1301.6092 507.74 1301.6092 539.7481250000001Q1301.6092 571.75625 1301.0534 603.764375Q1300.4976 635.7725 1299.9418 668.525Q1298.8302 707.72875 1279.51615 724.7253125Q1260.2021 741.721875 1215.7381 741.721875ZM1215.7381 705.495625Q1234.3574 705.495625 1242.6944 698.548125Q1251.0314 691.600625 1251.3093 675.720625Q1252.4209 641.975625 1252.9767000000002 607.6103125Q1253.5325 573.245 1253.5325 538.6315625Q1253.5325 504.018125 1252.9767000000002 470.025Q1252.4209 436.03187499999996 1251.3093 403.27937499999996Q1251.0314 387.39937499999996 1242.55545 380.32781249999994Q1234.0795 373.25624999999997 1215.7381 373.25624999999997Q1197.6746 373.25624999999997 1189.19865 380.32781249999994Q1180.7227 387.39937499999996 1180.1669 403.27937499999996Q1179.0553 436.03187499999996 1178.4995 470.025Q1177.9437 504.018125 1177.9437 538.6315625Q1177.9437 573.245 1178.63845 607.6103125Q1179.3332 641.975625 1180.1669 675.720625Q1180.7227 691.600625 1189.19865 698.548125Q1197.6746 705.495625 1215.7381 705.495625ZM1334.7428 738.0V341.0H1412.5548000000001Q1456.1851000000001 341.0 1475.9160000000002 357.7484375Q1495.6469000000002 374.496875 1497.3143 413.4525Q1498.1480000000001 433.55062499999997 1498.4259000000002 450.91937499999995Q1498.7038 468.288125 1498.4259000000002 484.7884375Q1498.1480000000001 501.28875 1497.3143 518.409375Q1496.2027 544.4625 1487.0320000000002 560.3425Q1477.8613 576.2225 1458.6862 583.418125L1505.3734000000002 738.0H1453.6840000000002L1412.5548000000001 590.861875H1383.3753000000002V738.0ZM1383.3753000000002 552.154375H1411.999Q1430.6183 552.154375 1439.2332000000001 544.3384375Q1447.8481000000002 536.5225 1448.6818 520.394375Q1449.5155 502.7775 1449.7934 484.29218749999995Q1450.0713 465.806875 1449.7934 447.44562499999995Q1449.5155 429.08437499999997 1448.6818 411.21937499999996Q1447.8481000000002 395.09125 1439.3721500000001 387.39937499999996Q1430.8962000000001 379.7075 1412.5548000000001 379.7075H1383.3753000000002ZM1528.2247 738.0V341.0H1612.4284L1641.6079 500.29625L1656.8924000000002 698.051875H1668.2863000000002L1683.015 500.29625L1712.7503000000002 341.0H1796.6761000000001V738.0H1748.0436000000002V620.636875L1756.9364 379.7075H1743.8751000000002L1715.8072000000002 623.118125L1692.1857 736.759375H1632.7151000000001L1609.3715000000002 623.118125L1581.3036000000002 379.7075H1568.5202000000002L1576.8572000000001 620.636875V738.0ZM1816.7484 738.0 1867.6041 341.0H1952.3636000000001L2003.2193000000002 738.0H1953.4752L1942.3592 630.81H1877.3306L1866.4925 738.0ZM1882.0549 592.1025H1937.9128L1928.7421000000002 505.25874999999996L1917.904 379.7075H1902.3416L1891.2256 505.25874999999996ZM2059.1407 738.0V379.7075H1998.8364000000001V341.0H2167.7996000000003V379.7075H2107.4953V738.0Z"/></svg></a>
 <div class="links">
-<a href="#test">Sprawdź się</a>
-<a href="#bilet">Co dostajesz</a>
-<a href="#pakiety">Pakiety</a>
-<a href="#pytania">Pytania</a>
-<a class="btn" href="#rezerwacja">Rezerwuję miejsce</a>
+<a class="hide-m" href="#test">Sprawdź się</a>
+<a class="hide-m" href="#bilet">Co dostajesz</a>
+<a class="hide-m" href="#pakiety">Pakiety</a>
+<a class="hide-m" href="#pytania">Pytania</a>
+<a class="btn" href="#rezerwacja">Rezerwuję</a>
 </div>
 </div>
 
@@ -312,17 +309,6 @@ footer .col{display:flex;flex-direction:column;gap:6px}
 </div>
 </section>
 
-<section style="padding-top:0">
-<div class="wrap">
-<h2 class="d">Za co płacisz</h2>
-<div class="why">
-<div><h3 class="d">Animacja tylko dla Ciebie</h3><p>Projektujemy ją pod jedną rzecz, na przykład Twój tort weselny, salę albo warsztat. Tej samej nie dostanie nikt inny.</p></div>
-<div><h3 class="d">Teksty piszemy za Ciebie</h3><p>Układamy je tak, żeby klient chciał zadzwonić. W klinice DCLB podobne podejście podniosło akceptację leczenia z 37% do 57%.</p></div>
-<div><h3 class="d">Film z drona, jeśli chcesz</h3><p>W mazowieckim przyjeżdżamy z kamerą i dronem. Z tego samego materiału montujemy rolki na Instagram.</p></div>
-</div>
-</div>
-</section>
-
 <section id="pakiety" style="padding-top:0">
 <div class="wrap">
 <h2 class="d">Dwa pakiety, stała cena</h2>
@@ -360,20 +346,6 @@ footer .col{display:flex;flex-direction:column;gap:6px}
 </div>
 </section>
 
-<section style="padding-top:0" id="wakcji">
-<div class="wrap" style="text-align:center">
-<h2 class="d">Trzy strony w akcji</h2>
-<p class="lead" style="margin:20px auto 0;max-width:600px">Po 5 sekund na każdą. Tyle wystarczy, żeby klient zapamiętał firmę.</p>
-<div class="player" id="player">
-<div class="bars"><i><b></b></i><i><b></b></i><i><b></b></i></div>
-<div class="v" style="background:#26201A"><div class="zoom" style="position:absolute;inset:0;transform-origin:50% 40%"><div style="position:absolute;left:22%;right:22%;top:30%;bottom:0;background:#3A2F24;border-radius:48% 48% 0 0/30% 30% 0 0"></div><div style="position:absolute;left:34%;right:34%;top:46%;bottom:0;background:#E9D9B8;border-radius:50% 50% 0 0/22% 22% 0 0"></div></div><div style="position:absolute;top:40px;left:28px;right:28px;display:flex;justify-content:space-between;font-size:13px;color:#D9CBB0"><span>Dwór Pod Lipami</span><span>Sala · Menu · Terminy</span></div><div class="rise" style="position:absolute;left:28px;bottom:56px;text-align:left"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(34px,5.6vw,72px);color:#F4EFE2">Wesele na 180 osób<br>40 minut od Warszawy</div><div style="margin-top:14px;display:inline-block;background:#E9D9B8;color:#26201A;font-size:14px;font-weight:600;padding:10px 14px">Sprawdź wolne terminy</div></div><span class="tag">Sala weselna</span></div>
-<div class="v" style="background:#F0B9C3"><div style="position:absolute;right:12%;bottom:12%;width:34%;display:flex;flex-direction:column;align-items:center"><div class="s3" style="width:50%;height:44px;background:#FFF4EE;border-radius:10px 10px 0 0"></div><div class="s2" style="width:75%;height:54px;background:#7A3B2E"></div><div class="s1" style="width:100%;height:66px;background:#FFF4EE"></div></div><div style="position:absolute;top:40px;left:28px;text-align:left"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(34px,5.6vw,72px);color:#4A1F18">Kremówka i Syn</div><div style="margin-top:8px;font-size:15px;color:#4A1F18">Torty weselne od 1998 roku</div><div style="margin-top:18px;display:inline-block;background:#4A1F18;color:#FFF4EE;font-size:14px;font-weight:600;padding:10px 14px">Zarezerwuj degustację</div></div><span class="tag">Cukiernia</span></div>
-<div class="v" style="background:#151513"><div style="position:absolute;top:40px;left:28px;right:28px;text-align:left"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(40px,7vw,96px);color:#F2C230">Garaż 44</div><div style="margin-top:6px;font-size:15px;color:#D4D3CC">Mechanika i detailing, Piaseczno</div><div style="margin-top:24px;height:14px;background:#F2C230;position:relative;overflow:hidden;max-width:520px"><div class="slide" style="position:absolute;top:0;bottom:0;width:40%;background:#151513"></div></div><div style="margin-top:24px;display:inline-block;background:#F2C230;color:#151513;font-size:14px;font-weight:600;padding:10px 14px">Zadzwoń teraz</div></div><span class="tag">Warsztat</span></div>
-</div>
-<div class="fine">Projekty przykładowe.</div>
-</div>
-</section>
-
 <section class="res" id="rezerwacja">
 <div class="wrap resgrid">
 <div>
@@ -384,7 +356,8 @@ footer .col{display:flex;flex-direction:column;gap:6px}
 <div class="clock" aria-label="Do końca Black Week">
 <div><b class="tf-d">--</b><span>dni</span></div><div><b class="tf-h">--</b><span>godz.</span></div><div><b class="tf-m">--</b><span>min</span></div><div><b class="tf-s">--</b><span>sek.</span></div>
 </div>
-<div class="queue" id="queue"></div>
+<div class="queue" id="queue" style="display:none"></div>
+<p style="margin:22px 0 0;font-size:17px;line-height:1.5">Zajęte <strong class="tf-taken">2</strong> z 8 miejsc. Twoje będzie miejsce nr <strong class="tf-next">3</strong>, gotowa strona do <strong class="tf-date">--</strong>.</p>
 <div class="fine">Terminy liczą się same od dnia wpłaty, w dni robocze. Robimy najwyżej 8 stron w tej cenie.</div>
 </div>
 <div>
@@ -454,7 +427,7 @@ footer .col{display:flex;flex-direction:column;gap:6px}
   function fmt(d){return d.getDate()+'.'+String(d.getMonth()+1).padStart(2,'0');}
   var today=new Date(), taken = 8 - LEFT, next = Math.min(taken+1, 8);
   function slotDone(k){return addWork(today, BUILD_DAYS + Math.floor(k*5/PER_WEEK));}
-  set('.tf-left', LEFT); set('.tf-next', next);
+  set('.tf-left', LEFT); set('.tf-next', next); set('.tf-taken', taken);
   set('.tf-proj', fmt(addWork(today, PROJECT_DAYS+1)));
   set('.tf-date', fmt(slotDone(0)));
   var q = document.getElementById('queue'), h='';
