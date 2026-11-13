@@ -211,7 +211,7 @@ footer .col{display:flex;flex-direction:column;gap:6px}
 
 <header class="hero wrap">
 <h1 class="d">Pokaż swoją firmę lepiej <span class="u">niż konkurencja</span></h1>
-<p class="lead">Strona z animacją zaprojektowaną pod to, co sprzedajesz. Gotowa w 7 dni od rezerwacji, pod Twoją domeną.</p>
+<p class="lead">Strona z animacją zaprojektowaną pod to, co sprzedajesz, i ułożona tak, żeby klient od razu zadzwonił albo zostawił numer. Gotowa w 7 dni roboczych.</p>
 <div class="price"><s>2490 zł</s><b>1990 zł</b><span>netto, cena do 30 listopada</span></div>
 <div class="cta">
 <a class="btn" href="#rezerwacja">Rezerwuję cenę i miejsce</a>
@@ -283,7 +283,7 @@ footer .col{display:flex;flex-direction:column;gap:6px}
 <div class="stub">
 <div style="font-size:15px">Rezerwacja Black Week</div>
 <div><div style="font-size:15px">Twoje miejsce</div><div class="no">nr <span class="tf-next">3</span></div></div>
-<div style="font-size:15px">Oddanie strony do <strong class="tf-date">25.11</strong></div>
+<div style="font-size:15px">Pierwszy projekt: <strong class="tf-proj">--</strong><br>Gotowa strona: <strong class="tf-date">--</strong></div>
 </div>
 <div class="body">
 <ul>
@@ -291,7 +291,7 @@ footer .col{display:flex;flex-direction:column;gap:6px}
 <li><strong>Start w ciągu 24 godzin</strong>Dzwonimy dzień po wpłacie i od razu zaczynamy.</li>
 <li><strong>Pierwszy projekt po 3 dniach</strong>Widzisz animację swojej strony, zanim powstanie reszta.</li>
 <li><strong>Domena i hosting na rok</strong>W cenie, bez abonamentu.</li>
-<li><strong>Zwrot 990 zł, jeśli projekt Ci nie podejdzie</strong>Mówisz to po pierwszym projekcie, oddajemy pieniądze w 3 dni.</li>
+<li><strong>Zwrot 990 zł, jeśli coś pójdzie nie tak</strong>Gdy nie pokażemy projektu w 3 dni robocze albo projekt Ci nie podejdzie, oddajemy całą wpłatę w 3 dni.</li>
 <li><strong>10% ceny za każdy dzień spóźnienia</strong>Spóźnimy się z naszej winy, to płacisz mniej.</li>
 </ul>
 </div>
@@ -327,6 +327,7 @@ footer .col{display:flex;flex-direction:column;gap:6px}
 <div class="p"><s>5990 zł</s><b>4490 zł</b><span style="color:var(--mute)">netto</span></div>
 <ul><li>Wszystko z pakietu obok</li><li>Dzień nagrań z kamerą i dronem</li><li>Film na stronę i zdjęcia bez stocka</li><li>3–5 rolek na Instagram i Facebooka</li></ul>
 <a class="btn" href="#rezerwacja" data-pack="film">Rezerwuję za 990 zł</a>
+<a class="link" href="tel:[TELEFON]" style="text-align:center">Wolisz najpierw porozmawiać? Zadzwoń</a>
 </div>
 </div>
 <p class="payback">Wystarczy jeden nowy klient, żeby strona się zwróciła. Deweloperowi to jedno mieszkanie, restauracji jedno wesele.</p>
@@ -349,13 +350,15 @@ footer .col{display:flex;flex-direction:column;gap:6px}
 <section class="res" id="rezerwacja">
 <div class="wrap resgrid">
 <div>
-<h2 class="d">Zarezerwuj cenę i miejsce w kolejce</h2>
+<h2 class="d">Zarezerwuj realizację za 990 zł</h2>
+<p class="lead" style="margin-top:18px">Resztę zapłacisz, gdy zaakceptujesz projekt. Jeśli zarezerwujesz dziś, pierwszy projekt zobaczysz <strong class="tf-proj">--</strong>.</p>
+<div style="margin-top:22px;border:1px solid var(--line);background:var(--bg)"><div style="display:flex;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line)"><span>Strona z animacją</span><span><s style="color:var(--mute)">2490 zł</s> <strong>1990 zł</strong></span></div><div style="display:flex;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line);font-weight:700"><span>Płacisz teraz</span><span>990 zł</span></div><div style="display:flex;justify-content:space-between;padding:14px 18px;color:var(--mute)"><span>Po akceptacji projektu</span><span>1000 zł</span></div></div>
 <div class="price" style="justify-content:flex-start"><s>2490 zł</s><b>1990 zł</b><span>netto</span></div>
 <div class="clock" aria-label="Do końca Black Week">
 <div><b class="tf-d">--</b><span>dni</span></div><div><b class="tf-h">--</b><span>godz.</span></div><div><b class="tf-m">--</b><span>min</span></div><div><b class="tf-s">--</b><span>sek.</span></div>
 </div>
 <div class="queue" id="queue"></div>
-<div class="fine">Kolejność ustala data wpłaty. Robimy najwyżej 8 stron w tej cenie.</div>
+<div class="fine">Terminy liczą się same od dnia wpłaty, w dni robocze. Robimy najwyżej 8 stron w tej cenie.</div>
 </div>
 <div>
 <form id="tf-form" action="https://api.web3forms.com/submit" method="POST">
@@ -383,7 +386,8 @@ footer .col{display:flex;flex-direction:column;gap:6px}
 <div class="wrap faq">
 <div><h2 class="d" style="font-size:clamp(40px,4.6vw,68px)">Pytania przed rezerwacją</h2></div>
 <div>
-<details><summary>Co, jeśli pierwszy projekt mi się nie spodoba?</summary><p>Mówisz nam to po trzecim dniu i oddajemy 990 zł w ciągu 3 dni. Bez tłumaczenia się.</p></details>
+<details><summary>Co, jeśli pierwszy projekt mi się nie spodoba?</summary><p>Piszesz nam to w ciągu 2 dni od jego otrzymania i oddajemy 990 zł w 3 dni. To samo, jeśli nie pokażemy projektu w 3 dni robocze od otrzymania materiałów.</p></details>
+<details><summary>Co znaczy „akceptacja projektu”?</summary><p>Zatwierdzasz wygląd strony i animację mailem albo przyciskiem w podglądzie. Potem robimy resztę i masz jeszcze 2 rundy poprawek tekstów i zdjęć w cenie. Każda kolejna runda to 200 zł.</p></details>
 <details><summary>Kiedy zaczniecie?</summary><p>Dzwonimy w ciągu 24 godzin od wpłaty. Kolejność w kolejce ustala data rezerwacji.</p></details>
 <details><summary>Nie mam dobrych zdjęć.</summary><p>Wystarczą te z wizytówki Google i z telefonu. W pakiecie z filmem nagrywamy wszystko sami.</p></details>
 <details><summary>Czy sam zmienię ceny albo godziny otwarcia?</summary><p>Tak, bez pisania do nas.</p></details>
@@ -412,18 +416,24 @@ footer .col{display:flex;flex-direction:column;gap:6px}
   // ===== USTAWIENIA =====
   var LEFT = 6;                         // wolne miejsca, zmien po kazdej rezerwacji
   var PAY_URL = '';                     // link do platnosci 990 zl (Stripe / Przelewy24), np. 'https://buy.stripe.com/...'
-  var DATES = ['21.11','24.11','25.11','26.11','27.11','28.11','2.12','3.12']; // terminy oddania dla miejsc 1-8
+  var PER_WEEK = 3;                     // ile stron oddajesz w tygodniu
+  var PROJECT_DAYS = 3, BUILD_DAYS = 7;  // dni robocze: pierwszy projekt, gotowa strona
   var END = Date.parse('2026-11-30T22:59:00Z');
   // ======================
 
   function $(s){return document.querySelectorAll(s);}
   function set(sel,v){$(sel).forEach(function(e){e.textContent=v;});}
-  var taken = 8 - LEFT, next = Math.min(taken+1, 8);
-  set('.tf-left', LEFT); set('.tf-next', next); set('.tf-date', DATES[next-1]);
+  function addWork(d,n){d=new Date(d);while(n>0){d.setDate(d.getDate()+1);var w=d.getDay();if(w!==0&&w!==6)n--;}return d;}
+  function fmt(d){return d.getDate()+'.'+String(d.getMonth()+1).padStart(2,'0');}
+  var today=new Date(), taken = 8 - LEFT, next = Math.min(taken+1, 8);
+  function slotDone(k){return addWork(today, BUILD_DAYS + Math.floor(k*5/PER_WEEK));}
+  set('.tf-left', LEFT); set('.tf-next', next);
+  set('.tf-proj', fmt(addWork(today, PROJECT_DAYS+1)));
+  set('.tf-date', fmt(slotDone(0)));
   var q = document.getElementById('queue'), h='';
   for (var i=0;i<8;i++){
-    var t = i<taken, cls = t?'taken':(i===taken?'free next':'free');
-    h += '<div class="'+cls+'"><span>Miejsce '+(i+1)+', oddanie do '+DATES[i]+'</span><em>'+(t?'zajęte':(i===taken?'następne wolne':'wolne'))+'</em></div>';
+    var t = i<taken, k=i-taken, cls = t?'taken':(k===0?'free next':'free');
+    h += '<div class="'+cls+'"><span>Miejsce '+(i+1)+(t?'':', gotowa strona do '+fmt(slotDone(k)))+'</span><em>'+(t?'zajęte':(k===0?'Twoje, jeśli zarezerwujesz teraz':'wolne'))+'</em></div>';
   }
   q.innerHTML = h;
 
