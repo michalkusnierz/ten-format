@@ -439,9 +439,9 @@ footer .col{display:flex;flex-direction:column;gap:6px}
 
   // intro
   var intro=document.getElementById('intro');
-  var seen=false; try{seen=sessionStorage.getItem('tf-intro')==='1';}catch(e){}
+  var seen=false;
   var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function closeIntro(){intro.classList.add('hide');try{sessionStorage.setItem('tf-intro','1');}catch(e){}setTimeout(function(){intro.style.display='none';},800);}
+  function closeIntro(){intro.classList.add('hide');setTimeout(function(){intro.style.display='none';},800);}
   document.getElementById('skip').addEventListener('click',closeIntro);
   if(seen||reduce){intro.style.display='none';} else {setTimeout(closeIntro,4400);}
 
