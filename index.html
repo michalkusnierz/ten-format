@@ -2,427 +2,487 @@
 <html lang="pl">
 <head>
 <meta charset="utf-8">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ten Format – strona z animacją dla Twojej firmy</title>
-<meta name="description" content="Strona z animacją zrobioną pod Twój produkt. Za darmo zobaczysz jej początek, zanim zapłacisz. Gotowa w 7 dni, od 1990 zł netto.">
-<meta property="og:title" content="Ten Format – pokaż swoją firmę lepiej niż konkurencja">
-<meta property="og:description" content="Darmowe demo Twojej strony, zanim zapłacisz. Gotowa w 7 dni.">
+<title>10 Format – strona z animacją dla Twojej firmy</title>
+<meta name="description" content="Strona z animacją zaprojektowaną pod Twój produkt. Gotowa w 7 dni od rezerwacji. Cena Black Week 1990 zł netto.">
+<meta property="og:title" content="10 Format – pokaż swoją firmę lepiej niż konkurencja">
+<meta property="og:description" content="Zarezerwuj cenę Black Week i miejsce w kolejce. Strona gotowa w 7 dni.">
 <meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&amp;family=Libre+Franklin:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Libre+Franklin:wght@400;500;600;700&display=swap">
 <style>
-body{margin:0;background:#EDEFF2}
-a{color:#11131A}a:hover{color:#1E2BD8}
-@keyframes tfRise{0%{transform:translateY(36px);opacity:0}16%{transform:translateY(0);opacity:1}100%{transform:translateY(0);opacity:1}}
-@keyframes tfZoom{0%{transform:scale(1)}100%{transform:scale(1.2)}}
-@keyframes tfScroll{0%,12%{transform:translateY(0)}88%,100%{transform:translateY(-48%)}}
-@keyframes tfSlide{0%{transform:translateX(-110%)}100%{transform:translateX(110%)}}
-@keyframes tfBlink{0%,49%{opacity:1}50%,100%{opacity:.15}}
-@keyframes tfStack{0%{transform:translateY(60px);opacity:0}25%{transform:translateY(0);opacity:1}100%{transform:translateY(0);opacity:1}}
-.tf-rise{animation:tfRise 7s ease-out infinite}
-.tf-zoom{animation:tfZoom 9s ease-in-out infinite alternate}
-.tf-scroll{animation:tfScroll 11s ease-in-out infinite alternate}
-.tf-slide{animation:tfSlide 3.2s linear infinite}
-.tf-blink{animation:tfBlink 1.2s steps(1) infinite}
-.tf-s1{animation:tfStack 6s ease-out infinite}
-.tf-s2{animation:tfStack 6s ease-out .4s infinite both}
-.tf-s3{animation:tfStack 6s ease-out .8s infinite both}
-input::placeholder{color:#6B7080}
-@media (prefers-reduced-motion: reduce){.tf-rise,.tf-zoom,.tf-scroll,.tf-slide,.tf-blink,.tf-s1,.tf-s2,.tf-s3{animation:none}}
-</style>
+:root{--bg:#EDEFF2;--ink:#11131A;--ink2:#2A2E38;--mute:#4A4F5C;--line:#C9CDD6;--blue:#1E2BD8;--orange:#FF8A3D;--white:#FFFFFF}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Libre Franklin',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1320px;margin:0 auto;padding-left:clamp(20px,4vw,60px);padding-right:clamp(20px,4vw,60px)}
+.d{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.98;margin:0}
+.u{text-decoration:underline;text-decoration-color:var(--orange);text-decoration-thickness:.09em;text-underline-offset:.08em;text-decoration-skip-ink:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 28px;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;font-size:16px;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{background:#1622B0}
+.btn.o{background:var(--orange);color:var(--ink)}
+.btn.o:hover{background:#FF9C5A}
+.link{font-weight:600;font-size:16px;text-decoration:underline;text-underline-offset:4px}
+section{padding:clamp(72px,10vw,140px) 0}
+h2.d{font-size:clamp(44px,6vw,92px)}
+p.lead{font-size:clamp(18px,1.6vw,21px);line-height:1.55;color:var(--ink2);margin:0}
 
-<style>html{scroll-behavior:smooth}</style>
+/* intro */
+#intro{position:fixed;inset:0;z-index:50;background:var(--ink);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s ease}
+#intro.hide{opacity:0;pointer-events:none}
+#intro .n{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:min(46vw,420px);line-height:1}
+#intro .t{margin-top:12px;font-size:clamp(17px,2vw,22px);color:#C9CDD6;text-align:center;padding:0 20px;min-height:1.5em}
+#intro .mark{width:min(48vw,360px);display:none}
+#intro .skip{position:absolute;top:18px;right:22px;background:none;border:0;color:#C9CDD6;font:inherit;font-size:14px;cursor:pointer;padding:10px}
+#intro .ring{position:absolute;width:min(70vw,620px);aspect-ratio:1;border:2px solid #2A2E38;border-radius:50%}
+#intro .sweep{position:absolute;width:min(70vw,620px);aspect-ratio:1;border-radius:50%;background:conic-gradient(rgba(255,138,61,.22) var(--a,0deg),transparent 0)}
+
+/* strip */
+.strip{background:var(--orange);color:var(--ink);font-size:14px}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:6px 28px;justify-content:space-between;padding-top:10px;padding-bottom:10px}
+
+/* nav */
+.nav{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center;padding-top:20px;padding-bottom:20px}
+.nav .links{display:flex;flex-wrap:wrap;gap:8px 26px;align-items:center;font-size:15px}
+.nav .links a{text-decoration:none}
+.nav .links .btn{min-height:46px;padding:0 18px;font-size:15px}
+
+/* hero */
+.hero{text-align:center;padding:clamp(48px,8vw,110px) 0 clamp(40px,5vw,64px)}
+.hero h1{font-size:clamp(58px,10.5vw,168px);color:var(--blue);max-width:1200px;margin:0 auto}
+.hero p.lead{max-width:620px;margin:28px auto 0}
+.price{display:flex;justify-content:center;align-items:baseline;gap:6px 16px;flex-wrap:wrap;margin-top:30px}
+.price s{font-size:19px;color:var(--mute)}
+.price b{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(56px,6vw,78px);line-height:1}
+.price span{font-size:15px;color:var(--mute)}
+.cta{display:flex;justify-content:center;align-items:center;gap:18px 28px;flex-wrap:wrap;margin-top:28px}
+.fine{margin-top:16px;font-size:14px;color:var(--mute)}
+
+/* film strip */
+.reel{overflow:hidden;padding:10px 0 0}
+.reel .track{display:flex;gap:20px;width:max-content;animation:reel 60s linear infinite}
+.reel:hover .track{animation-play-state:paused}
+@keyframes reel{to{transform:translateX(-50%)}}
+.frame{width:clamp(280px,32vw,460px);aspect-ratio:16/10;position:relative;overflow:hidden;flex:none}
+.cap{margin-top:10px;font-size:14px;color:var(--mute)}
+.reel .note{text-align:center;font-size:14px;color:var(--mute);margin-top:18px}
+
+@keyframes rise{0%{transform:translateY(30px);opacity:0}18%,100%{transform:none;opacity:1}}
+@keyframes zoom{to{transform:scale(1.2)}}
+@keyframes stack{0%{transform:translateY(50px);opacity:0}25%,100%{transform:none;opacity:1}}
+@keyframes slide{0%{transform:translateX(-110%)}100%{transform:translateX(110%)}}
+.rise{animation:rise 7s ease-out infinite}
+.zoom{animation:zoom 9s ease-in-out infinite alternate}
+.s1{animation:stack 6s ease-out infinite}.s2{animation:stack 6s ease-out .4s infinite both}.s3{animation:stack 6s ease-out .8s infinite both}
+.slide{animation:slide 3.2s linear infinite}
+
+/* test */
+.test{background:var(--ink);color:#fff}
+.test h2{color:#fff}
+.test p.lead{color:#C9CDD6;max-width:640px}
+.phones{display:flex;gap:clamp(20px,4vw,64px);justify-content:center;flex-wrap:wrap;margin-top:56px}
+.phone{width:min(300px,80vw);aspect-ratio:9/18.5;border-radius:34px;border:10px solid #2A2E38;background:#000;overflow:hidden;position:relative;cursor:pointer;padding:0;font:inherit;color:inherit;text-align:left;transition:transform .25s,border-color .25s}
+.phone:hover{transform:translateY(-6px)}
+.phone.pick{border-color:var(--orange)}
+.phone .lbl{position:absolute;left:0;right:0;bottom:-44px;text-align:center;color:#C9CDD6;font-size:15px}
+.pwrap{display:flex;flex-direction:column;align-items:center;gap:16px}
+.verdict{max-width:640px;margin:44px auto 0;text-align:center;font-size:clamp(18px,1.8vw,22px);line-height:1.5;min-height:3em;color:#fff}
+.verdict .btn{margin-top:20px}
+
+/* ticket */
+.ticket{display:flex;flex-wrap:wrap;background:var(--white);margin-top:48px;position:relative;filter:drop-shadow(0 18px 40px rgba(17,19,26,.08))}
+.ticket .stub{flex:1 1 280px;background:var(--blue);color:#fff;padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;justify-content:space-between;gap:28px;position:relative}
+.ticket .stub:after{content:"";position:absolute;top:0;bottom:0;right:-1px;border-right:3px dashed var(--bg)}
+.ticket .stub .no{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(90px,11vw,160px);line-height:.85}
+.ticket .body{flex:2 1 460px;padding:clamp(28px,4vw,48px)}
+.ticket ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px 40px}
+.ticket li{font-size:17px;line-height:1.5;color:var(--ink2)}
+.ticket li strong{display:block;font-size:19px;color:var(--ink);margin-bottom:4px}
+
+/* wyrozniki */
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px 64px;margin-top:56px}
+.why h3{font-size:clamp(30px,3vw,44px)}
+.why p{font-size:18px;line-height:1.55;color:var(--ink2);margin:14px 0 0}
+
+/* pakiety */
+.packs{display:flex;flex-wrap:wrap;gap:28px;margin-top:48px}
+.pack{flex:1 1 360px;background:var(--white);padding:clamp(26px,3vw,42px);display:flex;flex-direction:column;gap:20px;border:1px solid var(--line)}
+.pack.hi{border:2px solid var(--blue)}
+.pack h3{font-size:42px}
+.pack .where{font-size:15px;color:var(--mute)}
+.pack .p{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.pack .p s{color:var(--mute);font-size:17px}
+.pack .p b{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:72px;line-height:1}
+.pack ul{margin:0;padding:0 0 0 20px;font-size:16px;line-height:1.7;color:var(--ink2)}
+.pack .btn{margin-top:auto}
+.payback{margin-top:28px;font-size:17px;line-height:1.55;color:var(--ink2);max-width:760px}
+
+/* scenariusz */
+.script{margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:4px}
+.scene{background:var(--white);padding:24px 22px 28px;position:relative}
+.scene .day{font-size:14px;color:var(--mute)}
+.scene h3{font-size:30px;margin:10px 0 10px}
+.scene p{margin:0;font-size:15px;line-height:1.5;color:var(--ink2)}
+.scene.last{background:var(--blue);color:#fff}.scene.last p,.scene.last .day{color:#E3E6FF}
+
+/* rezerwacja */
+.res{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.resgrid{display:flex;flex-wrap:wrap;gap:48px 64px;align-items:flex-start}
+.resgrid>div{flex:1 1 420px;min-width:0}
+.clock{display:flex;gap:10px;margin-top:26px}
+.clock div{background:var(--bg);min-width:76px;padding:12px 8px;text-align:center}
+.clock b{display:block;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:44px;line-height:1}
+.clock span{font-size:13px;color:var(--mute)}
+.queue{margin-top:30px;border-top:1px solid var(--line)}
+.queue div{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:16px}
+.queue .taken{color:var(--mute)}
+.queue .taken em{font-style:normal}
+.queue .free em{font-style:normal;color:var(--blue);font-weight:600}
+.queue .next{background:#FFF3EA;margin:0 -12px;padding:11px 12px}
+form{display:flex;flex-direction:column;gap:16px}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{display:flex;gap:12px;align-items:center;border:1px solid var(--line);padding:14px 16px;cursor:pointer;font-size:16px}
+.opt input{accent-color:var(--blue);width:18px;height:18px}
+.opt b{margin-left:auto;white-space:nowrap}
+label.f{display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--ink2)}
+label.f input{height:50px;padding:0 14px;border:1px solid #A9AEBA;background:#fff;color:var(--ink);font:inherit;font-size:16px}
+.row2{display:flex;flex-wrap:wrap;gap:16px}.row2 label{flex:1 1 180px}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.45;color:var(--mute)}
+.agree input{width:18px;height:18px;flex:none;margin:1px 0 0;accent-color:var(--blue)}
+#msg{font-size:14px;color:var(--mute)}
+
+/* faq */
+.faq{display:flex;flex-wrap:wrap;gap:32px 64px}
+.faq>div:first-child{flex:1 1 260px}
+.faq>div:last-child{flex:2 1 520px;min-width:0}
+details{border-top:1px solid var(--line);padding:20px 0}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:700;font-size:19px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-weight:400;color:var(--blue);font-size:24px;line-height:1}
+details[open] summary:after{content:"–"}
+details p{margin:10px 0 0;font-size:16px;line-height:1.55;color:var(--mute)}
+
+/* final */
+.final{background:var(--blue);color:#fff;text-align:center}
+.final h2{color:#fff;max-width:1000px;margin:0 auto}
+.final .fine{color:#E3E6FF}
+
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px 48px;justify-content:space-between;padding-top:40px;padding-bottom:56px;font-size:14px;color:var(--mute)}
+footer .col{display:flex;flex-direction:column;gap:6px}
+
+@media (prefers-reduced-motion: reduce){.reel .track,.rise,.zoom,.s1,.s2,.s3,.slide{animation:none}}
+</style>
 <!-- MIEJSCE NA PIKSEL META I MICROSOFT CLARITY -->
 </head>
 <body>
 
-<div style="background: #EDEFF2; color: #11131A; font-family: 'Libre Franklin', system-ui, sans-serif; min-height: 100vh">
-
-<!-- PASEK BLACK WEEK -->
-<div style="background: #FF8A3D; color: #11131A; font-family: 'Libre Franklin', sans-serif; font-size: 13px">
-<div style="max-width: 1320px; margin: 0 auto; padding: 10px clamp(20px, 4vw, 60px); display: flex; flex-wrap: wrap; gap: 8px 28px; justify-content: space-between; align-items: center">
-<span style="font-weight: 500">Ceny Black Week do 30.11</span>
-<span>Zostało <span class="tf-left">6</span> z 8 miejsc</span>
-<span>Koniec za <span id="tf-d">--</span> d <span id="tf-h">--</span> h <span id="tf-m">--</span> min</span>
-</div>
+<div id="intro" aria-hidden="true">
+<div class="ring"></div><div class="sweep" id="sweep"></div>
+<div class="n" id="num">10</div>
+<div class="mark" id="mark"><svg xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" viewBox="245 331 590 417"><polygon fill="#B8B8B8" points="596,410 762,540 596,670"/><path fill="#FFFFFF" d="M255 403L362 341H408V685H503V738H255V685H350V405L255 460Z"/><path fill="#FFFFFF" fill-rule="evenodd" d="M597 341H769L825 397V682L769 738H597L541 682V397ZM623 397L596 424V659L623 686H744L771 659V424L744 397Z"/></svg></div>
+<div class="t" id="itext">Tyle sekund klient daje Twojej stronie.</div>
+<button class="skip" id="skip" type="button">Pomiń</button>
 </div>
 
-<!-- NAWIGACJA -->
-<div style="max-width: 1320px; margin: 0 auto; padding: 22px clamp(20px, 4vw, 60px); display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center">
-<a href="#start" style="text-decoration: none; display: flex; align-items: center; gap: 10px">
-<svg xmlns="http://www.w3.org/2000/svg" style="height: 34px; width: auto; display: block" role="img" aria-label="10 Format" viewBox="235 321 2221 437"><polygon fill="#9A9A9A" points="596,410 762,540 596,670"/><path fill="#11131A" d="M255 403L362 341H408V685H503V738H255V685H350V405L255 460Z"/><path fill="#11131A" fill-rule="evenodd" d="M597 341H769L825 397V682L769 738H597L541 682V397ZM623 397L596 424V659L623 686H744L771 659V424L744 397Z"/><path fill="#11131A" d="M848.55 401.0V346.85H840.4125V341.0H863.2125V346.85H855.075V401.0ZM869.3375 401.0V341.0H880.7L884.6375 365.075L886.7 394.9625H888.2375L890.225 365.075L894.2375 341.0H905.5625V401.0H899.0V383.2625L900.2 346.85H898.4375L894.65 383.6375L891.4625 400.8125H883.4375L880.2875 383.6375L876.5 346.85H874.775L875.9 383.2625V401.0Z"/><path fill="#11131A" d="M993.0033875 738.0V341.0H1137.8289875V379.7075H1042.504325V518.16125H1132.1717375V556.86875H1042.504325V738.0ZM1280.8941375 741.721875Q1235.9189999999999 741.721875 1215.97719375 724.7253125Q1196.0353875 707.72875 1195.1868 668.525Q1194.621075 635.7725 1194.19678125 603.6403124999999Q1193.7724875 571.508125 1193.7724875 539.5Q1193.7724875 507.491875 1194.19678125 475.35968749999995Q1194.621075 443.22749999999996 1195.1868 410.47499999999997Q1196.0353875 371.023125 1215.97719375 354.150625Q1235.9189999999999 337.278125 1280.8941375 337.278125Q1326.1521375 337.278125 1345.81108125 354.150625Q1365.470025 371.023125 1366.601475 410.47499999999997Q1367.1671999999999 443.22749999999996 1367.7329249999998 475.48375Q1368.29865 507.74 1368.29865 539.7481250000001Q1368.29865 571.75625 1367.7329249999998 603.764375Q1367.1671999999999 635.7725 1366.601475 668.525Q1365.470025 707.72875 1345.81108125 724.7253125Q1326.1521375 741.721875 1280.8941375 741.721875ZM1280.8941375 705.495625Q1299.845925 705.495625 1308.3318 698.548125Q1316.817675 691.600625 1317.1005375 675.720625Q1318.2319875 641.975625 1318.7977125 607.6103125Q1319.3634375 573.245 1319.3634375 538.6315625Q1319.3634375 504.018125 1318.7977125 470.025Q1318.2319875 436.03187499999996 1317.1005375 403.27937499999996Q1316.817675 387.39937499999996 1308.1903687499998 380.32781249999994Q1299.5630625 373.25624999999997 1280.8941375 373.25624999999997Q1262.508075 373.25624999999997 1253.88076875 380.32781249999994Q1245.2534625 387.39937499999996 1244.6877375 403.27937499999996Q1243.5562875 436.03187499999996 1242.9905625000001 470.025Q1242.4248375 504.018125 1242.4248375 538.6315625Q1242.4248375 573.245 1243.13199375 607.6103125Q1243.83915 641.975625 1244.6877375 675.720625Q1245.2534625 691.600625 1253.88076875 698.548125Q1262.508075 705.495625 1280.8941375 705.495625ZM1442.3453499999998 738.0V341.0H1521.54685Q1565.9562624999999 341.0 1586.0394999999999 357.7484375Q1606.1227374999999 374.496875 1607.8199124999999 413.4525Q1608.6685 433.55062499999997 1608.9513625 450.91937499999995Q1609.234225 468.288125 1608.9513625 484.7884375Q1608.6685 501.28875 1607.8199124999999 518.409375Q1606.6884625 544.4625 1597.3539999999998 560.3425Q1588.0195374999998 576.2225 1568.502025 583.418125L1616.022925 738.0H1563.4105L1521.54685 590.861875H1491.8462875V738.0ZM1491.8462875 552.154375H1520.981125Q1539.9329125 552.154375 1548.70165 544.3384375Q1557.4703875 536.5225 1558.318975 520.394375Q1559.1675624999998 502.7775 1559.450425 484.29218749999995Q1559.7332875 465.806875 1559.450425 447.44562499999995Q1559.1675624999998 429.08437499999997 1558.318975 411.21937499999996Q1557.4703875 395.09125 1548.84308125 387.39937499999996Q1540.215775 379.7075 1521.54685 379.7075H1491.8462875ZM1679.6037124999998 738.0V341.0H1765.3110499999998L1795.0116125 500.29625L1810.5690499999998 698.051875H1822.1664125L1837.158125 500.29625L1867.4244125 341.0H1952.8488874999998V738.0H1903.3479499999999V620.636875L1912.3995499999999 379.7075H1899.1050125L1870.5358999999999 623.118125L1846.4925875 736.759375H1785.9600125L1762.1995625 623.118125L1733.6304499999999 379.7075H1720.618775L1729.10465 620.636875V738.0ZM2013.6010499999998 738.0 2065.3648875 341.0H2151.63795L2203.4017875 738.0H2152.7693999999997L2141.4548999999997 630.81H2075.265075L2064.2334374999996 738.0ZM2080.0737375 592.1025H2136.9291L2127.5946375 505.25874999999996L2116.5629999999996 379.7075H2100.7227L2089.4082 505.25874999999996ZM2300.6432124999997 738.0V379.7075H2239.2620499999994V341.0H2411.2424499999997V379.7075H2349.8612874999994V738.0Z"/></svg>
-</a>
-<div style="display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: center; font-family: 'Libre Franklin', sans-serif; font-size: 13px">
-<a href="#przyklady" style="text-decoration: none">Przykłady</a>
-<a href="#pakiety" style="text-decoration: none">Pakiety</a>
-<a href="#proces" style="text-decoration: none">Jak to wygląda</a>
-<a href="#pytania" style="text-decoration: none">Pytania</a>
-<a href="#demo" style="text-decoration: none; color: #FFFFFF; background: #1E2BD8; padding: 12px 18px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Chcę swoje demo</a>
-</div>
-</div>
+<div class="strip"><div class="wrap">
+<span><strong>Black Week:</strong> cena 1990 zł zamiast 2490 zł do 30.11</span>
+<span>Wolne miejsca: <strong class="tf-left">6</strong> z 8</span>
+<span>Koniec za <span class="tf-d">--</span> d <span class="tf-h">--</span> h <span class="tf-m">--</span> min</span>
+</div></div>
 
-<!-- START -->
-<div id="start" style="max-width: 1320px; margin: 0 auto; padding: clamp(32px, 6vw, 72px) clamp(20px, 4vw, 60px) 40px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
-<div style="flex: 999 1 560px; min-width: 0">
-<h1 style="margin: 18px 0 0; color: #1E2BD8; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(60px, 9.4vw, 148px); line-height: 0.98; text-transform: uppercase">Pokaż swoją firmę lepiej <span style="text-decoration: underline; text-decoration-color: #FF8A3D; text-decoration-thickness: 0.09em; text-underline-offset: 0.08em; text-decoration-skip-ink: none">niż konkurencja</span></h1>
-<p style="margin: 30px 0 0; max-width: 560px; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: #2A2E38">Strona z animacją zrobioną pod Twój produkt. Za darmo zobaczysz jej początek, zanim zapłacisz. Gotowa w 7 dni.</p>
-<div style="margin-top: 34px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px">
-<span style="font-family: 'Libre Franklin', sans-serif; font-size: 18px; color: #4A4F5C; text-decoration: line-through">2490 zł</span>
-<span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 64px; line-height: 1; text-transform: uppercase">1990 zł</span>
-<span style="font-family: 'Libre Franklin', sans-serif; font-size: 13px; color: #4A4F5C">netto, do 30 listopada</span>
+<div class="wrap nav">
+<a href="#" aria-label="10 Format, strona główna"><svg xmlns="http://www.w3.org/2000/svg" style="height:34px;width:auto;display:block" role="img" aria-label="10 Format" viewBox="235 321 2221 437"><polygon fill="#9A9A9A" points="596,410 762,540 596,670"/><path fill="#11131A" d="M255 403L362 341H408V685H503V738H255V685H350V405L255 460Z"/><path fill="#11131A" fill-rule="evenodd" d="M597 341H769L825 397V682L769 738H597L541 682V397ZM623 397L596 424V659L623 686H744L771 659V424L744 397Z"/><path fill="#11131A" d="M848.55 401.0V346.85H840.4125V341.0H863.2125V346.85H855.075V401.0ZM869.3375 401.0V341.0H880.7L884.6375 365.075L886.7 394.9625H888.2375L890.225 365.075L894.2375 341.0H905.5625V401.0H899.0V383.2625L900.2 346.85H898.4375L894.65 383.6375L891.4625 400.8125H883.4375L880.2875 383.6375L876.5 346.85H874.775L875.9 383.2625V401.0Z"/><path fill="#11131A" d="M993.0033875 738.0V341.0H1137.8289875V379.7075H1042.504325V518.16125H1132.1717375V556.86875H1042.504325V738.0ZM1280.8941375 741.721875Q1235.9189999999999 741.721875 1215.97719375 724.7253125Q1196.0353875 707.72875 1195.1868 668.525Q1194.621075 635.7725 1194.19678125 603.6403124999999Q1193.7724875 571.508125 1193.7724875 539.5Q1193.7724875 507.491875 1194.19678125 475.35968749999995Q1194.621075 443.22749999999996 1195.1868 410.47499999999997Q1196.0353875 371.023125 1215.97719375 354.150625Q1235.9189999999999 337.278125 1280.8941375 337.278125Q1326.1521375 337.278125 1345.81108125 354.150625Q1365.470025 371.023125 1366.601475 410.47499999999997Q1367.1671999999999 443.22749999999996 1367.7329249999998 475.48375Q1368.29865 507.74 1368.29865 539.7481250000001Q1368.29865 571.75625 1367.7329249999998 603.764375Q1367.1671999999999 635.7725 1366.601475 668.525Q1365.470025 707.72875 1345.81108125 724.7253125Q1326.1521375 741.721875 1280.8941375 741.721875ZM1280.8941375 705.495625Q1299.845925 705.495625 1308.3318 698.548125Q1316.817675 691.600625 1317.1005375 675.720625Q1318.2319875 641.975625 1318.7977125 607.6103125Q1319.3634375 573.245 1319.3634375 538.6315625Q1319.3634375 504.018125 1318.7977125 470.025Q1318.2319875 436.03187499999996 1317.1005375 403.27937499999996Q1316.817675 387.39937499999996 1308.1903687499998 380.32781249999994Q1299.5630625 373.25624999999997 1280.8941375 373.25624999999997Q1262.508075 373.25624999999997 1253.88076875 380.32781249999994Q1245.2534625 387.39937499999996 1244.6877375 403.27937499999996Q1243.5562875 436.03187499999996 1242.9905625000001 470.025Q1242.4248375 504.018125 1242.4248375 538.6315625Q1242.4248375 573.245 1243.13199375 607.6103125Q1243.83915 641.975625 1244.6877375 675.720625Q1245.2534625 691.600625 1253.88076875 698.548125Q1262.508075 705.495625 1280.8941375 705.495625ZM1442.3453499999998 738.0V341.0H1521.54685Q1565.9562624999999 341.0 1586.0394999999999 357.7484375Q1606.1227374999999 374.496875 1607.8199124999999 413.4525Q1608.6685 433.55062499999997 1608.9513625 450.91937499999995Q1609.234225 468.288125 1608.9513625 484.7884375Q1608.6685 501.28875 1607.8199124999999 518.409375Q1606.6884625 544.4625 1597.3539999999998 560.3425Q1588.0195374999998 576.2225 1568.502025 583.418125L1616.022925 738.0H1563.4105L1521.54685 590.861875H1491.8462875V738.0ZM1491.8462875 552.154375H1520.981125Q1539.9329125 552.154375 1548.70165 544.3384375Q1557.4703875 536.5225 1558.318975 520.394375Q1559.1675624999998 502.7775 1559.450425 484.29218749999995Q1559.7332875 465.806875 1559.450425 447.44562499999995Q1559.1675624999998 429.08437499999997 1558.318975 411.21937499999996Q1557.4703875 395.09125 1548.84308125 387.39937499999996Q1540.215775 379.7075 1521.54685 379.7075H1491.8462875ZM1679.6037124999998 738.0V341.0H1765.3110499999998L1795.0116125 500.29625L1810.5690499999998 698.051875H1822.1664125L1837.158125 500.29625L1867.4244125 341.0H1952.8488874999998V738.0H1903.3479499999999V620.636875L1912.3995499999999 379.7075H1899.1050125L1870.5358999999999 623.118125L1846.4925875 736.759375H1785.9600125L1762.1995625 623.118125L1733.6304499999999 379.7075H1720.618775L1729.10465 620.636875V738.0ZM2013.6010499999998 738.0 2065.3648875 341.0H2151.63795L2203.4017875 738.0H2152.7693999999997L2141.4548999999997 630.81H2075.265075L2064.2334374999996 738.0ZM2080.0737375 592.1025H2136.9291L2127.5946375 505.25874999999996L2116.5629999999996 379.7075H2100.7227L2089.4082 505.25874999999996ZM2300.6432124999997 738.0V379.7075H2239.2620499999994V341.0H2411.2424499999997V379.7075H2349.8612874999994V738.0Z"/></svg></a>
+<div class="links">
+<a href="#test">Sprawdź się</a>
+<a href="#bilet">Co dostajesz</a>
+<a href="#pakiety">Pakiety</a>
+<a href="#pytania">Pytania</a>
+<a class="btn" href="#rezerwacja">Rezerwuję miejsce</a>
 </div>
 </div>
 
-<!-- FORMULARZ -->
-<div id="demo" style="flex: 1 1 380px; max-width: 460px; position: relative; margin-top: 8px">
-<form id="tf-form" action="https://api.web3forms.com/submit" method="POST" style="background: #FFFFFF; border: 1px solid #C9CDD6; padding: 30px; display: flex; flex-direction: column; gap: 16px">
+<header class="hero wrap">
+<h1 class="d">Pokaż swoją firmę lepiej <span class="u">niż konkurencja</span></h1>
+<p class="lead">Strona z animacją zaprojektowaną pod to, co sprzedajesz. Gotowa w 7 dni od rezerwacji, pod Twoją domeną.</p>
+<div class="price"><s>2490 zł</s><b>1990 zł</b><span>netto, cena do 30 listopada</span></div>
+<div class="cta">
+<a class="btn" href="#rezerwacja">Rezerwuję cenę i miejsce</a>
+<a class="link" href="#test">Sprawdź się w 10 sekund</a>
+</div>
+<div class="fine">Rezerwacja to 990 zł. Resztę płacisz, kiedy zaakceptujesz stronę.</div>
+</header>
+
+<div class="reel" aria-label="Przykładowe projekty">
+<div class="track">
+<div><div class="frame" style="background:#1C2B22"><div class="zoom" style="position:absolute;inset:0;transform-origin:70% 80%"><div style="position:absolute;left:-10%;right:-10%;bottom:-30%;height:70%;background:#2F4A38;border-radius:50% 50% 0 0"></div><div style="position:absolute;left:30%;right:-20%;bottom:-40%;height:70%;background:#3D5E46;border-radius:50% 50% 0 0"></div><div style="position:absolute;right:16%;top:16%;width:12%;aspect-ratio:1;border-radius:50%;background:#E8C77A"></div></div><div style="position:absolute;top:14px;left:18px;right:18px;display:flex;justify-content:space-between;font-size:11px;color:#F4EFE2"><span>Osiedle Na Skarpie</span><span>Mieszkania · Kontakt</span></div><div class="rise" style="position:absolute;left:18px;bottom:18px;max-width:70%"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(26px,2.6vw,40px);color:#F4EFE2">24 mieszkania z widokiem na las</div><div style="margin-top:10px;display:inline-block;background:#E8C77A;color:#1C2B22;font-size:11px;padding:7px 10px;font-weight:600">Umów oglądanie</div></div></div><div class="cap">Deweloper · przelot nad osiedlem</div></div>
+<div><div class="frame" style="background:#26201A"><div class="zoom" style="position:absolute;inset:0;transform-origin:50% 40%"><div style="position:absolute;left:18%;right:18%;top:26%;bottom:0;background:#3A2F24;border-radius:48% 48% 0 0/30% 30% 0 0"></div><div style="position:absolute;left:31%;right:31%;top:42%;bottom:0;background:#E9D9B8;border-radius:50% 50% 0 0/22% 22% 0 0"></div></div><div class="rise" style="position:absolute;left:18px;top:16px"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(26px,2.6vw,40px);color:#F4EFE2">Dwór Pod Lipami</div><div style="margin-top:6px;font-size:12px;color:#D9CBB0">Sala na 180 gości, 40 minut od Warszawy</div></div></div><div class="cap">Sala weselna · wejście do sali</div></div>
+<div><div class="frame" style="background:#F0B9C3"><div style="position:absolute;left:0;right:0;bottom:8%;display:flex;flex-direction:column;align-items:center"><div class="s3" style="width:22%;height:30px;background:#FFF4EE;border-radius:8px 8px 0 0"></div><div class="s2" style="width:32%;height:36px;background:#7A3B2E"></div><div class="s1" style="width:42%;height:44px;background:#FFF4EE"></div></div><div style="position:absolute;left:18px;top:16px"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(26px,2.6vw,40px);color:#4A1F18">Kremówka i Syn</div><div style="margin-top:6px;font-size:12px;color:#4A1F18">Torty weselne od 1998 roku</div></div></div><div class="cap">Cukiernia · tort układa się sam</div></div>
+<div><div class="frame" style="background:#151513"><div style="position:absolute;left:18px;top:16px;right:18px"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(30px,3vw,46px);color:#F2C230">Garaż 44</div><div style="margin-top:6px;font-size:12px;color:#D4D3CC">Mechanika i detailing, Piaseczno</div><div style="margin-top:16px;height:10px;background:#F2C230;position:relative;overflow:hidden"><div class="slide" style="position:absolute;top:0;bottom:0;width:40%;background:#151513"></div></div><div style="margin-top:16px;display:inline-block;background:#F2C230;color:#151513;font-size:12px;font-weight:600;padding:9px 12px">Zadzwoń teraz</div></div></div><div class="cap">Warsztat · pasek jak na torze</div></div>
+<div><div class="frame" style="background:#1C2B22"><div class="zoom" style="position:absolute;inset:0;transform-origin:70% 80%"><div style="position:absolute;left:-10%;right:-10%;bottom:-30%;height:70%;background:#2F4A38;border-radius:50% 50% 0 0"></div><div style="position:absolute;left:30%;right:-20%;bottom:-40%;height:70%;background:#3D5E46;border-radius:50% 50% 0 0"></div><div style="position:absolute;right:16%;top:16%;width:12%;aspect-ratio:1;border-radius:50%;background:#E8C77A"></div></div><div style="position:absolute;top:14px;left:18px;right:18px;display:flex;justify-content:space-between;font-size:11px;color:#F4EFE2"><span>Osiedle Na Skarpie</span><span>Mieszkania · Kontakt</span></div><div class="rise" style="position:absolute;left:18px;bottom:18px;max-width:70%"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(26px,2.6vw,40px);color:#F4EFE2">24 mieszkania z widokiem na las</div><div style="margin-top:10px;display:inline-block;background:#E8C77A;color:#1C2B22;font-size:11px;padding:7px 10px;font-weight:600">Umów oglądanie</div></div></div><div class="cap">Deweloper · przelot nad osiedlem</div></div>
+<div><div class="frame" style="background:#26201A"><div class="zoom" style="position:absolute;inset:0;transform-origin:50% 40%"><div style="position:absolute;left:18%;right:18%;top:26%;bottom:0;background:#3A2F24;border-radius:48% 48% 0 0/30% 30% 0 0"></div><div style="position:absolute;left:31%;right:31%;top:42%;bottom:0;background:#E9D9B8;border-radius:50% 50% 0 0/22% 22% 0 0"></div></div><div class="rise" style="position:absolute;left:18px;top:16px"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(26px,2.6vw,40px);color:#F4EFE2">Dwór Pod Lipami</div><div style="margin-top:6px;font-size:12px;color:#D9CBB0">Sala na 180 gości, 40 minut od Warszawy</div></div></div><div class="cap">Sala weselna · wejście do sali</div></div>
+<div><div class="frame" style="background:#F0B9C3"><div style="position:absolute;left:0;right:0;bottom:8%;display:flex;flex-direction:column;align-items:center"><div class="s3" style="width:22%;height:30px;background:#FFF4EE;border-radius:8px 8px 0 0"></div><div class="s2" style="width:32%;height:36px;background:#7A3B2E"></div><div class="s1" style="width:42%;height:44px;background:#FFF4EE"></div></div><div style="position:absolute;left:18px;top:16px"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(26px,2.6vw,40px);color:#4A1F18">Kremówka i Syn</div><div style="margin-top:6px;font-size:12px;color:#4A1F18">Torty weselne od 1998 roku</div></div></div><div class="cap">Cukiernia · tort układa się sam</div></div>
+<div><div class="frame" style="background:#151513"><div style="position:absolute;left:18px;top:16px;right:18px"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(30px,3vw,46px);color:#F2C230">Garaż 44</div><div style="margin-top:6px;font-size:12px;color:#D4D3CC">Mechanika i detailing, Piaseczno</div><div style="margin-top:16px;height:10px;background:#F2C230;position:relative;overflow:hidden"><div class="slide" style="position:absolute;top:0;bottom:0;width:40%;background:#151513"></div></div><div style="margin-top:16px;display:inline-block;background:#F2C230;color:#151513;font-size:12px;font-weight:600;padding:9px 12px">Zadzwoń teraz</div></div></div><div class="cap">Warsztat · pasek jak na torze</div></div>
+</div>
+<div class="note wrap">Projekty przykładowe. Prawdziwe realizacje pokażemy tu w grudniu.</div>
+</div>
+
+<section class="test" id="test">
+<div class="wrap" style="text-align:center">
+<h2 class="d">Do której cukierni zadzwonisz?</h2>
+<p class="lead" style="margin:24px auto 0">Dwie cukiernie z tej samej ulicy. Te same torty, te same ceny. Kliknij tę, u której zamówiłbyś tort na wesele.</p>
+<div class="phones">
+<div class="pwrap">
+<button class="phone" id="pA" type="button" aria-label="Cukiernia A">
+<div style="background:#fff;height:100%;padding:22px 18px;color:#333;font-family:Georgia,serif">
+<div style="font-size:24px;color:#8a3b3b">Cukiernia Basia</div>
+<div style="margin-top:4px;font-size:12px;color:#777">ul. Lipowa 4 · tel. 600 000 000</div>
+<div style="margin-top:18px;height:150px;background:#ddd;display:flex;align-items:center;justify-content:center;font-size:12px;color:#888">zdjęcie_tort1.jpg</div>
+<div style="margin-top:16px;font-size:14px;line-height:1.5">Zapraszamy do naszej cukierni. Oferujemy torty na każdą okazję. Ceny do uzgodnienia telefonicznie.</div>
+<div style="margin-top:14px;font-size:13px;color:#0645ad;text-decoration:underline">Galeria</div>
+<div style="margin-top:6px;font-size:13px;color:#0645ad;text-decoration:underline">Kontakt</div>
+<div style="position:absolute;bottom:14px;left:18px;font-size:10px;color:#aaa">© 2017 Wszelkie prawa zastrzeżone</div>
+</div>
+</button>
+<div style="color:#C9CDD6">Cukiernia A</div>
+</div>
+<div class="pwrap">
+<button class="phone" id="pB" type="button" aria-label="Cukiernia B">
+<div style="background:#F0B9C3;height:100%;position:relative;color:#4A1F18">
+<div style="padding:20px 18px 0">
+<div class="d" style="font-size:40px;line-height:.9">Kremówka i Syn</div>
+<div style="margin-top:8px;font-size:13px">Torty weselne od 1998 roku</div>
+</div>
+<div style="position:absolute;left:0;right:0;bottom:92px;display:flex;flex-direction:column;align-items:center">
+<div class="s3" style="width:34%;height:40px;background:#FFF4EE;border-radius:10px 10px 0 0"></div>
+<div class="s2" style="width:52%;height:48px;background:#7A3B2E"></div>
+<div class="s1" style="width:70%;height:58px;background:#FFF4EE"></div>
+</div>
+<div style="position:absolute;left:18px;right:18px;bottom:22px;background:#4A1F18;color:#FFF4EE;text-align:center;padding:14px;font-size:14px;font-weight:600">Zarezerwuj termin degustacji</div>
+</div>
+</button>
+<div style="color:#C9CDD6">Cukiernia B</div>
+</div>
+</div>
+<div class="verdict" id="verdict" role="status"></div>
+</div>
+</section>
+
+<section id="bilet">
+<div class="wrap">
+<h2 class="d">Co dostajesz od razu <span class="u">za 990 zł</span></h2>
+<p class="lead" style="margin-top:24px;max-width:680px">Rezerwacja działa jak bilet. Kupujesz go dziś, a my od jutra robimy Twoją stronę.</p>
+<div class="ticket">
+<div class="stub">
+<div style="font-size:15px">Rezerwacja Black Week</div>
+<div><div style="font-size:15px">Twoje miejsce</div><div class="no">nr <span class="tf-next">3</span></div></div>
+<div style="font-size:15px">Oddanie strony do <strong class="tf-date">25.11</strong></div>
+</div>
+<div class="body">
+<ul>
+<li><strong>Cena 1990 zł zostaje Twoja</strong>Także po Black Week, kiedy wraca cena 2490 zł.</li>
+<li><strong>Start w ciągu 24 godzin</strong>Dzwonimy dzień po wpłacie i od razu zaczynamy.</li>
+<li><strong>Pierwszy projekt po 3 dniach</strong>Widzisz animację swojej strony, zanim powstanie reszta.</li>
+<li><strong>Domena i hosting na rok</strong>W cenie, bez abonamentu.</li>
+<li><strong>Zwrot 990 zł, jeśli projekt Ci nie podejdzie</strong>Mówisz to po pierwszym projekcie, oddajemy pieniądze w 3 dni.</li>
+<li><strong>10% ceny za każdy dzień spóźnienia</strong>Spóźnimy się z naszej winy, to płacisz mniej.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section style="padding-top:0">
+<div class="wrap">
+<h2 class="d">Za co płacisz</h2>
+<div class="why">
+<div><h3 class="d">Animacja tylko dla Ciebie</h3><p>Projektujemy ją pod jedną rzecz, na przykład Twój tort weselny, salę albo warsztat. Tej samej nie dostanie nikt inny.</p></div>
+<div><h3 class="d">Teksty piszemy za Ciebie</h3><p>Układamy je tak, żeby klient chciał zadzwonić. W klinice DCLB podobne podejście podniosło akceptację leczenia z 37% do 57%.</p></div>
+<div><h3 class="d">Film z drona, jeśli chcesz</h3><p>W mazowieckim przyjeżdżamy z kamerą i dronem. Z tego samego materiału montujemy rolki na Instagram.</p></div>
+</div>
+</div>
+</section>
+
+<section id="pakiety" style="padding-top:0">
+<div class="wrap">
+<h2 class="d">Dwa pakiety, stała cena</h2>
+<div class="packs">
+<div class="pack">
+<div class="where">Zdalnie, cała Polska</div>
+<h3 class="d">Strona z animacją</h3>
+<div class="p"><s>2490 zł</s><b>1990 zł</b><span style="color:var(--mute)">netto</span></div>
+<ul><li>Projekt pod Twoją markę i animacja na starcie strony</li><li>Teksty pisane za Ciebie</li><li>Formularz i telefon jednym kliknięciem</li><li>Podpięcie do wizytówki Google</li><li>Gotowa w 7 dni, 2 rundy poprawek</li></ul>
+<a class="btn" href="#rezerwacja" data-pack="strona">Rezerwuję za 990 zł</a>
+</div>
+<div class="pack hi">
+<div class="where">Z nagraniem u Ciebie, województwo mazowieckie</div>
+<h3 class="d">Strona z animacją i filmem</h3>
+<div class="p"><s>5990 zł</s><b>4490 zł</b><span style="color:var(--mute)">netto</span></div>
+<ul><li>Wszystko z pakietu obok</li><li>Dzień nagrań z kamerą i dronem</li><li>Film na stronę i zdjęcia bez stocka</li><li>3–5 rolek na Instagram i Facebooka</li></ul>
+<a class="btn" href="#rezerwacja" data-pack="film">Rezerwuję za 990 zł</a>
+</div>
+</div>
+<p class="payback">Wystarczy jeden nowy klient, żeby strona się zwróciła. Deweloperowi to jedno mieszkanie, restauracji jedno wesele.</p>
+</div>
+</section>
+
+<section style="padding-top:0">
+<div class="wrap">
+<h2 class="d">Scenariusz na 7 dni</h2>
+<div class="script">
+<div class="scene"><div class="day">Dzień 0</div><h3 class="d">Rezerwujesz</h3><p>Płacisz 990 zł BLIK-iem albo kartą. Fakturę dostajesz mailem.</p></div>
+<div class="scene"><div class="day">Dzień 1</div><h3 class="d">15 minut rozmowy</h3><p>Wysyłasz logo i zdjęcia, mogą być z telefonu. Resztę bierzemy na siebie.</p></div>
+<div class="scene"><div class="day">Dzień 3</div><h3 class="d">Pierwszy projekt</h3><p>Oglądasz animację swojej strony. Tu możesz jeszcze odzyskać 990 zł.</p></div>
+<div class="scene"><div class="day">Dzień 7</div><h3 class="d">Strona gotowa</h3><p>Sprawdzasz całość i zgłaszasz poprawki. Masz 2 rundy.</p></div>
+<div class="scene last"><div class="day">Na koniec</div><h3 class="d">Startujesz</h3><p>Akceptujesz, dopłacasz resztę, a strona działa pod Twoją domeną.</p></div>
+</div>
+</div>
+</section>
+
+<section class="res" id="rezerwacja">
+<div class="wrap resgrid">
+<div>
+<h2 class="d">Zarezerwuj cenę i miejsce w kolejce</h2>
+<div class="price" style="justify-content:flex-start"><s>2490 zł</s><b>1990 zł</b><span>netto</span></div>
+<div class="clock" aria-label="Do końca Black Week">
+<div><b class="tf-d">--</b><span>dni</span></div><div><b class="tf-h">--</b><span>godz.</span></div><div><b class="tf-m">--</b><span>min</span></div><div><b class="tf-s">--</b><span>sek.</span></div>
+</div>
+<div class="queue" id="queue"></div>
+<div class="fine">Kolejność ustala data wpłaty. Robimy najwyżej 8 stron w tej cenie.</div>
+</div>
+<div>
+<form id="tf-form" action="https://api.web3forms.com/submit" method="POST">
 <input type="hidden" name="access_key" value="TWOJ_KLUCZ_WEB3FORMS">
-<input type="hidden" name="subject" value="Nowe zgłoszenie demo – Ten Format">
+<input type="hidden" name="subject" value="Nowa rezerwacja – 10 Format">
 <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
-<div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 38px; line-height: 1; text-transform: uppercase">Twoje demo w 48 godzin</div>
-<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #2A2E38">Nazwa firmy
-<input type="text" name="firma" required autocomplete="organization" placeholder="np. Cukiernia u Basi" style="height: 48px; box-sizing: border-box; padding: 0 14px; background: #FFFFFF; border: 1px solid #A9AEBA; color: #11131A; font-family: inherit; font-size: 16px">
-</label>
-<div style="display: flex; flex-wrap: wrap; gap: 16px">
-<label style="flex: 1 1 160px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #2A2E38">Telefon
-<input type="tel" name="telefon" required autocomplete="tel" style="height: 48px; box-sizing: border-box; padding: 0 14px; background: #FFFFFF; border: 1px solid #A9AEBA; color: #11131A; font-family: inherit; font-size: 16px">
-</label>
-<label style="flex: 1 1 160px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #2A2E38">E-mail
-<input type="email" name="email" required autocomplete="email" style="height: 48px; box-sizing: border-box; padding: 0 14px; background: #FFFFFF; border: 1px solid #A9AEBA; color: #11131A; font-family: inherit; font-size: 16px">
-</label>
+<div class="opts">
+<label class="opt"><input type="radio" name="pakiet" value="Strona z animacją (1990 zł)" checked> Strona z animacją <b>1990 zł</b></label>
+<label class="opt"><input type="radio" name="pakiet" value="Strona z animacją i filmem (4490 zł)"> Strona z animacją i filmem <b>4490 zł</b></label>
 </div>
-<label style="display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.45; color: #4A4F5C">
-<input type="checkbox" name="zgoda" value="tak" required style="margin: 2px 0 0; width: 18px; height: 18px; flex: none; accent-color: #FF8A3D">
-<span>Zgadzam się na kontakt od Ten Format w sprawie demo i oferty.</span>
-</label>
-<button type="submit" id="tf-submit" style="min-height: 56px; border: 0; background: #1E2BD8; color: #FFFFFF; font-family: 'Libre Franklin', sans-serif; font-weight: 500; font-size: 15px; cursor: pointer">Chcę swoje demo</button>
-<div id="tf-msg" role="status" style="font-size: 13px; color: #4A4F5C">Bez zobowiązań i bez płatności.</div>
+<label class="f">Nazwa firmy<input type="text" name="firma" required autocomplete="organization"></label>
+<div class="row2">
+<label class="f">Telefon<input type="tel" name="telefon" required autocomplete="tel"></label>
+<label class="f">E-mail<input type="email" name="email" required autocomplete="email"></label>
+</div>
+<label class="agree"><input type="checkbox" name="zgoda" value="tak" required><span>Akceptuję <a href="#">regulamin</a> i zgadzam się na kontakt od 10 Format w sprawie mojej strony.</span></label>
+<button class="btn o" type="submit" id="tf-submit" style="min-height:62px;font-size:17px">Rezerwuję i płacę 990 zł</button>
+<div id="msg" role="status">Po kliknięciu przejdziesz do płatności BLIK lub kartą.</div>
 </form>
 </div>
 </div>
+</section>
 
-<!-- MONITOR Z DEMEM -->
-<div style="max-width: 1320px; margin: 0 auto; padding: 20px clamp(20px, 4vw, 60px) clamp(60px, 8vw, 110px)">
-<div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-family: 'Libre Franklin', sans-serif; font-size: 12px; color: #4A4F5C; padding-bottom: 10px; border-bottom: 1px solid #C9CDD6">
-<span>Tak wygląda demo: 10 sekund początku Twojej strony</span>
-</div>
-<div style="margin-top: 18px; display: flex; flex-wrap: wrap; gap: 24px; align-items: stretch">
-<div style="flex: 999 1 640px; min-width: 0; aspect-ratio: 16 / 9; background: #1C2B22; position: relative; overflow: hidden">
-<div class="tf-zoom" style="position: absolute; inset: 0; transform-origin: 70% 80%">
-<div style="position: absolute; left: -10%; right: -10%; bottom: -30%; height: 70%; background: #2F4A38; border-radius: 50% 50% 0 0"></div>
-<div style="position: absolute; left: 30%; right: -20%; bottom: -40%; height: 70%; background: #3D5E46; border-radius: 50% 50% 0 0"></div>
-<div style="position: absolute; right: 16%; top: 16%; width: 13%; aspect-ratio: 1 / 1; border-radius: 50%; background: #E8C77A"></div>
-</div>
-<div style="position: absolute; top: 0; left: 0; right: 0; padding: 4% 5%; display: flex; justify-content: space-between; align-items: center; font-family: 'Libre Franklin', sans-serif; font-size: clamp(9px, 0.9vw, 12px); color: #F4EFE2">
-<span>Osiedle Na Skarpie</span>
-<span>Mieszkania / Lokalizacja / Kontakt</span>
-</div>
-<div class="tf-rise" style="position: absolute; left: 5%; bottom: 10%; max-width: 60%">
-<div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(30px, 5vw, 74px); line-height: 0.98; color: #F4EFE2; text-transform: uppercase">24 mieszkania z widokiem na las</div>
-<div style="margin-top: 14px; display: inline-block; background: #E8C77A; color: #1C2B22; font-family: 'Libre Franklin', sans-serif; font-size: clamp(9px, 0.9vw, 12px); padding: 8px 12px">Umów oglądanie</div>
-</div>
-</div>
-<div style="flex: 1 1 220px; display: flex; flex-direction: column; justify-content: space-between; gap: 18px; font-size: 15px; line-height: 1.5; color: #4A4F5C">
-<div style="font-family: 'Libre Franklin', sans-serif; font-size: 12px">Projekt przykładowy</div>
-<div>Demo robimy z tego, co o Twojej firmie jest już w internecie: zdjęć z wizytówki, opinii i godzin otwarcia. Dostajesz je jako krótkie nagranie na telefon.</div>
-<a href="#demo" style="color: #1E2BD8; font-family: 'Libre Franklin', sans-serif; font-size: 13px">Zamów swoje demo</a>
-</div>
-</div>
-</div>
-
-<!-- PROBLEM (jasna sekcja) -->
-<div style="background: #1E2BD8; color: #FFFFFF">
-<div style="max-width: 1320px; margin: 0 auto; padding: clamp(64px, 9vw, 130px) clamp(20px, 4vw, 60px); display: flex; flex-wrap: wrap; gap: 32px 64px">
-<div style="flex: 999 1 640px; min-width: 0">
-<p style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(40px, 5.6vw, 84px); line-height: 0.98; text-transform: uppercase">Większość firm, z którymi rozmawiamy, jest lepsza niż ich strona.</p>
-<p style="margin: 34px 0 0; max-width: 620px; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.55; color: #EDEFF2">Ktoś piecze świetne torty, a w sieci ma zdjęcie z 2017 roku i numer telefonu. Obcy klient ocenia go właśnie po tym i dzwoni gdzie indziej.</p>
-</div>
-</div>
-</div>
-
-<!-- PRZYKŁADY -->
-<div id="przyklady" style="max-width: 1320px; margin: 0 auto; padding: clamp(64px, 9vw, 120px) clamp(20px, 4vw, 60px)">
-<div style="display: flex; flex-wrap: wrap; gap: 16px 64px; align-items: flex-end; justify-content: space-between">
+<section id="pytania">
+<div class="wrap faq">
+<div><h2 class="d" style="font-size:clamp(40px,4.6vw,68px)">Pytania przed rezerwacją</h2></div>
 <div>
-<h2 style="margin: 13px 0 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 6vw, 92px); line-height: 0.98; text-transform: uppercase">Tak to wygląda w ruchu</h2>
+<details><summary>Co, jeśli pierwszy projekt mi się nie spodoba?</summary><p>Mówisz nam to po trzecim dniu i oddajemy 990 zł w ciągu 3 dni. Bez tłumaczenia się.</p></details>
+<details><summary>Kiedy zaczniecie?</summary><p>Dzwonimy w ciągu 24 godzin od wpłaty. Kolejność w kolejce ustala data rezerwacji.</p></details>
+<details><summary>Nie mam dobrych zdjęć.</summary><p>Wystarczą te z wizytówki Google i z telefonu. W pakiecie z filmem nagrywamy wszystko sami.</p></details>
+<details><summary>Czy sam zmienię ceny albo godziny otwarcia?</summary><p>Tak, bez pisania do nas.</p></details>
+<details><summary>Kto płaci za hosting?</summary><p>Pierwszy rok jest od nas. Później to około 200 zł rocznie.</p></details>
+<details><summary>Wystawiacie fakturę VAT?</summary><p>Tak, na każdą wpłatę.</p></details>
 </div>
-<div style="max-width: 360px; font-size: 15px; line-height: 1.5; color: #4A4F5C">Projekty przykładowe. Prawdziwe realizacje pokażemy tu w grudniu.</div>
 </div>
+</section>
 
-<div style="margin-top: 48px; display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
-<!-- kadr 1: sala weselna -->
-<div style="flex: 999 1 520px; min-width: 0">
-<div style="aspect-ratio: 4 / 3; background: #26201A; position: relative; overflow: hidden">
-<div class="tf-zoom" style="position: absolute; inset: 0; transform-origin: 50% 40%">
-<div style="position: absolute; left: 18%; right: 18%; top: 22%; bottom: 0; background: #3A2F24; border-radius: 48% 48% 0 0 / 30% 30% 0 0"></div>
-<div style="position: absolute; left: 30%; right: 30%; top: 38%; bottom: 0; background: #E9D9B8; border-radius: 50% 50% 0 0 / 22% 22% 0 0"></div>
+<section class="final">
+<div class="wrap">
+<h2 class="d">Cena Black Week znika 30 listopada</h2>
+<div class="cta"><a class="btn o" href="#rezerwacja">Rezerwuję cenę i miejsce</a></div>
+<div class="fine">Wolne miejsca: <span class="tf-left">6</span> z 8. Koniec za <span class="tf-d">--</span> d <span class="tf-h">--</span> h.</div>
 </div>
-<div class="tf-rise" style="position: absolute; left: 6%; top: 8%">
-<div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(28px, 3.6vw, 54px); line-height: 0.98; color: #F4EFE2; text-transform: uppercase">Dwór Pod Lipami</div>
-<div style="margin-top: 8px; font-size: clamp(12px, 1vw, 15px); color: #D9CBB0">Sala na 180 gości, 40 minut od Warszawy</div>
-</div>
-</div>
-<div style="margin-top: 12px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-family: 'Libre Franklin', sans-serif; font-size: 12px; color: #4A4F5C">
-<span>Sala weselna</span>
-<span>Animacja: przelot z drona</span>
-</div>
-</div>
+</section>
 
-<!-- kadr 2: cukiernia -->
-<div style="flex: 1 1 300px; min-width: 0; margin-top: clamp(0px, 6vw, 90px)">
-<div style="aspect-ratio: 4 / 5; background: #F0B9C3; position: relative; overflow: hidden">
-<div style="position: absolute; left: 0; right: 0; bottom: 10%; display: flex; flex-direction: column; align-items: center">
-<div class="tf-s3" style="width: 34%; height: 46px; background: #FFF4EE; border-radius: 10px 10px 0 0"></div>
-<div class="tf-s2" style="width: 50%; height: 56px; background: #7A3B2E"></div>
-<div class="tf-s1" style="width: 66%; height: 66px; background: #FFF4EE"></div>
-</div>
-<div style="position: absolute; left: 8%; top: 7%; right: 8%">
-<div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(28px, 3vw, 46px); line-height: 0.98; color: #4A1F18; text-transform: uppercase">Kremówka i Syn</div>
-<div style="margin-top: 8px; font-size: 14px; color: #4A1F18">Torty na zamówienie od 1998 roku</div>
-</div>
-</div>
-<div style="margin-top: 12px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-family: 'Libre Franklin', sans-serif; font-size: 12px; color: #4A4F5C">
-<span>Cukiernia</span>
-<span>Tort układa się sam</span>
-</div>
-</div>
-
-<!-- kadr 3: warsztat, telefon -->
-<div style="flex: 1 1 220px; min-width: 0; max-width: 300px">
-<div style="aspect-ratio: 9 / 16; background: #151513; border: 1px solid #C9CDD6; position: relative; overflow: hidden">
-<div class="tf-scroll" style="position: absolute; left: 0; right: 0; top: 0; padding: 18px; display: flex; flex-direction: column; gap: 14px">
-<div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 34px; line-height: 0.98; color: #F2C230; text-transform: uppercase">Garaż 44</div>
-<div style="font-size: 13px; color: #D4D3CC">Mechanika i detailing, Piaseczno</div>
-<div style="height: 10px; background: #F2C230; position: relative; overflow: hidden">
-<div class="tf-slide" style="position: absolute; top: 0; bottom: 0; width: 40%; background: #151513"></div>
-</div>
-<div style="aspect-ratio: 4 / 3; background: #2A2A26"></div>
-<div style="font-family: 'Libre Franklin', sans-serif; font-size: 11px; color: #A3A29B">Wymiana sprzęgła od 1200 zł</div>
-<div style="aspect-ratio: 4 / 3; background: #2A2A26"></div>
-<div style="background: #F2C230; color: #151513; font-family: 'Libre Franklin', sans-serif; font-size: 12px; padding: 12px; text-align: center">Zadzwoń teraz</div>
-<div style="aspect-ratio: 4 / 3; background: #2A2A26"></div>
-</div>
-</div>
-<div style="margin-top: 12px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-family: 'Libre Franklin', sans-serif; font-size: 12px; color: #4A4F5C">
-<span>Warsztat</span>
-<span>9:16</span>
-</div>
-</div>
-</div>
-</div>
-
-<!-- DLACZEGO TEN FORMAT -->
-<div style="border-top: 1px solid #C9CDD6">
-<div style="max-width: 1320px; margin: 0 auto; padding: clamp(64px, 9vw, 120px) clamp(20px, 4vw, 60px)">
-<div style="margin-top: 40px; display: flex; flex-direction: column">
-<div style="display: flex; flex-wrap: wrap; gap: 12px 48px; padding: 32px 0; border-top: 1px solid #C9CDD6">
-<div style="flex: 1 1 213px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(30px, 3vw, 44px); line-height: 0.98; text-transform: uppercase">Demo, zanim zapłacisz</div>
-<div style="flex: 2 1 380px; font-size: 18px; line-height: 1.55; color: #2A2E38">Podaj nazwę firmy, a w 48 godzin dostaniesz nagranie początku swojej strony. Jak się nie spodoba, po prostu nie odpisuj.</div>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 12px 48px; padding: 32px 0; border-top: 1px solid #C9CDD6">
-<div style="flex: 1 1 213px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(30px, 3vw, 44px); line-height: 0.98; text-transform: uppercase">Animacja tylko dla Ciebie</div>
-<div style="flex: 2 1 380px; font-size: 18px; line-height: 1.55; color: #2A2E38">Robimy ją pod jedną rzecz, na przykład Twój tort weselny albo Twój warsztat. Tej samej animacji nie dostanie nikt inny.</div>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 12px 48px; padding: 32px 0; border-top: 1px solid #C9CDD6; border-bottom: 1px solid #C9CDD6">
-<div style="flex: 1 1 213px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(30px, 3vw, 44px); line-height: 0.98; text-transform: uppercase">Teksty piszemy za Ciebie</div>
-<div style="flex: 2 1 380px; font-size: 18px; line-height: 1.55; color: #2A2E38">Układamy je tak, żeby klient chciał zadzwonić. W klinice DCLB podobne podejście podniosło akceptację leczenia z 37% do 57%.</div>
-</div>
-</div>
-</div>
-</div>
-
-<!-- RACHUNEK -->
-<div style="max-width: 1320px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 60px) clamp(64px, 9vw, 120px); display: flex; flex-wrap: wrap; gap: 40px 64px">
-<div style="flex: 999 1 560px; min-width: 0">
-<p style="margin: 15px 0 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(40px, 5vw, 76px); line-height: 0.98; text-transform: uppercase">Ilu klientów musi przyjść ze strony, żeby się zwróciła? <span style="color: #1E2BD8; text-decoration: underline; text-decoration-color: #FF8A3D; text-decoration-thickness: 0.09em; text-underline-offset: 0.08em; text-decoration-skip-ink: none">Zwykle wystarczy jeden.</span></p>
-</div>
-<div style="flex: 1 1 320px; display: flex; flex-direction: column; font-size: 17px; line-height: 1.45; color: #2A2E38; align-self: flex-end">
-<div style="padding: 14px 0; border-top: 1px solid #C9CDD6">Deweloperowi zwraca się na jednym mieszkaniu.</div>
-<div style="padding: 14px 0; border-top: 1px solid #C9CDD6">Warsztatowi na jednej większej naprawie.</div>
-<div style="padding: 14px 0; border-top: 1px solid #C9CDD6">Restauracji na jednym weselu.</div>
-<div style="padding: 14px 0; border-top: 1px solid #C9CDD6; border-bottom: 1px solid #C9CDD6">Gabinetowi na jednym pacjencie z implantem.</div>
-</div>
-</div>
-
-<!-- PAKIETY -->
-<div id="pakiety" style="background: #FFFFFF; border-top: 1px solid #C9CDD6; border-bottom: 1px solid #C9CDD6">
-<div style="max-width: 1320px; margin: 0 auto; padding: clamp(64px, 9vw, 120px) clamp(20px, 4vw, 60px)">
-<h2 style="margin: 13px 0 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 6vw, 92px); line-height: 0.98; text-transform: uppercase">Dwa pakiety, stała cena</h2>
-
-<div style="margin-top: 48px; display: flex; flex-wrap: wrap; gap: 28px; align-items: stretch">
-<div style="flex: 1 1 360px; min-width: 0; border: 1px solid #A9AEBA; padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; gap: 22px">
-<div style="font-family: 'Libre Franklin', sans-serif; font-size: 12px; color: #4A4F5C">Zdalnie, cała Polska</div>
-<div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 40px; line-height: 0.98; text-transform: uppercase">Strona z animacją</div>
-<div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap">
-<span style="font-family: 'Libre Franklin', sans-serif; font-size: 17px; color: #4A4F5C; text-decoration: line-through">2490 zł</span>
-<span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 72px; line-height: 1; text-transform: uppercase">1990 zł</span>
-<span style="font-family: 'Libre Franklin', sans-serif; font-size: 12px; color: #4A4F5C">netto</span>
-</div>
-<div style="display: flex; flex-direction: column; font-size: 16px; line-height: 1.45; color: #2A2E38">
-<div style="padding: 10px 0; border-top: 1px solid #C9CDD6">Projekt pod Twoją markę i animacja na starcie strony</div>
-<div style="padding: 10px 0; border-top: 1px solid #C9CDD6">Teksty pisane za Ciebie</div>
-<div style="padding: 10px 0; border-top: 1px solid #C9CDD6">Formularz i telefon jednym kliknięciem</div>
-<div style="padding: 10px 0; border-top: 1px solid #C9CDD6">Podpięcie do wizytówki Google</div>
-<div style="padding: 10px 0; border-top: 1px solid #C9CDD6; border-bottom: 1px solid #C9CDD6">Gotowa w 7 dni, 2 rundy poprawek</div>
-</div>
-<a href="#demo" style="margin-top: auto; text-decoration: none; min-height: 56px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; background: #1E2BD8; color: #FFFFFF; font-family: 'Libre Franklin', sans-serif; font-weight: 500; font-size: 15px">Rezerwuję za 990 zł</a>
-</div>
-
-<div style="flex: 1.25 1 400px; min-width: 0; border: 2px solid #FF8A3D; padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; gap: 22px; position: relative">
-<div style="font-family: 'Libre Franklin', sans-serif; font-size: 12px; color: #4A4F5C">Nagrania w województwie mazowieckim</div>
-<div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 40px; line-height: 0.98; text-transform: uppercase">Strona z animacją i filmem</div>
-<div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap">
-<span style="font-family: 'Libre Franklin', sans-serif; font-size: 17px; color: #4A4F5C; text-decoration: line-through">5990 zł</span>
-<span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 72px; line-height: 1; text-transform: uppercase">4490 zł</span>
-<span style="font-family: 'Libre Franklin', sans-serif; font-size: 12px; color: #4A4F5C">netto</span>
-</div>
-<div style="display: flex; flex-direction: column; font-size: 16px; line-height: 1.45; color: #2A2E38">
-<div style="padding: 10px 0; border-top: 1px solid #C9CDD6">Wszystko z pakietu obok</div>
-<div style="padding: 10px 0; border-top: 1px solid #C9CDD6">Dzień nagrań u Ciebie, z kamerą i dronem</div>
-<div style="padding: 10px 0; border-top: 1px solid #C9CDD6">Film na stronę i zdjęcia bez stocka</div>
-<div style="padding: 10px 0; border-top: 1px solid #C9CDD6; border-bottom: 1px solid #C9CDD6">3–5 rolek na Instagram i Facebooka z tego samego materiału</div>
-</div>
-<a href="#demo" style="margin-top: auto; text-decoration: none; min-height: 56px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; background: #1E2BD8; color: #FFFFFF; font-family: 'Libre Franklin', sans-serif; font-weight: 500; font-size: 15px">Rezerwuję za 990 zł</a>
-</div>
-</div>
-
-<div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px 40px; justify-content: space-between; font-size: 15px; line-height: 1.5; color: #4A4F5C">
-<div style="max-width: 640px">Rezerwacja to 990 zł, resztę płacisz po akceptacji strony. Do każdej rezerwacji w Black Week dorzucamy domenę i hosting na rok.</div>
-<div style="font-family: 'Libre Franklin', sans-serif; font-size: 13px; color: #11131A">Zostało <span class="tf-left">6</span> z 8 miejsc</div>
-</div>
-</div>
-</div>
-
-<!-- PROCES jako oś montażowa -->
-<div id="proces" style="max-width: 1320px; margin: 0 auto; padding: clamp(64px, 9vw, 120px) clamp(20px, 4vw, 60px)">
-<h2 style="margin: 13px 0 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 6vw, 92px); line-height: 0.98; text-transform: uppercase">Od dema do startu</h2>
-<div style="margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px">
-<div style="flex: 1 1 200px; min-width: 0; background: #FFFFFF; border-left: 4px solid #FF8A3D; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px">
-<div style="font-family: 'Libre Franklin', sans-serif; font-size: 12px; color: #4A4F5C">Dzień 0</div>
-<div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 30px; line-height: 0.98; text-transform: uppercase">Dostajesz demo</div>
-<div style="font-size: 15px; line-height: 1.5; color: #2A2E38">Nagranie początku Twojej strony, za darmo.</div>
-</div>
-<div style="flex: 1.4 1 220px; min-width: 0; background: #FFFFFF; border-left: 4px solid #11131A; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px">
-<div style="font-family: 'Libre Franklin', sans-serif; font-size: 12px; color: #4A4F5C">Dzień 1</div>
-<div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 30px; line-height: 0.98; text-transform: uppercase">Rezerwujesz</div>
-<div style="font-size: 15px; line-height: 1.5; color: #2A2E38">Wpłacasz 990 zł i wysyłasz logo oraz zdjęcia. Wystarczą te z telefonu.</div>
-</div>
-<div style="flex: 2.2 1 260px; min-width: 0; background: #FFFFFF; border-left: 4px solid #11131A; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px">
-<div style="font-family: 'Libre Franklin', sans-serif; font-size: 12px; color: #4A4F5C">Dzień 7</div>
-<div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 30px; line-height: 0.98; text-transform: uppercase">Strona gotowa</div>
-<div style="font-size: 15px; line-height: 1.5; color: #2A2E38">Oglądasz całość i zgłaszasz poprawki. Masz na to 2 rundy.</div>
-</div>
-<div style="flex: 1 1 200px; min-width: 0; background: #1E2BD8; color: #FFFFFF; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px">
-<div style="font-family: 'Libre Franklin', sans-serif; font-size: 12px">Dzień 8</div>
-<div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 30px; line-height: 0.98; text-transform: uppercase">Startujesz</div>
-<div style="font-size: 15px; line-height: 1.5">Akceptujesz i dopłacasz resztę, a my podpinamy domenę i wizytówkę Google.</div>
-</div>
-</div>
-</div>
-
-<!-- GWARANCJA -->
-<div style="background: #1E2BD8; color: #FFFFFF">
-<div style="max-width: 1320px; margin: 0 auto; padding: clamp(56px, 8vw, 110px) clamp(20px, 4vw, 60px); display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end">
-<div style="flex: 999 1 620px; min-width: 0">
-<p style="margin: 15px 0 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(40px, 5.4vw, 82px); line-height: 0.98; text-transform: uppercase">Za każdy dzień naszego spóźnienia oddajemy 10% ceny.</p>
-</div>
-<div style="flex: 1 1 280px; font-size: 17px; line-height: 1.55; color: #EDEFF2">Cena z oferty jest ceną końcową. W pierwszym roku nie płacisz za hosting i nie podpisujesz żadnego abonamentu.</div>
-</div>
-</div>
-
-<!-- PYTANIA -->
-<div id="pytania" style="max-width: 1320px; margin: 0 auto; padding: clamp(64px, 9vw, 120px) clamp(20px, 4vw, 60px); display: flex; flex-wrap: wrap; gap: 32px 64px">
-<div style="flex: 1 1 260px">
-<h2 style="margin: 13px 0 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(40px, 4.6vw, 68px); line-height: 0.98; text-transform: uppercase">Pytania, które słyszymy najczęściej</h2>
-</div>
-<div style="flex: 2 1 520px; min-width: 0; display: flex; flex-direction: column">
-<div style="padding: 22px 0; border-top: 1px solid #C9CDD6">
-<div style="font-weight: 700; font-size: 19px">Nie mam dobrych zdjęć.</div>
-<div style="margin-top: 8px; font-size: 16px; line-height: 1.55; color: #4A4F5C">Wystarczą te z wizytówki Google i z telefonu. W pakiecie z filmem nagrywamy wszystko sami.</div>
-</div>
-<div style="padding: 22px 0; border-top: 1px solid #C9CDD6">
-<div style="font-weight: 700; font-size: 19px">Czy sam zmienię ceny albo godziny otwarcia?</div>
-<div style="margin-top: 8px; font-size: 16px; line-height: 1.55; color: #4A4F5C">Tak, bez pisania do nas.</div>
-</div>
-<div style="padding: 22px 0; border-top: 1px solid #C9CDD6">
-<div style="font-weight: 700; font-size: 19px">Kto płaci za hosting?</div>
-<div style="margin-top: 8px; font-size: 16px; line-height: 1.55; color: #4A4F5C">Pierwszy rok jest od nas. Później to około 200 zł rocznie.</div>
-</div>
-<div style="padding: 22px 0; border-top: 1px solid #C9CDD6">
-<div style="font-weight: 700; font-size: 19px">Co, jeśli demo mi się nie spodoba?</div>
-<div style="margin-top: 8px; font-size: 16px; line-height: 1.55; color: #4A4F5C">Nic się nie dzieje i niczego nie płacisz.</div>
-</div>
-<div style="padding: 22px 0; border-top: 1px solid #C9CDD6; border-bottom: 1px solid #C9CDD6">
-<div style="font-weight: 700; font-size: 19px">Wystawiacie fakturę VAT?</div>
-<div style="margin-top: 8px; font-size: 16px; line-height: 1.55; color: #4A4F5C">Tak.</div>
-</div>
-</div>
-</div>
-
-<!-- KOŃCOWE WEZWANIE -->
-<div style="background: #1E2BD8; color: #FFFFFF">
-<div style="max-width: 1320px; margin: 0 auto; padding: clamp(56px, 8vw, 110px) clamp(20px, 4vw, 60px); display: flex; flex-wrap: wrap; gap: 28px 64px; align-items: flex-end; justify-content: space-between">
-<p style="margin: 0; flex: 999 1 459px; min-width: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 6.4vw, 100px); line-height: 0.98; text-transform: uppercase">Zobacz swoją stronę, zanim za nią zapłacisz</p>
-<div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 14px">
-<a href="#demo" style="text-decoration: none; min-height: 60px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; background: #FF8A3D; color: #11131A; font-family: 'Libre Franklin', sans-serif; font-weight: 500; font-size: 15px">Chcę swoje demo</a>
-<div style="font-family: 'Libre Franklin', sans-serif; font-size: 13px">Zostało <span class="tf-left">6</span> z 8 miejsc w cenie Black Week</div>
-</div>
-</div>
-</div>
-
-<!-- STOPKA -->
-<div style="max-width: 1320px; margin: 0 auto; padding: 40px clamp(20px, 4vw, 60px) 56px; display: flex; flex-wrap: wrap; gap: 20px 48px; justify-content: space-between; align-items: flex-start; font-size: 14px; color: #4A4F5C">
-<div style="display: flex; flex-direction: column; gap: 10px">
-<div style="display: flex; align-items: center; gap: 10px; color: #11131A">
-<svg xmlns="http://www.w3.org/2000/svg" style="height: 34px; width: auto; display: block" role="img" aria-label="10 Format" viewBox="235 321 2221 437"><polygon fill="#9A9A9A" points="596,410 762,540 596,670"/><path fill="#11131A" d="M255 403L362 341H408V685H503V738H255V685H350V405L255 460Z"/><path fill="#11131A" fill-rule="evenodd" d="M597 341H769L825 397V682L769 738H597L541 682V397ZM623 397L596 424V659L623 686H744L771 659V424L744 397Z"/><path fill="#11131A" d="M848.55 401.0V346.85H840.4125V341.0H863.2125V346.85H855.075V401.0ZM869.3375 401.0V341.0H880.7L884.6375 365.075L886.7 394.9625H888.2375L890.225 365.075L894.2375 341.0H905.5625V401.0H899.0V383.2625L900.2 346.85H898.4375L894.65 383.6375L891.4625 400.8125H883.4375L880.2875 383.6375L876.5 346.85H874.775L875.9 383.2625V401.0Z"/><path fill="#11131A" d="M993.0033875 738.0V341.0H1137.8289875V379.7075H1042.504325V518.16125H1132.1717375V556.86875H1042.504325V738.0ZM1280.8941375 741.721875Q1235.9189999999999 741.721875 1215.97719375 724.7253125Q1196.0353875 707.72875 1195.1868 668.525Q1194.621075 635.7725 1194.19678125 603.6403124999999Q1193.7724875 571.508125 1193.7724875 539.5Q1193.7724875 507.491875 1194.19678125 475.35968749999995Q1194.621075 443.22749999999996 1195.1868 410.47499999999997Q1196.0353875 371.023125 1215.97719375 354.150625Q1235.9189999999999 337.278125 1280.8941375 337.278125Q1326.1521375 337.278125 1345.81108125 354.150625Q1365.470025 371.023125 1366.601475 410.47499999999997Q1367.1671999999999 443.22749999999996 1367.7329249999998 475.48375Q1368.29865 507.74 1368.29865 539.7481250000001Q1368.29865 571.75625 1367.7329249999998 603.764375Q1367.1671999999999 635.7725 1366.601475 668.525Q1365.470025 707.72875 1345.81108125 724.7253125Q1326.1521375 741.721875 1280.8941375 741.721875ZM1280.8941375 705.495625Q1299.845925 705.495625 1308.3318 698.548125Q1316.817675 691.600625 1317.1005375 675.720625Q1318.2319875 641.975625 1318.7977125 607.6103125Q1319.3634375 573.245 1319.3634375 538.6315625Q1319.3634375 504.018125 1318.7977125 470.025Q1318.2319875 436.03187499999996 1317.1005375 403.27937499999996Q1316.817675 387.39937499999996 1308.1903687499998 380.32781249999994Q1299.5630625 373.25624999999997 1280.8941375 373.25624999999997Q1262.508075 373.25624999999997 1253.88076875 380.32781249999994Q1245.2534625 387.39937499999996 1244.6877375 403.27937499999996Q1243.5562875 436.03187499999996 1242.9905625000001 470.025Q1242.4248375 504.018125 1242.4248375 538.6315625Q1242.4248375 573.245 1243.13199375 607.6103125Q1243.83915 641.975625 1244.6877375 675.720625Q1245.2534625 691.600625 1253.88076875 698.548125Q1262.508075 705.495625 1280.8941375 705.495625ZM1442.3453499999998 738.0V341.0H1521.54685Q1565.9562624999999 341.0 1586.0394999999999 357.7484375Q1606.1227374999999 374.496875 1607.8199124999999 413.4525Q1608.6685 433.55062499999997 1608.9513625 450.91937499999995Q1609.234225 468.288125 1608.9513625 484.7884375Q1608.6685 501.28875 1607.8199124999999 518.409375Q1606.6884625 544.4625 1597.3539999999998 560.3425Q1588.0195374999998 576.2225 1568.502025 583.418125L1616.022925 738.0H1563.4105L1521.54685 590.861875H1491.8462875V738.0ZM1491.8462875 552.154375H1520.981125Q1539.9329125 552.154375 1548.70165 544.3384375Q1557.4703875 536.5225 1558.318975 520.394375Q1559.1675624999998 502.7775 1559.450425 484.29218749999995Q1559.7332875 465.806875 1559.450425 447.44562499999995Q1559.1675624999998 429.08437499999997 1558.318975 411.21937499999996Q1557.4703875 395.09125 1548.84308125 387.39937499999996Q1540.215775 379.7075 1521.54685 379.7075H1491.8462875ZM1679.6037124999998 738.0V341.0H1765.3110499999998L1795.0116125 500.29625L1810.5690499999998 698.051875H1822.1664125L1837.158125 500.29625L1867.4244125 341.0H1952.8488874999998V738.0H1903.3479499999999V620.636875L1912.3995499999999 379.7075H1899.1050125L1870.5358999999999 623.118125L1846.4925875 736.759375H1785.9600125L1762.1995625 623.118125L1733.6304499999999 379.7075H1720.618775L1729.10465 620.636875V738.0ZM2013.6010499999998 738.0 2065.3648875 341.0H2151.63795L2203.4017875 738.0H2152.7693999999997L2141.4548999999997 630.81H2075.265075L2064.2334374999996 738.0ZM2080.0737375 592.1025H2136.9291L2127.5946375 505.25874999999996L2116.5629999999996 379.7075H2100.7227L2089.4082 505.25874999999996ZM2300.6432124999997 738.0V379.7075H2239.2620499999994V341.0H2411.2424499999997V379.7075H2349.8612874999994V738.0Z"/></svg>
-</div>
-<div>Strony z animacją i film z drona.</div>
-</div>
-<div style="display: flex; flex-direction: column; gap: 6px; font-family: 'Libre Franklin', sans-serif; font-size: 13px">
-<span>[TELEFON]</span>
-<span>[E-MAIL]</span>
-<span>[NAZWA FIRMY, NIP]</span>
-</div>
-<div style="display: flex; flex-direction: column; gap: 6px; font-family: 'Libre Franklin', sans-serif; font-size: 13px">
-<a href="#" style="color: #4A4F5C">Polityka prywatności</a>
-<a href="#" style="color: #4A4F5C">Regulamin</a>
-</div>
-</div>
-
-</div>
+<footer><div class="wrap">
+<div class="col"><svg xmlns="http://www.w3.org/2000/svg" style="height:34px;width:auto;display:block" role="img" aria-label="10 Format" viewBox="235 321 2221 437"><polygon fill="#9A9A9A" points="596,410 762,540 596,670"/><path fill="#11131A" d="M255 403L362 341H408V685H503V738H255V685H350V405L255 460Z"/><path fill="#11131A" fill-rule="evenodd" d="M597 341H769L825 397V682L769 738H597L541 682V397ZM623 397L596 424V659L623 686H744L771 659V424L744 397Z"/><path fill="#11131A" d="M848.55 401.0V346.85H840.4125V341.0H863.2125V346.85H855.075V401.0ZM869.3375 401.0V341.0H880.7L884.6375 365.075L886.7 394.9625H888.2375L890.225 365.075L894.2375 341.0H905.5625V401.0H899.0V383.2625L900.2 346.85H898.4375L894.65 383.6375L891.4625 400.8125H883.4375L880.2875 383.6375L876.5 346.85H874.775L875.9 383.2625V401.0Z"/><path fill="#11131A" d="M993.0033875 738.0V341.0H1137.8289875V379.7075H1042.504325V518.16125H1132.1717375V556.86875H1042.504325V738.0ZM1280.8941375 741.721875Q1235.9189999999999 741.721875 1215.97719375 724.7253125Q1196.0353875 707.72875 1195.1868 668.525Q1194.621075 635.7725 1194.19678125 603.6403124999999Q1193.7724875 571.508125 1193.7724875 539.5Q1193.7724875 507.491875 1194.19678125 475.35968749999995Q1194.621075 443.22749999999996 1195.1868 410.47499999999997Q1196.0353875 371.023125 1215.97719375 354.150625Q1235.9189999999999 337.278125 1280.8941375 337.278125Q1326.1521375 337.278125 1345.81108125 354.150625Q1365.470025 371.023125 1366.601475 410.47499999999997Q1367.1671999999999 443.22749999999996 1367.7329249999998 475.48375Q1368.29865 507.74 1368.29865 539.7481250000001Q1368.29865 571.75625 1367.7329249999998 603.764375Q1367.1671999999999 635.7725 1366.601475 668.525Q1365.470025 707.72875 1345.81108125 724.7253125Q1326.1521375 741.721875 1280.8941375 741.721875ZM1280.8941375 705.495625Q1299.845925 705.495625 1308.3318 698.548125Q1316.817675 691.600625 1317.1005375 675.720625Q1318.2319875 641.975625 1318.7977125 607.6103125Q1319.3634375 573.245 1319.3634375 538.6315625Q1319.3634375 504.018125 1318.7977125 470.025Q1318.2319875 436.03187499999996 1317.1005375 403.27937499999996Q1316.817675 387.39937499999996 1308.1903687499998 380.32781249999994Q1299.5630625 373.25624999999997 1280.8941375 373.25624999999997Q1262.508075 373.25624999999997 1253.88076875 380.32781249999994Q1245.2534625 387.39937499999996 1244.6877375 403.27937499999996Q1243.5562875 436.03187499999996 1242.9905625000001 470.025Q1242.4248375 504.018125 1242.4248375 538.6315625Q1242.4248375 573.245 1243.13199375 607.6103125Q1243.83915 641.975625 1244.6877375 675.720625Q1245.2534625 691.600625 1253.88076875 698.548125Q1262.508075 705.495625 1280.8941375 705.495625ZM1442.3453499999998 738.0V341.0H1521.54685Q1565.9562624999999 341.0 1586.0394999999999 357.7484375Q1606.1227374999999 374.496875 1607.8199124999999 413.4525Q1608.6685 433.55062499999997 1608.9513625 450.91937499999995Q1609.234225 468.288125 1608.9513625 484.7884375Q1608.6685 501.28875 1607.8199124999999 518.409375Q1606.6884625 544.4625 1597.3539999999998 560.3425Q1588.0195374999998 576.2225 1568.502025 583.418125L1616.022925 738.0H1563.4105L1521.54685 590.861875H1491.8462875V738.0ZM1491.8462875 552.154375H1520.981125Q1539.9329125 552.154375 1548.70165 544.3384375Q1557.4703875 536.5225 1558.318975 520.394375Q1559.1675624999998 502.7775 1559.450425 484.29218749999995Q1559.7332875 465.806875 1559.450425 447.44562499999995Q1559.1675624999998 429.08437499999997 1558.318975 411.21937499999996Q1557.4703875 395.09125 1548.84308125 387.39937499999996Q1540.215775 379.7075 1521.54685 379.7075H1491.8462875ZM1679.6037124999998 738.0V341.0H1765.3110499999998L1795.0116125 500.29625L1810.5690499999998 698.051875H1822.1664125L1837.158125 500.29625L1867.4244125 341.0H1952.8488874999998V738.0H1903.3479499999999V620.636875L1912.3995499999999 379.7075H1899.1050125L1870.5358999999999 623.118125L1846.4925875 736.759375H1785.9600125L1762.1995625 623.118125L1733.6304499999999 379.7075H1720.618775L1729.10465 620.636875V738.0ZM2013.6010499999998 738.0 2065.3648875 341.0H2151.63795L2203.4017875 738.0H2152.7693999999997L2141.4548999999997 630.81H2075.265075L2064.2334374999996 738.0ZM2080.0737375 592.1025H2136.9291L2127.5946375 505.25874999999996L2116.5629999999996 379.7075H2100.7227L2089.4082 505.25874999999996ZM2300.6432124999997 738.0V379.7075H2239.2620499999994V341.0H2411.2424499999997V379.7075H2349.8612874999994V738.0Z"/></svg><span style="margin-top:8px">Strony z animacją i film z drona.</span></div>
+<div class="col"><span>[TELEFON]</span><span>[E-MAIL]</span><span>[NAZWA FIRMY, NIP]</span></div>
+<div class="col"><a href="#">Polityka prywatności</a><a href="#">Regulamin</a></div>
+</div></footer>
 
 <script>
 (function(){
-  var LEFT = 6; // ZMIEN po kazdej prawdziwej rezerwacji
-  document.querySelectorAll('.tf-left').forEach(function(e){e.textContent=LEFT;});
-  var end = Date.parse('2026-11-30T22:59:00Z');
+  // ===== USTAWIENIA =====
+  var LEFT = 6;                         // wolne miejsca, zmien po kazdej rezerwacji
+  var PAY_URL = '';                     // link do platnosci 990 zl (Stripe / Przelewy24), np. 'https://buy.stripe.com/...'
+  var DATES = ['21.11','24.11','25.11','26.11','27.11','28.11','2.12','3.12']; // terminy oddania dla miejsc 1-8
+  var END = Date.parse('2026-11-30T22:59:00Z');
+  // ======================
+
+  function $(s){return document.querySelectorAll(s);}
+  function set(sel,v){$(sel).forEach(function(e){e.textContent=v;});}
+  var taken = 8 - LEFT, next = Math.min(taken+1, 8);
+  set('.tf-left', LEFT); set('.tf-next', next); set('.tf-date', DATES[next-1]);
+  var q = document.getElementById('queue'), h='';
+  for (var i=0;i<8;i++){
+    var t = i<taken, cls = t?'taken':(i===taken?'free next':'free');
+    h += '<div class="'+cls+'"><span>Miejsce '+(i+1)+', oddanie do '+DATES[i]+'</span><em>'+(t?'zajęte':(i===taken?'następne wolne':'wolne'))+'</em></div>';
+  }
+  q.innerHTML = h;
+
   function pad(n){return String(n).padStart(2,'0');}
   function tick(){
-    var ms=Math.max(0,end-Date.now());
-    document.getElementById('tf-d').textContent=Math.floor(ms/86400000);
-    document.getElementById('tf-h').textContent=pad(Math.floor(ms%86400000/3600000));
-    document.getElementById('tf-m').textContent=pad(Math.floor(ms%3600000/60000));
+    var ms=Math.max(0,END-Date.now());
+    set('.tf-d', Math.floor(ms/86400000));
+    set('.tf-h', pad(Math.floor(ms%86400000/3600000)));
+    set('.tf-m', pad(Math.floor(ms%3600000/60000)));
+    set('.tf-s', pad(Math.floor(ms%60000/1000)));
   }
-  tick(); setInterval(tick,30000);
-  var f=document.getElementById('tf-form'), msg=document.getElementById('tf-msg'), btn=document.getElementById('tf-submit');
+  tick(); setInterval(tick,1000);
+
+  // intro
+  var intro=document.getElementById('intro'), num=document.getElementById('num'), mark=document.getElementById('mark'), it=document.getElementById('itext'), sw=document.getElementById('sweep');
+  var seen=false; try{seen=sessionStorage.getItem('tf-intro')==='1';}catch(e){}
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function closeIntro(){intro.classList.add('hide');try{sessionStorage.setItem('tf-intro','1');}catch(e){}setTimeout(function(){intro.style.display='none';},700);}
+  document.getElementById('skip').addEventListener('click',closeIntro);
+  if(seen||reduce){intro.style.display='none';}
+  else{
+    var n=10, start=performance.now();
+    (function frame(t){var a=((t-start)%300)/300*360; sw.style.setProperty('--a',a+'deg'); if(!intro.classList.contains('hide'))requestAnimationFrame(frame);})(start);
+    var iv=setInterval(function(){
+      n--;
+      if(n===5) it.textContent='Potem przewija do konkurencji.';
+      if(n<=0){clearInterval(iv); num.style.display='none'; mark.style.display='block'; it.textContent='Chyba że od pierwszej sekundy coś się dzieje.'; setTimeout(closeIntro,1600); return;}
+      num.textContent=n;
+    },300);
+  }
+
+  // test
+  var v=document.getElementById('verdict'), A=document.getElementById('pA'), B=document.getElementById('pB');
+  function pick(which){
+    A.classList.toggle('pick',which==='A'); B.classList.toggle('pick',which==='B');
+    v.innerHTML = (which==='B'
+      ? 'Wybrałeś po wyglądzie, bo torty są te same. Twoi klienci robią dokładnie to samo z Twoją firmą.'
+      : 'Torty są te same. Spójrz jeszcze raz na drugą stronę i pomyśl, którą zapamięta Twój klient.')
+      + '<br><a class="btn o" href="#bilet">Chcę stronę jak cukiernia B</a>';
+  }
+  A.addEventListener('click',function(){pick('A');}); B.addEventListener('click',function(){pick('B');});
+
+  // pakiet z przycisku
+  $('[data-pack]').forEach(function(b){b.addEventListener('click',function(){
+    var r=document.querySelectorAll('input[name=pakiet]'); r[b.getAttribute('data-pack')==='film'?1:0].checked=true;
+  });});
+
+  // formularz -> platnosc
+  var f=document.getElementById('tf-form'), msg=document.getElementById('msg'), btn=document.getElementById('tf-submit');
   f.addEventListener('submit',function(ev){
     ev.preventDefault();
-    btn.disabled=true; btn.textContent='Wysyłam...';
+    btn.disabled=true; btn.textContent='Rezerwuję...';
+    if(window.fbq) fbq('track','InitiateCheckout',{value:990,currency:'PLN'});
     fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
-      .then(function(r){return r.json();})
-      .then(function(d){
-        if(d.success){
-          f.reset(); btn.textContent='Wysłane';
-          msg.textContent='Dzięki! Demo wyślemy na Twój e-mail, a potem zadzwonimy.';
-          if(window.fbq) fbq('track','Lead');
-        } else { throw new Error(); }
-      })
-      .catch(function(){
-        btn.disabled=false; btn.textContent='Chcę swoje demo';
-        msg.textContent='Coś poszło nie tak. Spróbuj jeszcze raz albo zadzwoń: [TELEFON].';
+      .catch(function(){})
+      .then(function(){
+        if(PAY_URL){
+          var em=encodeURIComponent(f.email.value);
+          window.location.href = PAY_URL + (PAY_URL.indexOf('?')>-1?'&':'?') + 'prefilled_email=' + em;
+        } else {
+          btn.textContent='Miejsce zarezerwowane';
+          msg.textContent='Dzięki! Link do płatności 990 zł wyślemy Ci mailem w ciągu godziny. Miejsce trzymamy 24 godziny.';
+        }
       });
   });
 })();
