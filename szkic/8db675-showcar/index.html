@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Showcar · szkic strony od 10 Format</title>
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Libre+Franklin:wght@400;600;700&display=swap">
+<style>
+:root{--bg:#EDEEF0;--ink:#121315;--mute:#5A5F66;--acc:#F5D90A;--acc2:#16171A;--card:#FFFFFF;--line:#D3D6DB}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Libre Franklin',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55}
+a{color:inherit}
+.d{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.95;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 26px;background:var(--acc);color:var(--ink);font-weight:700;text-decoration:none;border:0;font-size:16px;cursor:pointer}
+.btn.ghost{background:transparent;border:2px solid #F2F3F5;color:#F2F3F5}
+
+.sk{position:sticky;top:0;z-index:40;background:#11131A;color:#fff;font-size:14px}
+.sk .wrap{display:flex;gap:10px 20px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding-top:9px;padding-bottom:9px}
+.sk a.go{background:#FF8A3D;color:#11131A;font-weight:700;text-decoration:none;padding:8px 14px}
+
+/* intro: zdejmowanie folii */
+#intro{position:fixed;inset:0;z-index:60;overflow:hidden;background:#0B0B0C;color:#F2F3F5;transition:opacity .6s ease;touch-action:none;user-select:none;-webkit-user-select:none}
+#intro.hide{opacity:0;pointer-events:none}
+#intro .skip{position:absolute;top:56px;right:22px;z-index:7;background:none;border:0;font:inherit;font-size:14px;cursor:pointer;padding:10px;color:#F2F3F5;opacity:.8}
+#intro .hint{position:absolute;bottom:7%;left:0;right:0;z-index:5;text-align:center;font-size:16px;font-weight:600;pointer-events:none;color:#F2F3F5}
+#intro .reveal{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
+#intro .reveal h2{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(80px,17vw,250px);line-height:.95;margin:0}
+#intro .reveal h2 span{text-decoration:underline;text-decoration-color:#F5D90A;text-decoration-thickness:.07em;text-underline-offset:.06em}
+#intro .shine{position:absolute;top:-20%;bottom:-20%;width:22%;left:-30%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.16),transparent);transform:skewX(-18deg);animation:shine 2.4s ease-in-out infinite}
+@keyframes shine{to{left:120%}}
+#foil{position:absolute;inset:0;z-index:3;background:#6E737A repeating-linear-gradient(135deg,rgba(255,255,255,.04) 0 2px,transparent 2px 6px)}
+#flap{position:absolute;inset:0;z-index:4;background:#C3C7CC;filter:drop-shadow(-6px -6px 10px rgba(0,0,0,.45));pointer-events:none}
+
+.hero{background:var(--acc2);color:#F2F3F5;padding:28px 0 90px;overflow:hidden;position:relative}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:60px}
+.nav .logo{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:30px;text-transform:uppercase;letter-spacing:.5px}
+.nav .logo b{color:var(--acc)}
+.nav a.tel{text-decoration:none;font-weight:700}
+.hero h1{font-size:clamp(48px,8vw,124px);max-width:980px}
+.hero h1 span{display:inline-block;opacity:0;transform:translateY(40px);animation:up .7s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes up{to{opacity:1;transform:none}}
+.hero p.lead{font-size:clamp(18px,1.6vw,22px);max-width:620px;color:#A7ABB2;margin:26px 0 34px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px}
+.gloss{position:absolute;right:-8%;bottom:-35%;width:46vw;max-width:620px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(245,217,10,.35) 0,rgba(245,217,10,0) 68%);animation:pulse 5s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.12);opacity:.7}}
+
+section{padding:90px 0}
+h2.d{font-size:clamp(40px,5vw,72px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:40px}
+.card{background:var(--card);border:1px solid var(--line);padding:28px}
+.card h3{font-size:22px;margin:0 0 10px}
+.card p{margin:0;color:var(--mute)}
+
+.pick{background:var(--card);border:1px solid var(--line);padding:30px;margin-top:40px;max-width:820px}
+.pick .q{font-weight:700;margin:0 0 12px}
+.pick .opts{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.pick .opts button{font:inherit;padding:12px 18px;border:2px solid var(--line);background:#fff;cursor:pointer;font-weight:600}
+.pick .opts button.on{border-color:var(--ink);background:var(--acc)}
+.pick .sum{border-top:1px solid var(--line);padding-top:20px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.pick .sum b{font-family:'Big Shoulders Display',sans-serif;font-size:30px;text-transform:uppercase}
+
+.contact{background:var(--acc2);color:#F2F3F5}
+.contact .row{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start}
+.contact p{color:#A7ABB2}
+form{display:flex;flex-direction:column;gap:12px}
+form input,form textarea{font:inherit;padding:15px;border:0;background:#F2F3F5;color:#121315}
+footer{padding:30px 0;font-size:14px;color:var(--mute)}
+@media(max-width:800px){.contact .row{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}.hero h1 span{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="sk"><div class="wrap">
+<span>Szkic strony przygotowany przez 10 Format dla firmy <strong>Showcar</strong>. Strona nie jest jeszcze opublikowana.</span>
+<a class="go" href="mailto:tenformat@gmail.com?subject=Chc%C4%99%20t%C4%99%20stron%C4%99%3A%20Showcar">Chcę tę stronę</a>
+</div></div>
+
+<div id="intro" aria-hidden="true">
+<div class="shine"></div>
+<div class="reveal"><h2><span>Showcar</span></h2></div>
+<div id="foil"></div><div id="flap"></div>
+<div class="hint">Złap za róg w prawym dolnym rogu i zdejmij folię</div>
+<button class="skip" id="skip" type="button">Pomiń</button>
+</div>
+
+<header class="hero">
+<div class="gloss"></div>
+<div class="wrap" style="position:relative">
+<nav class="nav">
+<div class="logo">Show<b>car</b></div>
+<a class="tel" href="#kontakt">Kontakt</a>
+</nav>
+<h1 class="d"><span style="animation-delay:.05s">Twoje</span> <span style="animation-delay:.15s">auto</span> <span style="animation-delay:.25s">jak</span> <span style="animation-delay:.35s">z</span> <span style="animation-delay:.45s">salonu</span></h1>
+<p class="lead">Detailing samochodowy w Lwówku Śląskim. Mycie, czyszczenie wnętrza, polerowanie i zabezpieczenie lakieru.</p>
+<div class="ctas"><a class="btn" href="#pakiet">Wybierz usługę</a><a class="btn ghost" href="#kontakt">Zapytaj o termin</a></div>
+</div>
+</header>
+
+<section>
+<div class="wrap">
+<h2 class="d">Co robimy</h2>
+<div class="grid">
+<div class="card"><h3>Mycie detailingowe</h3><p>Ręczne mycie nadwozia, felg i progów bezpiecznymi środkami, bez rys po myjni automatycznej.</p></div>
+<div class="card"><h3>Czyszczenie wnętrza</h3><p>Odkurzanie, pranie tapicerki i dywaników, czyszczenie plastików i szyb od środka.</p></div>
+<div class="card"><h3>Polerowanie lakieru</h3><p>Usuwamy zmatowienia i drobne rysy, żeby lakier znowu odbijał światło.</p></div>
+<div class="card"><h3>Zabezpieczenie lakieru</h3><p>Wosk albo powłoka, które chronią lakier i ułatwiają mycie przez kolejne miesiące.</p></div>
+</div>
+</div>
+</section>
+
+<section style="padding-top:0" id="pakiet">
+<div class="wrap">
+<h2 class="d">Wybierz, czego potrzebuje Twoje auto</h2>
+<div class="pick">
+<p class="q">Wielkość auta</p>
+<div class="opts" data-g="size"><button type="button" class="on">Małe / miejskie</button><button type="button">Kompakt / sedan</button><button type="button">SUV / kombi</button><button type="button">Bus / van</button></div>
+<p class="q">Usługa</p>
+<div class="opts" data-g="svc"><button type="button" class="on">Mycie detailingowe</button><button type="button">Czyszczenie wnętrza</button><button type="button">Polerowanie lakieru</button><button type="button">Zabezpieczenie lakieru</button></div>
+<div class="sum"><div>Twój wybór:<br><b id="sel">Małe / miejskie · Mycie detailingowe</b></div><a class="btn" href="#kontakt" id="ask">Zapytaj o cenę i termin</a></div>
+</div>
+</div>
+</section>
+
+<section class="contact" id="kontakt">
+<div class="wrap row">
+<div>
+<h2 class="d">Zapytaj o termin</h2>
+<p style="font-size:19px;margin-top:20px">Napisz, jakie masz auto i co chcesz zrobić. Odezwiemy się z ceną i wolnym terminem.</p>
+<p>Lwówek Śląski</p>
+</div>
+<form onsubmit="event.preventDefault();this.querySelector('button').textContent='To tylko szkic, formularz zadziała po starcie strony';">
+<input type="text" placeholder="Imię" required>
+<input type="tel" placeholder="Telefon" required>
+<textarea rows="3" id="msg" placeholder="Marka i model auta, czego potrzebujesz"></textarea>
+<button class="btn" type="submit">Wyślij zapytanie</button>
+</form>
+</div>
+</section>
+
+<footer><div class="wrap">Showcar · Lwówek Śląski · Szkic przygotowany przez <a href="../../">10 Format</a></div></footer>
+
+<script>
+(function(){
+  var intro=document.getElementById('intro'),closed=false;
+  function closeIntro(){if(closed)return;closed=true;intro.classList.add('hide');setTimeout(function(){intro.style.display='none';},700);}
+  document.getElementById('skip').addEventListener('click',closeIntro);
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){intro.style.display='none';closed=true;}
+  if(!closed){
+    var fo=document.getElementById('foil'),fl=document.getElementById('flap'),last=Date.now(),done=false;
+    function line(k){return k<=100?[[k,0],[0,k]]:[[100,k-100],[k-100,100]];}
+    function poly(k){if(k<=0)return 'polygon(0 0,0 0,0 0)';if(k>=200)return 'polygon(0 0,100% 0,100% 100%,0 100%)';
+      if(k<=100)return 'polygon(0 0,'+k+'% 0,0 '+k+'%)';return 'polygon(0 0,100% 0,100% '+(k-100)+'%,'+(k-100)+'% 100%,0 100%)';}
+    function strip(k,w){var a=line(Math.max(0,k)),b=line(Math.min(200,k+w));return 'polygon('+a[0][0]+'% '+a[0][1]+'%,'+a[1][0]+'% '+a[1][1]+'%,'+b[1][0]+'% '+b[1][1]+'%,'+b[0][0]+'% '+b[0][1]+'%)';}
+    function setK(k){if(done)return;k=Math.max(0,Math.min(200,k));fo.style.clipPath=poly(k);fl.style.clipPath=k>=199?poly(0):strip(k,Math.min(14,200-k));
+      if(k<12){done=true;fo.style.display='none';fl.style.display='none';setTimeout(closeIntro,1300);}}
+    setK(186);
+    var down=false;intro.addEventListener('pointerdown',function(){down=true;});addEventListener('pointerup',function(){down=false;});
+    intro.addEventListener('pointermove',function(e){if(!down)return;last=Date.now();setK(e.clientX/innerWidth*100+e.clientY/innerHeight*100);});
+    setTimeout(function autoF(){if(closed||done)return;if(Date.now()-last<2400){setTimeout(autoF,500);return;}
+      var t0=performance.now();(function step(t){var p=Math.min(1,(t-t0)/1400);setK(186*(1-p*p));if(p<1&&!closed&&!done)requestAnimationFrame(step);})(t0);},2600);
+  }
+  // wybor pakietu
+  var st={size:'Małe / miejskie',svc:'Mycie detailingowe'},sel=document.getElementById('sel');
+  document.querySelectorAll('.pick .opts').forEach(function(g){g.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){
+    g.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');st[g.getAttribute('data-g')]=b.textContent;sel.textContent=st.size+' · '+st.svc;});});});
+  document.getElementById('ask').addEventListener('click',function(){document.getElementById('msg').value='Auto: '+st.size+'. Usługa: '+st.svc+'.';});
+})();
+</script>
+</body>
+</html>

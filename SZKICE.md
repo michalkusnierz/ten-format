@@ -15,7 +15,20 @@ Etykiety Gmail (utwórz, jeśli ich nie ma):
 
 ## Kiedy pominąć
 
-Pomiń i oznacz `tf-pominiete`, gdy: nazwa firmy albo link wyglądają na test lub spam, linku nie da się otworzyć i nie da się znaleźć firmy w sieci po nazwie i mieście, albo zgłoszenie dotyczy czegoś nielegalnego. Nie odpisuj takim osobom.
+Pomiń i oznacz `tf-pominiete` tylko wtedy, gdy: nazwa firmy albo uwagi wprost mówią, że to test, treść to spam (losowe znaki, reklama, link do czegoś innego niż firma), albo zgłoszenie dotyczy czegoś nielegalnego. Nie odpisuj takim osobom.
+
+Brak danych NIE jest powodem do pominięcia. Linki do Map Google (maps.app.goo.gl), Instagrama i Facebooka zwykle nie dają się pobrać automatycznie. Wtedy:
+- Spróbuj jeszcze WebSearch po nazwie firmy + mieście + branży i po nazwie konta z linku (np. `show.car95`). Uważaj na firmy o tej samej nazwie w innym mieście: bierz dane tylko, jeśli miasto się zgadza.
+- Jeśli dalej nic nie ma, zrób **szkic bazowy** (opis niżej) i oznacz wątek `tf-szkic-gotowy` jak zwykle.
+- Nie próbuj obchodzić blokady (curl, przeglądarka, kopie stron).
+
+### Szkic bazowy (gdy nie da się zebrać danych o firmie)
+
+- Nazwa firmy, miasto i branża ze zgłoszenia. Usługi opisz ogólnie, typowe dla branży, bez obietnic typu „gwarancja 5 lat” czy liczb.
+- Usuń: opinie, ocenę Google, lata działalności, adres, zdjęcia realizacji. Telefon firmowy tylko, jeśli jest w publicznym źródle; jeśli nie, przycisk kontaktu prowadzi do sekcji formularza/kontaktu bez numeru.
+- Paleta: neutralna, ciemna (np. grafit + jeden akcent pasujący do branży). Intro i bonus branżowy jak w zwykłym szkicu.
+- W szkicu maila zamiast zdania „Zrobiliśmy go z …” napisz: „Zrobiliśmy go na podstawie nazwy i miasta, bo nie mogliśmy otworzyć Waszego profilu. Jeśli prześlecie kilka zdjęć realizacji, numer telefonu i listę usług, wstawimy je w drugiej wersji.”
+- W powiadomieniu dla Michała zaznacz „szkic bazowy” i który link się nie otworzył.
 
 Jeśli zgłoszeń w cenie Black Week jest więcej niż wolnych miejsc, i tak rób szkic. Limit 8 dotyczy wpłaconych zaliczek.
 
