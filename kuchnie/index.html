@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10 Format – Strona dla stolarzy i firm od kuchni na wymiar</title>
+<meta name="description" content="Strona z animacją zaprojektowaną pod Twój produkt. Gotowa w 7 dni od rezerwacji. Cena Black Week 1990 zł netto.">
+<meta property="og:title" content="10 Format – pokaż swoją firmę lepiej niż konkurencja">
+<meta property="og:description" content="Zarezerwuj cenę Black Week i miejsce w kolejce. Strona gotowa w 7 dni.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Libre+Franklin:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#EDEFF2;--ink:#11131A;--ink2:#2A2E38;--mute:#4A4F5C;--line:#C9CDD6;--blue:#1E2BD8;--orange:#FF8A3D;--white:#FFFFFF}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Libre Franklin',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1320px;margin:0 auto;padding-left:clamp(20px,4vw,60px);padding-right:clamp(20px,4vw,60px)}
+.d{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.98;margin:0}
+.u{text-decoration:underline;text-decoration-color:var(--orange);text-decoration-thickness:.09em;text-underline-offset:.08em;text-decoration-skip-ink:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 28px;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;font-size:16px;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{background:#1622B0}
+.btn.o{background:var(--orange);color:var(--ink)}
+.btn.o:hover{background:#FF9C5A}
+.link{font-weight:600;font-size:16px;text-decoration:underline;text-underline-offset:4px}
+section{padding:clamp(72px,10vw,140px) 0}
+h2.d{font-size:clamp(44px,6vw,92px)}
+p.lead{font-size:clamp(18px,1.6vw,21px);line-height:1.55;color:var(--ink2);margin:0}
+
+/* intro */
+#intro{position:fixed;inset:0;z-index:50;overflow:hidden;transition:opacity .6s ease;touch-action:none;user-select:none;-webkit-user-select:none}
+#intro.hide{opacity:0;pointer-events:none}
+#intro .skip{position:absolute;top:18px;right:22px;z-index:6;background:none;border:0;font:inherit;font-size:14px;cursor:pointer;padding:10px;color:inherit;opacity:.8}
+#intro .hint{position:absolute;bottom:7%;left:0;right:0;z-index:5;text-align:center;font-size:16px;font-weight:600;pointer-events:none}
+#intro .reveal{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
+#intro .reveal h2{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(44px,8vw,120px);line-height:.95;margin:0;max-width:1100px}
+.top{background:var(--hbg);color:var(--hink)}
+.top .strip{background:var(--hacc);color:var(--hacct)}
+.top .nav .links a:not(.btn){color:var(--hink)}
+.top .hero h1{color:var(--hink);font-size:clamp(44px,7vw,112px)}
+.top .u{text-decoration-color:var(--hacc)}
+.top p.lead,.top .price s,.top .price span,.top .fine,.top .link{color:var(--hmute)}
+.top .price b{color:var(--hink)}
+.top .reel .cap,.top .reel .note{color:var(--hmute)}
+#intro{background:#F4F2EE;color:#1F3A33}
+#intro .wall{position:absolute;left:7vw;right:7vw;bottom:22%;top:18%}
+#intro .floor{position:absolute;left:0;right:0;bottom:22%;height:2px;background:#1F3A33}
+#tape{position:absolute;left:7vw;bottom:calc(22% - 46px);height:30px;width:0;background:#E8C547 repeating-linear-gradient(90deg,transparent 0 23px,#1F3A33 23px 24px);border:1px solid #B89A2E}
+#tapebox{position:absolute;left:calc(7vw - 46px);bottom:calc(22% - 58px);width:52px;height:52px;background:#1F3A33;border-radius:10px}
+#cm{position:absolute;bottom:calc(22% - 100px);left:7vw;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:42px}
+#cabs{position:absolute;left:7vw;right:7vw;bottom:22%;height:34%;display:flex;gap:6px}
+#cabs i{flex:1;background:#1F3A33;position:relative;transform:translateY(-140%);opacity:0;transition:transform .45s cubic-bezier(.3,1.4,.5,1),opacity .2s}
+#cabs i:after{content:"";position:absolute;top:18px;left:50%;width:40%;height:5px;margin-left:-20%;background:#C9A47A;border-radius:3px}
+#cabs i.in{transform:none;opacity:1}
+#intro .reveal{align-items:flex-start;padding-top:9vh}
+#intro .reveal h2{opacity:0;transition:opacity .5s;font-size:clamp(34px,5.4vw,84px)}
+#intro .reveal h2.in{opacity:1}
+
+/* strip */
+.strip{background:var(--orange);color:var(--ink);font-size:14px}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:6px 28px;justify-content:space-between;padding-top:10px;padding-bottom:10px}
+
+@media (max-width:760px){.hide-m{display:none!important}.strip .wrap{justify-content:center;text-align:center}.nav{flex-wrap:nowrap}.nav svg{height:36px!important}.nav .links .btn{min-height:42px;padding:0 16px;font-size:14px}}
+/* nav */
+.nav{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center;padding-top:20px;padding-bottom:20px}
+.nav .links{display:flex;flex-wrap:wrap;gap:8px 26px;align-items:center;font-size:15px}
+.nav .links a{text-decoration:none}
+.nav .links .btn{min-height:46px;padding:0 18px;font-size:15px}
+
+/* hero */
+.hero{text-align:center;padding:clamp(48px,8vw,110px) 0 clamp(40px,5vw,64px)}
+.hero h1{font-size:clamp(58px,10.5vw,168px);color:var(--blue);max-width:1200px;margin:0 auto}
+.hero p.lead{max-width:620px;margin:28px auto 0}
+.price{display:flex;justify-content:center;align-items:baseline;gap:6px 16px;flex-wrap:wrap;margin-top:30px}
+.price s{font-size:19px;color:var(--mute)}
+.price b{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(56px,6vw,78px);line-height:1}
+.price span{font-size:15px;color:var(--mute)}
+.cta{display:flex;justify-content:center;align-items:center;gap:18px 28px;flex-wrap:wrap;margin-top:28px}
+.fine{margin-top:16px;font-size:14px;color:var(--mute)}
+
+/* film strip */
+.reel{overflow:hidden;padding:10px 0 0}
+.reel .track{display:flex;gap:20px;width:max-content;animation:reel 60s linear infinite}
+.reel:hover .track{animation-play-state:paused}
+@keyframes reel{to{transform:translateX(-50%)}}
+.frame{width:clamp(280px,32vw,460px);aspect-ratio:16/10;position:relative;overflow:hidden;flex:none}
+.cap{margin-top:10px;font-size:14px;color:var(--mute)}
+.reel .note{text-align:center;font-size:14px;color:var(--mute);margin-top:18px}
+
+@keyframes rise{0%{transform:translateY(30px);opacity:0}18%,100%{transform:none;opacity:1}}
+@keyframes zoom{to{transform:scale(1.2)}}
+@keyframes stack{0%{transform:translateY(50px);opacity:0}25%,100%{transform:none;opacity:1}}
+@keyframes slide{0%{transform:translateX(-110%)}100%{transform:translateX(110%)}}
+.rise{animation:rise 7s ease-out infinite}
+.zoom{animation:zoom 9s ease-in-out infinite alternate}
+.s1{animation:stack 6s ease-out infinite}.s2{animation:stack 6s ease-out .4s infinite both}.s3{animation:stack 6s ease-out .8s infinite both}
+.slide{animation:slide 3.2s linear infinite}
+
+/* test */
+.test{background:var(--ink);color:#fff}
+.test h2{color:#fff}
+.test p.lead{color:#C9CDD6;max-width:640px}
+.phones{display:flex;gap:clamp(20px,4vw,64px);justify-content:center;flex-wrap:wrap;margin-top:56px}
+.phone{width:min(300px,80vw);aspect-ratio:9/18.5;border-radius:34px;border:10px solid #2A2E38;background:#000;overflow:hidden;position:relative;cursor:pointer;padding:0;font:inherit;color:inherit;text-align:left;transition:transform .25s,border-color .25s}
+.phone:hover{transform:translateY(-6px)}
+.phone.pick{border-color:var(--orange)}
+.phone .lbl{position:absolute;left:0;right:0;bottom:-44px;text-align:center;color:#C9CDD6;font-size:15px}
+.pwrap{display:flex;flex-direction:column;align-items:center;gap:16px}
+.verdict{max-width:640px;margin:44px auto 0;text-align:center;font-size:clamp(18px,1.8vw,22px);line-height:1.5;min-height:3em;color:#fff}
+.verdict .btn{margin-top:20px}
+
+/* ticket */
+.ticket{display:flex;flex-wrap:wrap;background:var(--white);margin-top:48px;position:relative;filter:drop-shadow(0 18px 40px rgba(17,19,26,.08))}
+.ticket .stub{flex:1 1 280px;background:var(--blue);color:#fff;padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;justify-content:space-between;gap:28px;position:relative}
+.ticket .stub:after{content:"";position:absolute;top:0;bottom:0;right:-1px;border-right:3px dashed var(--bg)}
+.ticket .stub .no{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(90px,11vw,160px);line-height:.85}
+.ticket .body{flex:2 1 460px;padding:clamp(28px,4vw,48px)}
+.ticket ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px 40px}
+.ticket li{font-size:17px;line-height:1.5;color:var(--ink2)}
+.ticket li strong{display:block;font-size:19px;color:var(--ink);margin-bottom:4px}
+
+/* wyrozniki */
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px 64px;margin-top:56px}
+.why h3{font-size:clamp(30px,3vw,44px)}
+.why p{font-size:18px;line-height:1.55;color:var(--ink2);margin:14px 0 0}
+
+/* pakiety */
+.packs{display:flex;flex-wrap:wrap;gap:28px;margin-top:48px}
+.pack{flex:1 1 360px;background:var(--white);padding:clamp(26px,3vw,42px);display:flex;flex-direction:column;gap:20px;border:1px solid var(--line)}
+.pack.hi{border:2px solid var(--blue)}
+.pack h3{font-size:42px}
+.pack .where{font-size:15px;color:var(--mute)}
+.pack .p{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.pack .p s{color:var(--mute);font-size:17px}
+.pack .p b{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:72px;line-height:1}
+.pack ul{margin:0;padding:0 0 0 20px;font-size:16px;line-height:1.7;color:var(--ink2)}
+.pack .btn{margin-top:auto}
+.payback{margin-top:28px;font-size:17px;line-height:1.55;color:var(--ink2);max-width:760px}
+
+/* scenariusz */
+.script{margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:4px}
+.scene{background:var(--white);padding:24px 22px 28px;position:relative}
+.scene .day{font-size:14px;color:var(--mute)}
+.scene h3{font-size:30px;margin:10px 0 10px}
+.scene p{margin:0;font-size:15px;line-height:1.5;color:var(--ink2)}
+.scene.last{background:var(--blue);color:#fff}.scene.last p,.scene.last .day{color:#E3E6FF}
+
+
+/* player */
+.player{max-width:1000px;margin:44px auto 0;position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
+.player .bars{position:absolute;top:14px;left:14px;right:14px;display:flex;gap:6px;z-index:3}
+.player .bars i{flex:1;height:3px;background:rgba(255,255,255,.35);position:relative;overflow:hidden}
+.player .bars i b{position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left}
+.player .bars i.done b{transform:scaleX(1)}
+.player .bars i.on b{animation:bar 5s linear forwards}
+@keyframes bar{to{transform:scaleX(1)}}
+.player .v{position:absolute;inset:0;opacity:0;transition:opacity .5s}
+.player .v.on{opacity:1}
+.player .tag{position:absolute;left:16px;bottom:14px;z-index:3;background:rgba(17,19,26,.75);color:#fff;font-size:13px;padding:6px 10px}
+
+/* rezerwacja */
+.res{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.resgrid{display:flex;flex-wrap:wrap;gap:48px 64px;align-items:flex-start}
+.resgrid>div{flex:1 1 420px;min-width:0}
+.clock{display:flex;gap:10px;margin-top:26px}
+.clock div{background:var(--bg);min-width:76px;padding:12px 8px;text-align:center}
+.clock b{display:block;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:44px;line-height:1}
+.clock span{font-size:13px;color:var(--mute)}
+.queue{margin-top:30px;border-top:1px solid var(--line)}
+.queue div{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:16px}
+.queue .taken{color:var(--mute)}
+.queue .taken em{font-style:normal}
+.queue .free em{font-style:normal;color:var(--blue);font-weight:600}
+.queue .next{background:#FFF3EA;margin:0 -12px;padding:11px 12px}
+form{display:flex;flex-direction:column;gap:16px}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{display:flex;gap:12px;align-items:center;border:1px solid var(--line);padding:14px 16px;cursor:pointer;font-size:16px}
+.opt input{accent-color:var(--blue);width:18px;height:18px}
+.opt b{margin-left:auto;white-space:nowrap}
+label.f{display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--ink2)}
+label.f input{height:50px;padding:0 14px;border:1px solid #A9AEBA;background:#fff;color:var(--ink);font:inherit;font-size:16px}
+.row2{display:flex;flex-wrap:wrap;gap:16px}.row2 label{flex:1 1 180px}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.45;color:var(--mute)}
+.agree input{width:18px;height:18px;flex:none;margin:1px 0 0;accent-color:var(--blue)}
+#msg{font-size:14px;color:var(--mute)}
+
+/* faq */
+.faq{display:flex;flex-wrap:wrap;gap:32px 64px}
+.faq>div:first-child{flex:1 1 260px}
+.faq>div:last-child{flex:2 1 520px;min-width:0}
+details{border-top:1px solid var(--line);padding:20px 0}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:700;font-size:19px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-weight:400;color:var(--blue);font-size:24px;line-height:1}
+details[open] summary:after{content:"–"}
+details p{margin:10px 0 0;font-size:16px;line-height:1.55;color:var(--mute)}
+
+/* final */
+.final{background:var(--blue);color:#fff;text-align:center}
+.final h2{color:#fff;max-width:1000px;margin:0 auto}
+.final .fine{color:#E3E6FF}
+
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px 48px;justify-content:space-between;padding-top:40px;padding-bottom:56px;font-size:14px;color:var(--mute)}
+footer .col{display:flex;flex-direction:column;gap:6px}
+
+@media (prefers-reduced-motion: reduce){.reel .track,.rise,.zoom,.s1,.s2,.s3,.slide{animation:none}}
+</style>
+<!-- MIEJSCE NA PIKSEL META I MICROSOFT CLARITY -->
+</head>
+<body>
+
+<div id="intro" aria-hidden="true">
+<div class="reveal"><h2 id="kh">Kuchnia na wymiar zasługuje na stronę na wymiar</h2></div>
+<div class="floor"></div>
+<div id="cabs"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div id="tapebox"></div><div id="tape"></div><div id="cm">0 cm</div>
+<div class="hint">Przeciągnij palcem w prawo, żeby zmierzyć ścianę</div>
+<button class="skip" id="skip" type="button">Pomiń</button>
+</div>
+
+<div class="top" style="--hbg:#F4F2EE;--hink:#1F3A33;--hmute:#4A5C55;--hacc:#C9A47A;--hacct:#1F3A33">
+<div class="strip"><div class="wrap"><span><strong>Black Week do 30.11:</strong> 1990 zł zamiast 2490 zł</span><span class="hide-m">Zostało <strong class="tf-left">6</strong> z 8 miejsc</span></div></div>
+
+<div class="wrap nav">
+<a href="#" aria-label="10 Format, strona główna"><svg xmlns="http://www.w3.org/2000/svg" style="height:46px;width:auto;display:block" role="img" aria-label="10 Format" viewBox="235 321 1629 437"><polygon fill="#9AA8A2" points="596,410 762,540 596,670"/><path fill="#1F3A33" d="M255 403L362 341H408V685H503V738H255V685H350V405L255 460Z"/><path fill="#1F3A33" fill-rule="evenodd" d="M597 341H769L825 397V682L769 738H597L541 682V397ZM623 397L596 424V659L623 686H744L771 659V424L744 397Z"/><path fill="#1F3A33" d="M846.55 401.0V346.85H838.4125V341.0H861.2125V346.85H853.075V401.0ZM867.3375 401.0V341.0H878.7L882.6375 365.075L884.7 394.9625H886.2375L888.225 365.075L892.2375 341.0H903.5625V401.0H897.0V383.2625L898.2 346.85H896.4375L892.65 383.6375L889.4625 400.8125H881.4375L878.2875 383.6375L874.5 346.85H872.775L873.9 383.2625V401.0Z"/><path fill="#1F3A33" d="M940.79 738.0V438.0H1048.31V467.25H977.54V571.875H1044.1100000000001V601.125H977.54V738.0ZM1124.19 740.8125Q1090.8 740.8125 1075.995 727.96875Q1061.19 715.125 1060.56 685.5Q1060.14 660.75 1059.825 636.46875Q1059.51 612.1875 1059.51 588.0Q1059.51 563.8125 1059.825 539.53125Q1060.14 515.25 1060.56 490.5Q1061.19 460.6875 1075.995 447.9375Q1090.8 435.1875 1124.19 435.1875Q1157.79 435.1875 1172.385 447.9375Q1186.98 460.6875 1187.8200000000002 490.5Q1188.24 515.25 1188.66 539.625Q1189.0800000000002 564.0 1189.0800000000002 588.1875Q1189.0800000000002 612.375 1188.66 636.5625Q1188.24 660.75 1187.8200000000002 685.5Q1186.98 715.125 1172.385 727.96875Q1157.79 740.8125 1124.19 740.8125ZM1124.19 713.4375Q1138.26 713.4375 1144.56 708.1875Q1150.8600000000001 702.9375 1151.0700000000002 690.9375Q1151.91 665.4375 1152.33 639.46875Q1152.75 613.5 1152.75 587.34375Q1152.75 561.1875 1152.33 535.5Q1151.91 509.8125 1151.0700000000002 485.0625Q1150.8600000000001 473.0625 1144.455 467.71875Q1138.05 462.375 1124.19 462.375Q1110.54 462.375 1104.135 467.71875Q1097.73 473.0625 1097.31 485.0625Q1096.47 509.8125 1096.0500000000002 535.5Q1095.63 561.1875 1095.63 587.34375Q1095.63 613.5 1096.1550000000002 639.46875Q1096.68 665.4375 1097.31 690.9375Q1097.73 702.9375 1104.135 708.1875Q1110.54 713.4375 1124.19 713.4375ZM1213.72 738.0V438.0H1272.52Q1305.49 438.0 1320.4 450.65625Q1335.3100000000002 463.3125 1336.5700000000002 492.75Q1337.2 507.9375 1337.41 521.0625Q1337.6200000000001 534.1875 1337.41 546.65625Q1337.2 559.125 1336.5700000000002 572.0625Q1335.73 591.75 1328.8000000000002 603.75Q1321.8700000000001 615.75 1307.38 621.1875L1342.66 738.0H1303.6000000000001L1272.52 626.8125H1250.47V738.0ZM1250.47 597.5625H1272.1000000000001Q1286.17 597.5625 1292.68 591.65625Q1299.19 585.75 1299.8200000000002 573.5625Q1300.45 560.25 1300.66 546.28125Q1300.8700000000001 532.3125 1300.66 518.4375Q1300.45 504.5625 1299.8200000000002 491.0625Q1299.19 478.875 1292.785 473.0625Q1286.38 467.25 1272.52 467.25H1250.47ZM1359.53 738.0V438.0H1423.16L1445.21 558.375L1456.76 707.8125H1465.3700000000001L1476.5 558.375L1498.97 438.0H1562.39V738.0H1525.64V649.3125L1532.3600000000001 467.25H1522.49L1501.28 651.1875L1483.43 737.0625H1438.49L1420.85 651.1875L1399.64 467.25H1389.98L1396.28 649.3125V738.0ZM1577.16 738.0 1615.5900000000001 438.0H1679.64L1718.0700000000002 738.0H1680.48L1672.0800000000002 657.0H1622.94L1614.75 738.0ZM1626.51 627.75H1668.72L1661.79 562.125L1653.6000000000001 467.25H1641.8400000000001L1633.44 562.125ZM1759.9300000000003 738.0V467.25H1714.3600000000001V438.0H1842.0400000000002V467.25H1796.4700000000003V738.0Z"/></svg></a>
+<div class="links">
+<a class="hide-m" href="#test">Sprawdź się</a>
+<a class="hide-m" href="#bilet">Co dostajesz</a>
+<a class="hide-m" href="#pakiety">Pakiety</a>
+<a class="hide-m" href="#pytania">Pytania</a>
+<a class="btn" href="#rezerwacja">Rezerwuję</a>
+</div>
+</div>
+
+<header class="hero wrap">
+<h1 class="d">Klient wybiera stolarza, <span class="u">zanim zaprosi go na pomiar</span></h1>
+<p class="lead">Strona z animacją, która pokazuje Twoje kuchnie lepiej niż album na Facebooku. Gotowa w 7 dni roboczych.</p>
+<div class="price"><s>2490 zł</s><b>1990 zł</b><span>netto, cena do 30 listopada</span></div>
+<div class="cta">
+<a class="btn" href="#rezerwacja">Rezerwuję cenę i miejsce</a>
+<a class="link" href="#test">Sprawdź się w 10 sekund</a>
+</div>
+<div class="fine">Rezerwacja to 990 zł. Resztę płacisz, kiedy zaakceptujesz stronę.</div>
+</header>
+</div>
+
+<div class="reel" aria-label="Przykładowe projekty">
+<div class="track">
+<div><div class="frame" style="background:#1C2B22"><div class="zoom" style="position:absolute;inset:0;transform-origin:70% 80%"><div style="position:absolute;left:-10%;right:-10%;bottom:-30%;height:70%;background:#2F4A38;border-radius:50% 50% 0 0"></div><div style="position:absolute;left:30%;right:-20%;bottom:-40%;height:70%;background:#3D5E46;border-radius:50% 50% 0 0"></div><div style="position:absolute;right:16%;top:16%;width:12%;aspect-ratio:1;border-radius:50%;background:#E8C77A"></div></div><div style="position:absolute;top:14px;left:18px;right:18px;display:flex;justify-content:space-between;font-size:11px;color:#F4EFE2"><span>Osiedle Na Skarpie</span><span>Mieszkania · Kontakt</span></div><div class="rise" style="position:absolute;left:18px;bottom:18px;max-width:70%"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(26px,2.6vw,40px);color:#F4EFE2">24 mieszkania z widokiem na las</div><div style="margin-top:10px;display:inline-block;background:#E8C77A;color:#1C2B22;font-size:11px;padding:7px 10px;font-weight:600">Umów oglądanie</div></div></div><div class="cap">Deweloper · przelot nad osiedlem</div></div>
+<div><div class="frame" style="background:#26201A"><div class="zoom" style="position:absolute;inset:0;transform-origin:50% 40%"><div style="position:absolute;left:18%;right:18%;top:26%;bottom:0;background:#3A2F24;border-radius:48% 48% 0 0/30% 30% 0 0"></div><div style="position:absolute;left:31%;right:31%;top:42%;bottom:0;background:#E9D9B8;border-radius:50% 50% 0 0/22% 22% 0 0"></div></div><div class="rise" style="position:absolute;left:18px;top:16px"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(26px,2.6vw,40px);color:#F4EFE2">Dwór Pod Lipami</div><div style="margin-top:6px;font-size:12px;color:#D9CBB0">Sala na 180 gości, 40 minut od Warszawy</div></div></div><div class="cap">Sala weselna · wejście do sali</div></div>
+<div><div class="frame" style="background:#F0B9C3"><div style="position:absolute;left:0;right:0;bottom:8%;display:flex;flex-direction:column;align-items:center"><div class="s3" style="width:22%;height:30px;background:#FFF4EE;border-radius:8px 8px 0 0"></div><div class="s2" style="width:32%;height:36px;background:#7A3B2E"></div><div class="s1" style="width:42%;height:44px;background:#FFF4EE"></div></div><div style="position:absolute;left:18px;top:16px"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(26px,2.6vw,40px);color:#4A1F18">Kremówka i Syn</div><div style="margin-top:6px;font-size:12px;color:#4A1F18">Torty weselne od 1998 roku</div></div></div><div class="cap">Cukiernia · tort układa się sam</div></div>
+<div><div class="frame" style="background:#151513"><div style="position:absolute;left:18px;top:16px;right:18px"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(30px,3vw,46px);color:#F2C230">Garaż 44</div><div style="margin-top:6px;font-size:12px;color:#D4D3CC">Mechanika i detailing, Piaseczno</div><div style="margin-top:16px;height:10px;background:#F2C230;position:relative;overflow:hidden"><div class="slide" style="position:absolute;top:0;bottom:0;width:40%;background:#151513"></div></div><div style="margin-top:16px;display:inline-block;background:#F2C230;color:#151513;font-size:12px;font-weight:600;padding:9px 12px">Zadzwoń teraz</div></div></div><div class="cap">Warsztat · pasek jak na torze</div></div>
+<div><div class="frame" style="background:#1C2B22"><div class="zoom" style="position:absolute;inset:0;transform-origin:70% 80%"><div style="position:absolute;left:-10%;right:-10%;bottom:-30%;height:70%;background:#2F4A38;border-radius:50% 50% 0 0"></div><div style="position:absolute;left:30%;right:-20%;bottom:-40%;height:70%;background:#3D5E46;border-radius:50% 50% 0 0"></div><div style="position:absolute;right:16%;top:16%;width:12%;aspect-ratio:1;border-radius:50%;background:#E8C77A"></div></div><div style="position:absolute;top:14px;left:18px;right:18px;display:flex;justify-content:space-between;font-size:11px;color:#F4EFE2"><span>Osiedle Na Skarpie</span><span>Mieszkania · Kontakt</span></div><div class="rise" style="position:absolute;left:18px;bottom:18px;max-width:70%"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(26px,2.6vw,40px);color:#F4EFE2">24 mieszkania z widokiem na las</div><div style="margin-top:10px;display:inline-block;background:#E8C77A;color:#1C2B22;font-size:11px;padding:7px 10px;font-weight:600">Umów oglądanie</div></div></div><div class="cap">Deweloper · przelot nad osiedlem</div></div>
+<div><div class="frame" style="background:#26201A"><div class="zoom" style="position:absolute;inset:0;transform-origin:50% 40%"><div style="position:absolute;left:18%;right:18%;top:26%;bottom:0;background:#3A2F24;border-radius:48% 48% 0 0/30% 30% 0 0"></div><div style="position:absolute;left:31%;right:31%;top:42%;bottom:0;background:#E9D9B8;border-radius:50% 50% 0 0/22% 22% 0 0"></div></div><div class="rise" style="position:absolute;left:18px;top:16px"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(26px,2.6vw,40px);color:#F4EFE2">Dwór Pod Lipami</div><div style="margin-top:6px;font-size:12px;color:#D9CBB0">Sala na 180 gości, 40 minut od Warszawy</div></div></div><div class="cap">Sala weselna · wejście do sali</div></div>
+<div><div class="frame" style="background:#F0B9C3"><div style="position:absolute;left:0;right:0;bottom:8%;display:flex;flex-direction:column;align-items:center"><div class="s3" style="width:22%;height:30px;background:#FFF4EE;border-radius:8px 8px 0 0"></div><div class="s2" style="width:32%;height:36px;background:#7A3B2E"></div><div class="s1" style="width:42%;height:44px;background:#FFF4EE"></div></div><div style="position:absolute;left:18px;top:16px"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(26px,2.6vw,40px);color:#4A1F18">Kremówka i Syn</div><div style="margin-top:6px;font-size:12px;color:#4A1F18">Torty weselne od 1998 roku</div></div></div><div class="cap">Cukiernia · tort układa się sam</div></div>
+<div><div class="frame" style="background:#151513"><div style="position:absolute;left:18px;top:16px;right:18px"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(30px,3vw,46px);color:#F2C230">Garaż 44</div><div style="margin-top:6px;font-size:12px;color:#D4D3CC">Mechanika i detailing, Piaseczno</div><div style="margin-top:16px;height:10px;background:#F2C230;position:relative;overflow:hidden"><div class="slide" style="position:absolute;top:0;bottom:0;width:40%;background:#151513"></div></div><div style="margin-top:16px;display:inline-block;background:#F2C230;color:#151513;font-size:12px;font-weight:600;padding:9px 12px">Zadzwoń teraz</div></div></div><div class="cap">Warsztat · pasek jak na torze</div></div>
+</div>
+<div class="note wrap">Projekty przykładowe. Prawdziwe realizacje pokażemy tu w grudniu.</div>
+</div>
+
+<section class="test" id="test">
+<div class="wrap" style="text-align:center">
+<h2 class="d">Do której cukierni zadzwonisz?</h2>
+<p class="lead" style="margin:24px auto 0">Dwie cukiernie z tej samej ulicy. Te same torty, te same ceny. Kliknij tę, u której zamówiłbyś tort na wesele.</p>
+<div class="phones">
+<div class="pwrap">
+<button class="phone" id="pA" type="button" aria-label="Cukiernia A">
+<div style="background:#fff;height:100%;padding:22px 18px;color:#333;font-family:Georgia,serif">
+<div style="font-size:24px;color:#8a3b3b">Cukiernia Basia</div>
+<div style="margin-top:4px;font-size:12px;color:#777">ul. Lipowa 4 · tel. 600 000 000</div>
+<div style="margin-top:18px;height:150px;background:#ddd;display:flex;align-items:center;justify-content:center;font-size:12px;color:#888">zdjęcie_tort1.jpg</div>
+<div style="margin-top:16px;font-size:14px;line-height:1.5">Zapraszamy do naszej cukierni. Oferujemy torty na każdą okazję. Ceny do uzgodnienia telefonicznie.</div>
+<div style="margin-top:14px;font-size:13px;color:#0645ad;text-decoration:underline">Galeria</div>
+<div style="margin-top:6px;font-size:13px;color:#0645ad;text-decoration:underline">Kontakt</div>
+<div style="position:absolute;bottom:14px;left:18px;font-size:10px;color:#aaa">© 2017 Wszelkie prawa zastrzeżone</div>
+</div>
+</button>
+<div style="color:#C9CDD6">Cukiernia A</div>
+</div>
+<div class="pwrap">
+<button class="phone" id="pB" type="button" aria-label="Cukiernia B">
+<div style="background:#F0B9C3;height:100%;position:relative;color:#4A1F18">
+<div style="padding:20px 18px 0">
+<div class="d" style="font-size:40px;line-height:.9">Kremówka i Syn</div>
+<div style="margin-top:8px;font-size:13px">Torty weselne od 1998 roku</div>
+</div>
+<div style="position:absolute;left:0;right:0;bottom:92px;display:flex;flex-direction:column;align-items:center">
+<div class="s3" style="width:34%;height:40px;background:#FFF4EE;border-radius:10px 10px 0 0"></div>
+<div class="s2" style="width:52%;height:48px;background:#7A3B2E"></div>
+<div class="s1" style="width:70%;height:58px;background:#FFF4EE"></div>
+</div>
+<div style="position:absolute;left:18px;right:18px;bottom:22px;background:#4A1F18;color:#FFF4EE;text-align:center;padding:14px;font-size:14px;font-weight:600">Zarezerwuj termin degustacji</div>
+</div>
+</button>
+<div style="color:#C9CDD6">Cukiernia B</div>
+</div>
+</div>
+<div class="verdict" id="verdict" role="status"></div>
+</div>
+</section>
+
+<section id="bilet">
+<div class="wrap">
+<h2 class="d">Co dostajesz od razu <span class="u">za 990 zł</span></h2>
+<p class="lead" style="margin-top:24px;max-width:680px">Rezerwacja działa jak bilet. Kupujesz go dziś, a my od jutra robimy Twoją stronę.</p>
+<div class="ticket">
+<div class="stub">
+<div style="font-size:15px">Rezerwacja Black Week</div>
+<div><div style="font-size:15px">Twoje miejsce</div><div class="no">nr <span class="tf-next">3</span></div></div>
+<div style="font-size:15px">Pierwszy projekt: <strong class="tf-proj">--</strong><br>Gotowa strona: <strong class="tf-date">--</strong></div>
+</div>
+<div class="body">
+<ul>
+<li><strong>Cena 1990 zł zostaje Twoja</strong>Także po Black Week, kiedy wraca cena 2490 zł.</li>
+<li><strong>Start w ciągu 24 godzin</strong>Dzwonimy dzień po wpłacie i od razu zaczynamy.</li>
+<li><strong>Pierwszy projekt po 3 dniach</strong>Widzisz animację swojej strony, zanim powstanie reszta.</li>
+<li><strong>Domena i hosting na rok</strong>W cenie, bez abonamentu.</li>
+<li><strong>Zwrot 990 zł, jeśli coś pójdzie nie tak</strong>Gdy nie pokażemy projektu w 3 dni robocze albo projekt Ci nie podejdzie, oddajemy całą wpłatę w 3 dni.</li>
+<li><strong>10% ceny za każdy dzień spóźnienia</strong>Spóźnimy się z naszej winy, to płacisz mniej.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="pakiety" style="padding-top:0">
+<div class="wrap">
+<h2 class="d">Dwa pakiety, stała cena</h2>
+<div class="packs">
+<div class="pack">
+<div class="where">Zdalnie, cała Polska</div>
+<h3 class="d">Strona z animacją</h3>
+<div class="p"><s>2490 zł</s><b>1990 zł</b><span style="color:var(--mute)">netto</span></div>
+<ul><li>Projekt pod Twoją markę i animacja na starcie strony</li><li>Teksty pisane za Ciebie</li><li>Formularz i telefon jednym kliknięciem</li><li>Podpięcie do wizytówki Google</li><li>Gotowa w 7 dni, 2 rundy poprawek</li></ul>
+<a class="btn" href="#rezerwacja" data-pack="strona">Rezerwuję za 990 zł</a>
+</div>
+<div class="pack hi">
+<div class="where">Z nagraniem u Ciebie, województwo mazowieckie</div>
+<h3 class="d">Strona z animacją i filmem</h3>
+<div class="p"><s>5990 zł</s><b>4490 zł</b><span style="color:var(--mute)">netto</span></div>
+<ul><li>Wszystko z pakietu obok</li><li>Dzień nagrań z kamerą i dronem</li><li>Film na stronę i zdjęcia bez stocka</li><li>3–5 rolek na Instagram i Facebooka</li></ul>
+<a class="btn" href="#rezerwacja" data-pack="film">Rezerwuję za 990 zł</a>
+<a class="link" href="tel:+48794016134" style="text-align:center">Wolisz najpierw porozmawiać? Zadzwoń</a>
+</div>
+</div>
+<p class="payback">Wystarczy jeden nowy klient, żeby strona się zwróciła. Deweloperowi to jedno mieszkanie, restauracji jedno wesele.</p>
+</div>
+</section>
+
+<section style="padding-top:0">
+<div class="wrap">
+<h2 class="d">Scenariusz na 7 dni</h2>
+<div class="script">
+<div class="scene"><div class="day">Dzień 0</div><h3 class="d">Rezerwujesz</h3><p>Płacisz 990 zł BLIK-iem albo kartą. Fakturę dostajesz mailem.</p></div>
+<div class="scene"><div class="day">Dzień 1</div><h3 class="d">15 minut rozmowy</h3><p>Wysyłasz logo i zdjęcia, mogą być z telefonu. Resztę bierzemy na siebie.</p></div>
+<div class="scene"><div class="day">Dzień 3</div><h3 class="d">Pierwszy projekt</h3><p>Oglądasz animację swojej strony. Tu możesz jeszcze odzyskać 990 zł.</p></div>
+<div class="scene"><div class="day">Dzień 7</div><h3 class="d">Strona gotowa</h3><p>Sprawdzasz całość i zgłaszasz poprawki. Masz 2 rundy.</p></div>
+<div class="scene last"><div class="day">Na koniec</div><h3 class="d">Startujesz</h3><p>Akceptujesz, dopłacasz resztę, a strona działa pod Twoją domeną.</p></div>
+</div>
+</div>
+</section>
+
+<section class="res" id="rezerwacja">
+<div class="wrap resgrid">
+<div>
+<h2 class="d">Zarezerwuj realizację za 990 zł</h2>
+<p class="lead" style="margin-top:18px">Resztę zapłacisz, gdy zaakceptujesz projekt. Jeśli zarezerwujesz dziś, pierwszy projekt zobaczysz <strong class="tf-proj">--</strong>.</p>
+<div style="margin-top:22px;border:1px solid var(--line);background:var(--bg)"><div style="display:flex;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line)"><span>Strona z animacją</span><span><s style="color:var(--mute)">2490 zł</s> <strong>1990 zł</strong></span></div><div style="display:flex;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line);font-weight:700"><span>Płacisz teraz</span><span>990 zł</span></div><div style="display:flex;justify-content:space-between;padding:14px 18px;color:var(--mute)"><span>Po akceptacji projektu</span><span>1000 zł</span></div></div>
+<div class="price" style="justify-content:flex-start"><s>2490 zł</s><b>1990 zł</b><span>netto</span></div>
+<div class="clock" aria-label="Do końca Black Week">
+<div><b class="tf-d">--</b><span>dni</span></div><div><b class="tf-h">--</b><span>godz.</span></div><div><b class="tf-m">--</b><span>min</span></div><div><b class="tf-s">--</b><span>sek.</span></div>
+</div>
+<div class="queue" id="queue" style="display:none"></div>
+<p style="margin:22px 0 0;font-size:17px;line-height:1.5">Zajęte <strong class="tf-taken">2</strong> z 8 miejsc. Twoje będzie miejsce nr <strong class="tf-next">3</strong>, gotowa strona do <strong class="tf-date">--</strong>.</p>
+<div class="fine">Terminy liczą się same od dnia wpłaty, w dni robocze. Robimy najwyżej 8 stron w tej cenie.</div>
+</div>
+<div>
+<form id="tf-form" action="https://api.web3forms.com/submit" method="POST">
+<input type="hidden" name="access_key" value="TWOJ_KLUCZ_WEB3FORMS">
+<input type="hidden" name="subject" value="Nowa rezerwacja – 10 Format">
+<input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+<div class="opts">
+<label class="opt"><input type="radio" name="pakiet" value="Strona z animacją (1990 zł)" checked> Strona z animacją <b>1990 zł</b></label>
+<label class="opt"><input type="radio" name="pakiet" value="Strona z animacją i filmem (4490 zł)"> Strona z animacją i filmem <b>4490 zł</b></label>
+</div>
+<label class="f">Nazwa firmy<input type="text" name="firma" required autocomplete="organization"></label>
+<div class="row2">
+<label class="f">Telefon<input type="tel" name="telefon" required autocomplete="tel"></label>
+<label class="f">E-mail<input type="email" name="email" required autocomplete="email"></label>
+</div>
+<label class="agree"><input type="checkbox" name="zgoda" value="tak" required><span>Akceptuję <a href="../regulamin.html" target="_blank">regulamin</a> i zgadzam się na kontakt od 10 Format w sprawie mojej strony. Zasady przetwarzania danych opisuje <a href="../polityka-prywatnosci.html" target="_blank">polityka prywatności</a>.</span></label>
+<button class="btn o" type="submit" id="tf-submit" style="min-height:62px;font-size:17px">Rezerwuję i płacę 990 zł</button>
+<div id="msg" role="status">Po kliknięciu przejdziesz do płatności BLIK lub kartą.</div>
+</form>
+</div>
+</div>
+</section>
+
+<section id="pytania">
+<div class="wrap faq">
+<div><h2 class="d" style="font-size:clamp(40px,4.6vw,68px)">Pytania przed rezerwacją</h2></div>
+<div>
+<details><summary>Co, jeśli pierwszy projekt mi się nie spodoba?</summary><p>Piszesz nam to w ciągu 2 dni od jego otrzymania i oddajemy 990 zł w 3 dni. To samo, jeśli nie pokażemy projektu w 3 dni robocze od otrzymania materiałów.</p></details>
+<details><summary>Co znaczy „akceptacja projektu”?</summary><p>Zatwierdzasz wygląd strony i animację mailem albo przyciskiem w podglądzie. Potem robimy resztę i masz jeszcze 2 rundy poprawek tekstów i zdjęć w cenie. Każda kolejna runda to 200 zł.</p></details>
+<details><summary>Kiedy zaczniecie?</summary><p>Dzwonimy w ciągu 24 godzin od wpłaty. Kolejność w kolejce ustala data rezerwacji.</p></details>
+<details><summary>Nie mam dobrych zdjęć.</summary><p>Wystarczą te z wizytówki Google i z telefonu. W pakiecie z filmem nagrywamy wszystko sami.</p></details>
+<details><summary>Czy sam zmienię ceny albo godziny otwarcia?</summary><p>Tak, bez pisania do nas.</p></details>
+<details><summary>Kto płaci za hosting?</summary><p>Pierwszy rok jest od nas. Później to około 200 zł rocznie.</p></details>
+<details><summary>Wystawiacie fakturę VAT?</summary><p>Tak, na każdą wpłatę.</p></details>
+</div>
+</div>
+</section>
+
+<section class="final">
+<div class="wrap">
+<h2 class="d">Cena Black Week znika 30 listopada</h2>
+<div class="cta"><a class="btn o" href="#rezerwacja">Rezerwuję cenę i miejsce</a></div>
+<div class="fine">Wolne miejsca: <span class="tf-left">6</span> z 8. Koniec za <span class="tf-d">--</span> d <span class="tf-h">--</span> h.</div>
+</div>
+</section>
+
+<footer><div class="wrap">
+<div class="col"><svg xmlns="http://www.w3.org/2000/svg" style="height:46px;width:auto;display:block" role="img" aria-label="10 Format" viewBox="235 321 1629 437"><polygon fill="#9A9A9A" points="596,410 762,540 596,670"/><path fill="#11131A" d="M255 403L362 341H408V685H503V738H255V685H350V405L255 460Z"/><path fill="#11131A" fill-rule="evenodd" d="M597 341H769L825 397V682L769 738H597L541 682V397ZM623 397L596 424V659L623 686H744L771 659V424L744 397Z"/><path fill="#11131A" d="M846.55 401.0V346.85H838.4125V341.0H861.2125V346.85H853.075V401.0ZM867.3375 401.0V341.0H878.7L882.6375 365.075L884.7 394.9625H886.2375L888.225 365.075L892.2375 341.0H903.5625V401.0H897.0V383.2625L898.2 346.85H896.4375L892.65 383.6375L889.4625 400.8125H881.4375L878.2875 383.6375L874.5 346.85H872.775L873.9 383.2625V401.0Z"/><path fill="#11131A" d="M940.79 738.0V438.0H1048.31V467.25H977.54V571.875H1044.1100000000001V601.125H977.54V738.0ZM1124.19 740.8125Q1090.8 740.8125 1075.995 727.96875Q1061.19 715.125 1060.56 685.5Q1060.14 660.75 1059.825 636.46875Q1059.51 612.1875 1059.51 588.0Q1059.51 563.8125 1059.825 539.53125Q1060.14 515.25 1060.56 490.5Q1061.19 460.6875 1075.995 447.9375Q1090.8 435.1875 1124.19 435.1875Q1157.79 435.1875 1172.385 447.9375Q1186.98 460.6875 1187.8200000000002 490.5Q1188.24 515.25 1188.66 539.625Q1189.0800000000002 564.0 1189.0800000000002 588.1875Q1189.0800000000002 612.375 1188.66 636.5625Q1188.24 660.75 1187.8200000000002 685.5Q1186.98 715.125 1172.385 727.96875Q1157.79 740.8125 1124.19 740.8125ZM1124.19 713.4375Q1138.26 713.4375 1144.56 708.1875Q1150.8600000000001 702.9375 1151.0700000000002 690.9375Q1151.91 665.4375 1152.33 639.46875Q1152.75 613.5 1152.75 587.34375Q1152.75 561.1875 1152.33 535.5Q1151.91 509.8125 1151.0700000000002 485.0625Q1150.8600000000001 473.0625 1144.455 467.71875Q1138.05 462.375 1124.19 462.375Q1110.54 462.375 1104.135 467.71875Q1097.73 473.0625 1097.31 485.0625Q1096.47 509.8125 1096.0500000000002 535.5Q1095.63 561.1875 1095.63 587.34375Q1095.63 613.5 1096.1550000000002 639.46875Q1096.68 665.4375 1097.31 690.9375Q1097.73 702.9375 1104.135 708.1875Q1110.54 713.4375 1124.19 713.4375ZM1213.72 738.0V438.0H1272.52Q1305.49 438.0 1320.4 450.65625Q1335.3100000000002 463.3125 1336.5700000000002 492.75Q1337.2 507.9375 1337.41 521.0625Q1337.6200000000001 534.1875 1337.41 546.65625Q1337.2 559.125 1336.5700000000002 572.0625Q1335.73 591.75 1328.8000000000002 603.75Q1321.8700000000001 615.75 1307.38 621.1875L1342.66 738.0H1303.6000000000001L1272.52 626.8125H1250.47V738.0ZM1250.47 597.5625H1272.1000000000001Q1286.17 597.5625 1292.68 591.65625Q1299.19 585.75 1299.8200000000002 573.5625Q1300.45 560.25 1300.66 546.28125Q1300.8700000000001 532.3125 1300.66 518.4375Q1300.45 504.5625 1299.8200000000002 491.0625Q1299.19 478.875 1292.785 473.0625Q1286.38 467.25 1272.52 467.25H1250.47ZM1359.53 738.0V438.0H1423.16L1445.21 558.375L1456.76 707.8125H1465.3700000000001L1476.5 558.375L1498.97 438.0H1562.39V738.0H1525.64V649.3125L1532.3600000000001 467.25H1522.49L1501.28 651.1875L1483.43 737.0625H1438.49L1420.85 651.1875L1399.64 467.25H1389.98L1396.28 649.3125V738.0ZM1577.16 738.0 1615.5900000000001 438.0H1679.64L1718.0700000000002 738.0H1680.48L1672.0800000000002 657.0H1622.94L1614.75 738.0ZM1626.51 627.75H1668.72L1661.79 562.125L1653.6000000000001 467.25H1641.8400000000001L1633.44 562.125ZM1759.9300000000003 738.0V467.25H1714.3600000000001V438.0H1842.0400000000002V467.25H1796.4700000000003V738.0Z"/></svg><span style="margin-top:8px">Strony z animacją i film z drona.</span></div>
+<div class="col"><a href="tel:+48794016134">794 016 134</a><span>[E-MAIL]</span><span>Michał Kuśnierz, NIP 6161563556</span></div>
+<div class="col"><a href="../polityka-prywatnosci.html">Polityka prywatności</a><a href="../regulamin.html">Regulamin</a></div>
+</div></footer>
+
+<script>
+(function(){
+  // ===== USTAWIENIA =====
+  var LEFT = 6;                         // wolne miejsca, zmien po kazdej rezerwacji
+  var PAY_URL = '';                     // link do platnosci 990 zl (Stripe / Przelewy24), np. 'https://buy.stripe.com/...'
+  var PER_WEEK = 3;                     // ile stron oddajesz w tygodniu
+  var PROJECT_DAYS = 3, BUILD_DAYS = 7;  // dni robocze: pierwszy projekt, gotowa strona
+  var END = Date.parse('2026-11-30T22:59:00Z');
+  // ======================
+
+  function $(s){return document.querySelectorAll(s);}
+  function set(sel,v){$(sel).forEach(function(e){e.textContent=v;});}
+  function addWork(d,n){d=new Date(d);while(n>0){d.setDate(d.getDate()+1);var w=d.getDay();if(w!==0&&w!==6)n--;}return d;}
+  function fmt(d){return d.getDate()+'.'+String(d.getMonth()+1).padStart(2,'0');}
+  var today=new Date(), taken = 8 - LEFT, next = Math.min(taken+1, 8);
+  function slotDone(k){return addWork(today, BUILD_DAYS + Math.floor(k*5/PER_WEEK));}
+  set('.tf-left', LEFT); set('.tf-next', next); set('.tf-taken', taken);
+  set('.tf-proj', fmt(addWork(today, PROJECT_DAYS+1)));
+  set('.tf-date', fmt(slotDone(0)));
+  var q = document.getElementById('queue'), h='';
+  for (var i=0;i<8;i++){
+    var t = i<taken, k=i-taken, cls = t?'taken':(k===0?'free next':'free');
+    h += '<div class="'+cls+'"><span>Miejsce '+(i+1)+(t?'':', gotowa strona do '+fmt(slotDone(k)))+'</span><em>'+(t?'zajęte':(k===0?'Twoje, jeśli zarezerwujesz teraz':'wolne'))+'</em></div>';
+  }
+  q.innerHTML = h;
+
+  function pad(n){return String(n).padStart(2,'0');}
+  function tick(){
+    var ms=Math.max(0,END-Date.now());
+    set('.tf-d', Math.floor(ms/86400000));
+    set('.tf-h', pad(Math.floor(ms%86400000/3600000)));
+    set('.tf-m', pad(Math.floor(ms%3600000/60000)));
+    set('.tf-s', pad(Math.floor(ms%60000/1000)));
+  }
+  tick(); setInterval(tick,1000);
+
+  // intro
+  var intro=document.getElementById('intro');
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var closed=false;
+  function closeIntro(){if(closed)return;closed=true;intro.classList.add('hide');setTimeout(function(){intro.style.display='none';},700);}
+  document.getElementById('skip').addEventListener('click',closeIntro);
+  if(reduce){intro.style.display='none';closed=true;}
+  if(!closed){
+    var tp=document.getElementById('tape'),cm=document.getElementById('cm'),cabs=document.querySelectorAll('#cabs i'),last=Date.now(),done=false,max=innerWidth*0.86;
+    function setP(p){if(done)return;p=Math.max(0,Math.min(1,p));tp.style.width=(p*max)+'px';cm.style.left='calc(7vw + '+(p*max)+'px - 60px)';cm.textContent=Math.round(p*348)+' cm';
+      if(p>=0.98){done=true;cm.textContent='348 cm';cabs.forEach(function(c,i){setTimeout(function(){c.classList.add('in');},120*i);});
+        setTimeout(function(){document.getElementById('kh').classList.add('in');},800);setTimeout(closeIntro,2300);}}
+    var down=false;intro.addEventListener('pointerdown',function(e){down=true;last=Date.now();setP((e.clientX-innerWidth*0.07)/max);});addEventListener('pointerup',function(){down=false;});
+    intro.addEventListener('pointermove',function(e){if(!down&&e.pointerType!=='mouse')return;last=Date.now();setP((e.clientX-innerWidth*0.07)/max);});
+    setTimeout(function autoK(){if(closed||done)return;if(Date.now()-last<2400){setTimeout(autoK,500);return;}
+      var t0=performance.now(),s=parseFloat(tp.style.width||0)/max;(function step(t){var p=Math.min(1,(t-t0)/1200);setP(s+(1-s)*p);if(p<1&&!closed)requestAnimationFrame(step);})(t0);},2600);
+  }
+
+  // player
+  (function(){var p=document.getElementById('player');if(!p)return;var vs=p.querySelectorAll('.v'),bs=p.querySelectorAll('.bars i'),i=0;
+    function show(n){vs.forEach(function(v,k){v.classList.toggle('on',k===n);});bs.forEach(function(b,k){b.classList.remove('on');b.classList.toggle('done',k<n);void b.offsetWidth;if(k===n)b.classList.add('on');});}
+    show(0);setInterval(function(){i=(i+1)%vs.length;show(i);},5000);})();
+
+  // test
+  var v=document.getElementById('verdict'), A=document.getElementById('pA'), B=document.getElementById('pB');
+  function pick(which){
+    A.classList.toggle('pick',which==='A'); B.classList.toggle('pick',which==='B');
+    v.innerHTML = (which==='B'
+      ? 'Wybrałeś po wyglądzie, bo torty są te same. Twoi klienci robią dokładnie to samo z Twoją firmą.'
+      : 'Torty są te same. Spójrz jeszcze raz na drugą stronę i pomyśl, którą zapamięta Twój klient.')
+      + '<br><a class="btn o" href="#bilet">Chcę stronę jak cukiernia B</a>';
+  }
+  A.addEventListener('click',function(){pick('A');}); B.addEventListener('click',function(){pick('B');});
+
+  // pakiet z przycisku
+  $('[data-pack]').forEach(function(b){b.addEventListener('click',function(){
+    var r=document.querySelectorAll('input[name=pakiet]'); r[b.getAttribute('data-pack')==='film'?1:0].checked=true;
+  });});
+
+  // formularz -> platnosc
+  var f=document.getElementById('tf-form'), msg=document.getElementById('msg'), btn=document.getElementById('tf-submit');
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    btn.disabled=true; btn.textContent='Rezerwuję...';
+    if(window.fbq) fbq('track','InitiateCheckout',{value:990,currency:'PLN'});
+    fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
+      .catch(function(){})
+      .then(function(){
+        if(PAY_URL){
+          var em=encodeURIComponent(f.email.value);
+          window.location.href = PAY_URL + (PAY_URL.indexOf('?')>-1?'&':'?') + 'prefilled_email=' + em;
+        } else {
+          btn.textContent='Miejsce zarezerwowane';
+          msg.textContent='Dzięki! Link do płatności 990 zł wyślemy Ci mailem w ciągu godziny. Miejsce trzymamy 24 godziny.';
+        }
+      });
+  });
+})();
+</script>
+</body>
+</html>
