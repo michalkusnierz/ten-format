@@ -4,9 +4,10 @@ Ten plik czyta zadanie, które co godzinę obsługuje zgłoszenia z formularza n
 
 ## Skąd brać zgłoszenia
 
-Zgłoszenia z Web3Forms trafiają na tenformat@gmail.com i są przekierowane na Gmaila Michała.
-Szukaj w Gmailu: `subject:"Zgłoszenie 10 Format" -label:tf-szkic-gotowy -label:tf-pominiete newer_than:7d`.
-Każde zgłoszenie ma pola: pakiet, firma, link, miasto, telefon, email, uwagi, branza, landing.
+Zgłoszenia z Web3Forms trafiają na tenformat@gmail.com. Konektor Gmail jest podpięty do tej skrzynki.
+Szukaj: `subject:"Zgłoszenie 10 Format" -label:tf-szkic-gotowy -label:tf-pominiete newer_than:7d`.
+Zgłoszenie ze strony 10 Format ma pola: pakiet, firma, link, miasto, telefon, email, uwagi, branza, landing.
+Zgłoszenie od dewelopera (landing `pukpukpuk`, temat „Zgłoszenie 10 Format: deweloper”) ma tylko: link (adres strony inwestycji) i telefon. Nie ma maila, więc nie robisz szkicu maila (patrz niżej).
 
 Etykiety Gmail (utwórz, jeśli ich nie ma):
 - `tf-szkic-gotowy`: szkic zrobiony, szkic maila czeka na Michała
@@ -21,7 +22,7 @@ Jeśli zgłoszeń w cenie Black Week jest więcej niż wolnych miejsc, i tak ró
 ## Jak zrobić szkic
 
 1. Zbierz informacje o firmie: otwórz link ze zgłoszenia (WebFetch), poszukaj firmy w sieci po nazwie i mieście (WebSearch): wizytówka Google, strona, Facebook, Instagram, Oferteo, Panorama Firm. Zanotuj: usługi, obszar działania, telefon i adres firmowy, ocenę Google i liczbę opinii, 2–3 krótkie opinie z imieniem autora, kolory logo, bezpośrednie adresy zdjęć z ich strony.
-2. Skopiuj `szkic/_szablon/index.html` do `szkic/<kod>-<slug-firmy>/index.html`. `<kod>` to 6 losowych znaków [a-z0-9] (np. `python3 -c "import secrets;print(secrets.token_hex(3))"`), slug bez polskich znaków, małe litery, myślniki.
+2. Skopiuj `szkic/_szablon/index.html` (dla dewelopera: `szkic/_deweloper/index.html`, przykładowa strona inwestycji z listą domów i cenami) do `szkic/<kod>-<slug-firmy>/index.html`. `<kod>` to 6 losowych znaków [a-z0-9] (np. `python3 -c "import secrets;print(secrets.token_hex(3))"`), slug bez polskich znaków, małe litery, myślniki.
 3. Podmień wszystko oznaczone `{{...}}` w komentarzach. Zasady:
    - Pisz po polsku, konkretnie, językiem właściciela firmy. Zero wymyślonych faktów: liczby, lata działalności, ocena, opinie i adres tylko z prawdziwych źródeł. Jeśli czegoś nie ma, usuń ten element.
    - Bez typowych zwrotów AI: bez „to nie X, to Y”, pytań z odpowiedzią („Efekt? …”), wymuszonych trójek, krótkich dramatycznych zdań, słów kluczowy, kompleksowy, holistyczny, przestrzeń. Bez pauz (—) w zdaniach. Nagłówki zwykłą wielkością liter w treści (CSS i tak robi wersaliki).
@@ -34,7 +35,8 @@ Jeśli zgłoszeń w cenie Black Week jest więcej niż wolnych miejsc, i tak ró
    - `<meta name="robots" content="noindex, nofollow">` zostaje.
 4. Sprawdź plik: poprawny HTML, brak `{{`, brak pustych `url('')` (usuń puste zdjęcia albo całą sekcję), polskie znaki.
 5. Commit i push do `main`: `git add szkic/<folder> && git commit -m "Szkic: <firma>" && git push`. Link: `https://michalkusnierz.github.io/ten-format/szkic/<folder>/` (GitHub Pages publikuje po ~1 minucie).
-6. Zrób szkic maila w Gmailu (create_draft, NIE wysyłaj) do adresu ze zgłoszenia:
+6. Zrób szkic maila w Gmailu (create_draft, NIE wysyłaj) do adresu ze zgłoszenia. Deweloper nie podaje maila: wtedy pomiń ten krok, a w powiadomieniu dla Michała podaj telefon, link do szkicu i 3 rzeczy, które poprawiłbyś na ich obecnej stronie inwestycji, żeby miał o czym mówić przy telefonie.
+   Dla zgłoszeń ze strony:
    - Temat: `Szkic strony dla <firma>`
    - Treść (dopasuj do firmy, krótko, bez zwrotów AI):
 

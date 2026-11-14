@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<!-- SZKIC 10 FORMAT dla dewelopera. Agent: podmien nazwe inwestycji, lokalizacje, domy/lokale, ceny, telefon i opisy na prawdziwe dane z ich obecnej strony. Bez wymyslonych danych. Stopke z "Firma i dane sa wymyslone" zamien na "Szkic przygotowany przez 10 Format". -->
+</head>
+<body>
+<title>Brzozy 12</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&display=swap">
+<style>
+/* Przykładowa strona inwestycji: ciemna zieleń lasu, jasny len, jeden akcent miodowy */
+:root{--bg:#F4F3EF;--ink:#15171A;--mute:#55595E;--forest:#2C3A3E;--line:#D8D6CF;--acc:#E0A33A;--ok:#2F7A3E;--white:#FFFFFF;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Schibsted Grotesk',system-ui,sans-serif;font-size:17px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{text-wrap:balance;margin:0;letter-spacing:-.035em;line-height:.95}
+a{color:inherit}
+.btn{display:inline-flex;align-items:center;min-height:52px;padding:0 24px;background:var(--ink);color:var(--white);text-decoration:none;font-weight:700;border:0;font:inherit;font-weight:700;cursor:pointer}
+.btn.acc{background:var(--acc);color:var(--ink)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.top{background:var(--forest);color:var(--white)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px;flex-wrap:wrap}
+.nav b{letter-spacing:.12em;font-size:14px}
+.nav nav{display:flex;gap:20px;flex-wrap:wrap;font-size:15px}
+.nav nav a{text-decoration:none;opacity:.85}
+.hero{padding-block:40px 0}
+.hero h1{font-size:clamp(42px,7vw,104px);font-weight:900;max-width:900px}
+.hero p{max-width:520px;color:#D7DEDC;margin:22px 0 0;font-size:19px}
+.facts{display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:32px;padding-bottom:40px}
+.facts div{min-width:0}.facts span{display:block;font-size:13px;color:#AFBDB9}.facts strong{font-size:24px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.film{position:relative;height:clamp(260px,46vw,620px);overflow:hidden;background:#34502F;max-width:100%}
+.pan{animation:pan 40s linear infinite alternate}
+@keyframes pan{from{transform:translateX(0)}to{transform:translateX(-37.5%)}}
+@media (prefers-reduced-motion:reduce){.pan{animation:none}}
+.film .bar{position:absolute;left:16px;right:16px;bottom:18px;display:flex;justify-content:space-between;color:#fff;font-size:13px;font-weight:700}
+section{padding-block:88px}
+.sh{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 40px;margin-bottom:36px}
+.sh h2{font-size:clamp(34px,4.6vw,64px);font-weight:900}
+.sh p{max-width:420px;margin:0;color:var(--mute)}
+.tbl{overflow-x:auto;border:2px solid var(--ink);background:var(--white)}
+table{width:100%;border-collapse:collapse;min-width:640px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);font-size:16px;vertical-align:top}
+th{font-size:13px;color:var(--mute);font-weight:600}
+.st-w{color:var(--ok);font-weight:700}.st-r{color:var(--mute)}
+.hist{background:none;border:0;padding:0;font:inherit;font-size:14px;text-decoration:underline;cursor:pointer;color:var(--ink)}
+.hrow td{background:#FAF9F6;font-size:14px;color:var(--mute)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.okolica{border-top:2px solid var(--ink);padding-top:14px}
+.okolica strong{display:block;font-size:40px;font-weight:900;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.gal div{aspect-ratio:4/3;max-width:100%;position:relative;overflow:hidden}
+.gal span{position:absolute;left:12px;bottom:10px;color:#fff;font-size:13px;font-weight:700}
+.dark{background:var(--forest);color:var(--white)}
+.dark .sh p{color:#D7DEDC}
+form{background:var(--white);color:var(--ink);padding:28px;display:grid;gap:14px;max-width:560px}
+label{font-weight:700;font-size:14px}
+input,select{min-height:50px;padding:0 14px;border:2px solid var(--ink);font:inherit;width:100%;background:var(--white);color:var(--ink)}
+.ok{background:var(--white);color:var(--ink);padding:28px;max-width:560px;font-size:22px;font-weight:800;letter-spacing:-.02em}
+footer{padding-block:40px;font-size:14px;color:var(--mute)}
+footer .cols{display:flex;flex-wrap:wrap;gap:16px 48px}
+.note{font-size:13px;color:var(--mute);margin-top:12px}
+</style>
+
+<div class="top">
+<div class="wrap nav"><b>BRZOZY 12</b><nav><a href="#domy">Wolne domy</a><a href="#okolica">Okolica</a><a href="#kontakt">Kontakt</a></nav><a class="btn acc" href="#kontakt" style="min-height:44px">Umów oglądanie</a></div>
+<div class="wrap hero">
+<h1>12 domów pod lasem w Łomiankach</h1>
+<p>Domy 124–131 m² z ogrodem, 400 metrów od Puszczy Kampinoskiej. Oddanie w IV kwartale 2027.</p>
+<div class="facts"><div><span>cena od</span><strong>1 090 000 zł</strong></div><div><span>wolne</span><strong>7 z 12</strong></div><div><span>działki</span><strong>300–340 m²</strong></div><div><span>do stacji SKM</span><strong>3 min autem</strong></div></div>
+</div>
+<div class="film" role="img" aria-label="Widok osiedla z drona">
+<svg class="pan" aria-hidden="true" width="160%" height="100%" style="position:absolute;left:0;top:0;display:block">
+<defs><pattern id="os" width="420" height="300" patternUnits="userSpaceOnUse">
+<rect width="420" height="300" fill="#34502F"/><rect x="190" y="0" width="40" height="300" fill="#5E615C"/>
+<rect x="30" y="34" width="120" height="76" fill="#3C3F44"/><rect x="30" y="70" width="120" height="3" fill="#2B2E32"/>
+<rect x="270" y="64" width="120" height="76" fill="#44474C"/><rect x="270" y="100" width="120" height="3" fill="#2B2E32"/>
+<rect x="30" y="180" width="120" height="76" fill="#44474C"/><rect x="30" y="216" width="120" height="3" fill="#2B2E32"/>
+<rect x="270" y="210" width="120" height="76" fill="#3C3F44"/><rect x="270" y="246" width="120" height="3" fill="#2B2E32"/>
+<circle cx="168" cy="150" r="14" fill="#25401F"/><circle cx="400" cy="20" r="16" fill="#25401F"/><circle cx="250" cy="170" r="13" fill="#25401F"/>
+</pattern></defs><rect width="100%" height="100%" fill="url(#os)"/></svg>
+<div class="bar"><span>Film z budowy, październik 2026</span><span>1:20</span></div>
+</div>
+</div>
+
+<section id="domy"><div class="wrap">
+<div class="sh"><h2>Wolne domy</h2><p>Ceny brutto, aktualne na dziś. Przy każdym domu zobaczysz historię zmian ceny.</p></div>
+<div class="tbl"><table>
+<thead><tr><th>Dom</th><th>Powierzchnia</th><th>Działka</th><th>Cena</th><th>Cena za m²</th><th>Status</th><th></th></tr></thead>
+<tbody id="lista"></tbody>
+</table></div>
+<p class="note">Miejsce postojowe przed domem jest w cenie. Prospekt informacyjny dostępny w biurze sprzedaży i do pobrania na życzenie.</p>
+</div></section>
+
+<section class="dark"><div class="wrap">
+<div class="sh"><h2>Dzień na Brzozach</h2><p>Rano las, po południu ogród. Do centrum Warszawy dojedziesz w 25 minut poza szczytem.</p></div>
+<div class="gal">
+<div style="background:#5C6B4E"><span>Ogród od strony lasu</span></div>
+<div style="background:#B9B2A3"><span>Salon z wyjściem na taras</span></div>
+<div style="background:#7D8A86"><span>Ulica osiedlowa</span></div>
+</div>
+</div></section>
+
+<section id="okolica"><div class="wrap">
+<div class="sh"><h2>Okolica</h2><p>Odległości od bramy osiedla.</p></div>
+<div class="grid3">
+<div class="okolica"><strong>400 m</strong>Puszcza Kampinoska</div>
+<div class="okolica"><strong>1,2 km</strong>szkoła podstawowa i przedszkole</div>
+<div class="okolica"><strong>900 m</strong>sklep spożywczy</div>
+<div class="okolica"><strong>3 min</strong>autem do stacji SKM</div>
+<div class="okolica"><strong>25 min</strong>do centrum Warszawy</div>
+<div class="okolica"><strong>6 km</strong>do węzła S7</div>
+</div>
+</div></section>
+
+<section id="kontakt" class="dark"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:40px 64px">
+<div style="flex:1 1 320px;min-width:0"><h2 style="font-size:clamp(34px,4.6vw,64px);font-weight:900">Umów oglądanie domu</h2><p style="color:#D7DEDC;max-width:420px">Zostaw numer. Handlowiec oddzwoni dziś, w godzinach 9–19.</p><p style="color:#D7DEDC">Biuro sprzedaży: ul. Przykładowa 12, Łomianki<br>tel. 600 000 000</p></div>
+<div style="flex:1 1 380px;min-width:0" id="fbox">
+<form id="f">
+<div><label for="b-imie">Imię</label><input id="b-imie" required autocomplete="given-name"></div>
+<div><label for="b-tel">Telefon</label><input id="b-tel" type="tel" required autocomplete="tel"></div>
+<div><label for="b-dom">Który dom</label><select id="b-dom"><option>Jeszcze nie wiem</option></select></div>
+<button class="btn" type="submit">Poproś o kontakt</button>
+</form>
+</div>
+</div></section>
+
+<footer><div class="wrap cols"><span>Brzozy 12 sp. z o.o., ul. Przykładowa 12, 05-092 Łomianki</span><span>Strona przykładowa przygotowana przez 10 Format. Firma i dane są wymyślone.</span></div></footer>
+
+<script>
+var domy=[
+{n:3,m:124,d:300,c:1090000,s:'wolny',h:[['15.09.2026',1090000],['01.07.2026',1065000]]},
+{n:4,m:124,d:310,c:1090000,s:'rezerwacja',h:[['01.07.2026',1090000]]},
+{n:5,m:126,d:320,c:1110000,s:'wolny',h:[['01.07.2026',1110000]]},
+{n:7,m:131,d:340,c:1140000,s:'wolny',h:[['15.09.2026',1140000],['01.07.2026',1120000]]},
+{n:8,m:131,d:330,c:1140000,s:'sprzedany',h:[['01.07.2026',1140000]]},
+{n:10,m:124,d:300,c:1095000,s:'wolny',h:[['01.07.2026',1095000]]}
+];
+function zl(v){return v.toLocaleString('pl-PL')+' zł';}
+var tb=document.getElementById('lista'),sel=document.getElementById('b-dom');
+domy.forEach(function(x){
+  var tr=document.createElement('tr');
+  var st=x.s==='wolny'?'<span class="st-w">wolny</span>':'<span class="st-r">'+x.s+'</span>';
+  tr.innerHTML='<td><b>Dom '+x.n+'</b></td><td>'+x.m+' m²</td><td>'+x.d+' m²</td><td><b>'+zl(x.c)+'</b></td><td>'+zl(Math.round(x.c/x.m))+'</td><td>'+st+'</td><td><button class="hist" type="button" aria-expanded="false">historia ceny</button></td>';
+  var hr=document.createElement('tr');hr.className='hrow';hr.hidden=true;
+  hr.innerHTML='<td colspan="7">'+x.h.map(function(h){return h[0]+': '+zl(h[1]);}).join(', ')+'</td>';
+  tr.querySelector('.hist').addEventListener('click',function(e){hr.hidden=!hr.hidden;e.currentTarget.setAttribute('aria-expanded',String(!hr.hidden));});
+  tb.appendChild(tr);tb.appendChild(hr);
+  if(x.s==='wolny'){var o=document.createElement('option');o.textContent='Dom '+x.n;sel.appendChild(o);}
+});
+document.getElementById('f').addEventListener('submit',function(e){
+  e.preventDefault();
+  var imie=document.getElementById('b-imie').value.trim();
+  document.getElementById('fbox').innerHTML='<div class="ok">Dziękujemy'+(imie?', '+imie.replace(/[<>&]/g,''):'')+'. Handlowiec oddzwoni dziś.</div>';
+});
+</script>
+
+</body>
+</html>
