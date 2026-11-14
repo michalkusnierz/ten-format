@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<!-- SZKIC 10 FORMAT. Agent: podmien wszystko oznaczone {{...}} w komentarzach, reszte dopasuj do firmy. -->
+<title>Ciepły Dom Klima · szkic strony od 10 Format</title>
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Libre+Franklin:wght@400;600;700&display=swap">
+<style>
+/* {{PALETA}}: 4 kolory dobrane do firmy (z logo, zdjec albo branzy). Bez fioletowo-niebieskich gradientow. */
+:root{--bg:#F4F1EA;--ink:#0E1E2C;--mute:#4D5A66;--acc:#FF7A3D;--acc2:#0E1E2C;--card:#FFFFFF;--line:#D9D3C7}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Libre Franklin',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55}
+a{color:inherit}
+.d{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.95;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 26px;background:var(--acc);color:var(--ink);font-weight:700;text-decoration:none;border:0;font-size:16px}
+.btn.ghost{background:transparent;border:2px solid #F4F1EA;color:#F4F1EA}
+
+/* pasek szkicu */
+.sk{position:sticky;top:0;z-index:40;background:#11131A;color:#fff;font-size:14px}
+.sk .wrap{display:flex;gap:10px 20px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding-top:9px;padding-bottom:9px}
+.sk a.go{background:#FF8A3D;color:#11131A;font-weight:700;text-decoration:none;padding:8px 14px}
+
+/* intro */
+#intro{position:fixed;inset:0;z-index:60;background:var(--acc);color:var(--ink);transition:opacity .6s;touch-action:none;user-select:none}
+#intro.hide{opacity:0;pointer-events:none}
+#intro .reveal{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
+#intro h2{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(40px,7vw,104px);line-height:.95;margin:16px 0 0;max-width:1000px}
+#temp{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(90px,16vw,220px);line-height:.9}
+#frost{position:absolute;inset:0;width:100%;height:100%;z-index:3;cursor:crosshair}
+#intro .hint{position:absolute;bottom:7%;left:0;right:0;z-index:5;text-align:center;font-weight:600;pointer-events:none}
+#intro .skip{position:absolute;top:56px;right:22px;z-index:6;background:none;border:0;font:inherit;font-size:14px;cursor:pointer;padding:10px;color:inherit}
+
+/* hero */
+.hero{background:var(--acc2);color:#F4F1EA;padding:28px 0 90px;overflow:hidden;position:relative}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:60px}
+.nav .logo{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;letter-spacing:.5px}
+.nav a.tel{text-decoration:none;font-weight:700}
+.hero h1{font-size:clamp(48px,8vw,124px);max-width:980px}
+.hero h1 span{display:inline-block;opacity:0;transform:translateY(40px);animation:up .7s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes up{to{opacity:1;transform:none}}
+.hero p.lead{font-size:clamp(18px,1.6vw,22px);max-width:620px;color:#C9D2DA;margin:26px 0 34px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px}
+.hero .stars{margin-top:40px;font-size:15px;color:#C9D2DA}
+.hero .stars b{color:#F4F1EA;font-size:20px}
+.heat{position:absolute;right:-6%;bottom:-30%;width:46vw;max-width:620px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,var(--acc) 0,rgba(255,122,61,.0) 68%);opacity:.55;animation:pulse 5s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.12);opacity:.75}}
+
+section{padding:90px 0}
+h2.d{font-size:clamp(40px,5vw,72px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:40px}
+.card{background:var(--card);border:1px solid var(--line);padding:28px}
+.card h3{font-size:22px;margin:0 0 10px}
+.card p{margin:0;color:var(--mute)}
+.photo{aspect-ratio:4/3;background:var(--line) center/cover no-repeat;border:1px solid var(--line)}
+
+.calc{background:var(--card);border:1px solid var(--line);padding:30px;margin-top:40px;max-width:720px}
+.calc label{display:block;font-weight:600;margin-bottom:10px}
+.calc input[type=range]{width:100%;accent-color:var(--acc)}
+.calc .out{display:flex;gap:30px;flex-wrap:wrap;margin-top:22px}
+.calc .out b{display:block;font-family:'Big Shoulders Display',sans-serif;font-size:48px;line-height:1}
+
+.rev{background:var(--card);border:1px solid var(--line);padding:26px}
+.rev q{display:block;font-size:18px;quotes:none}
+.rev div{margin-top:14px;color:var(--mute);font-size:14px}
+
+.contact{background:var(--acc2);color:#F4F1EA}
+.contact .row{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start}
+.contact p{color:#C9D2DA}
+form{display:flex;flex-direction:column;gap:12px}
+form input,form textarea{font:inherit;padding:15px;border:0;background:#F4F1EA;color:#0E1E2C}
+footer{padding:30px 0;font-size:14px;color:var(--mute)}
+@media(max-width:800px){.contact .row{grid-template-columns:1fr}.nav .hide-m{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}.hero h1 span{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="sk"><div class="wrap">
+<span>Szkic strony przygotowany przez 10 Format dla firmy <strong>Ciepły Dom Klima</strong><!-- {{FIRMA}} -->. Strona nie jest jeszcze opublikowana.</span>
+<a class="go" href="mailto:tenformat@gmail.com?subject=Chc%C4%99%20t%C4%99%20stron%C4%99%3A%20Ciep%C5%82y%20Dom%20Klima">Chcę tę stronę</a>
+</div></div>
+
+<!-- {{INTRO}}: interaktywne intro pod branze. Klimatyzacja: zamarznieta szyba (ponizej). Inne branze: wez intro z ../../ogrodzenia/, ../../kuchnie/, ../../detailing/ albo zrob proste wejscie nazwy firmy. -->
+<div id="intro" aria-hidden="true">
+<div class="reveal"><div><div id="temp">-6°C</div><h2>Ciepło w domu bez pieca na węgiel</h2></div></div>
+<canvas id="frost"></canvas>
+<div class="hint">Przetrzyj szybę palcem albo myszką</div>
+<button class="skip" id="skip" type="button">Pomiń</button>
+</div>
+
+<header class="hero">
+<div class="heat"></div>
+<div class="wrap" style="position:relative">
+<nav class="nav">
+<div class="logo">Ciepły Dom Klima</div><!-- {{LOGO albo nazwa}} -->
+<a class="tel" href="tel:+48600000000">600 000 000</a><!-- {{TELEFON z wizytowki/strony, nie z formularza}} -->
+</nav>
+<!-- {{HASLO}}: konkretne, o tym, co klient firmy dostaje. Kazde slowo w osobnym span z rosnacym animation-delay. -->
+<h1 class="d"><span style="animation-delay:.05s">Ogrzewanie</span> <span style="animation-delay:.15s">klimatyzacją,</span> <span style="animation-delay:.25s">które</span> <span style="animation-delay:.35s">ogarnia</span> <span style="animation-delay:.45s">całą</span> <span style="animation-delay:.55s">zimę</span></h1>
+<p class="lead">Montujemy pompy ciepła powietrze-powietrze w domach i mieszkaniach w Piasecznie i okolicy. Wycena po jednej wizycie, montaż w jeden dzień.</p><!-- {{OPIS}} -->
+<div class="ctas"><a class="btn" href="#kontakt">Umów bezpłatną wycenę</a><a class="btn ghost" href="tel:+48600000000">Zadzwoń</a></div>
+<div class="stars"><b>4,9</b> w Google · 87 opinii</div><!-- {{OCENA i liczba opinii z Google, jesli sa. Bez wymyslania.}} -->
+</div>
+</header>
+
+<section>
+<div class="wrap">
+<h2 class="d">Co robimy</h2>
+<!-- {{USLUGI}}: 3-6 prawdziwych uslug firmy, opisy wlasnymi slowami -->
+<div class="grid">
+<div class="card"><h3>Klimatyzacja z funkcją grzania</h3><p>Dobieramy urządzenie do metrażu i ocieplenia domu, żeby grzało także przy mrozie.</p></div>
+<div class="card"><h3>Montaż w jeden dzień</h3><p>Przyjeżdżamy rano, wieczorem urządzenie działa. Sprzątamy po sobie.</p></div>
+<div class="card"><h3>Serwis i przeglądy</h3><p>Coroczny przegląd z czyszczeniem, żeby gwarancja producenta była ważna.</p></div>
+</div>
+</div>
+</section>
+
+
+<!-- {{BONUS BRANZOWY}}: klimatyzacja = kalkulator ponizej. Ogrodzenia = konfigurator dlugosci, kuchnie = kalkulator metrow, detailing = wybor pakietu. -->
+<section style="padding-top:0">
+<div class="wrap">
+<h2 class="d">Ile zaoszczędzisz na ogrzewaniu</h2>
+<div class="calc">
+<label for="m2">Metraż domu: <span id="m2v">120</span> m²</label>
+<input type="range" id="m2" min="40" max="300" step="5" value="120">
+<div class="out"><div><b id="o1">--</b>zł miesięcznie zimą</div><div><b id="o2">--</b>zł mniej niż ogrzewanie gazem</div></div>
+<p style="color:var(--mute);font-size:14px;margin:18px 0 0">Wynik orientacyjny. Dokładną kwotę podamy po wizycie.</p>
+</div>
+</div>
+</section>
+
+<section style="padding-top:0">
+<div class="wrap">
+<h2 class="d">Co mówią klienci</h2>
+<!-- {{OPINIE}}: 2-3 prawdziwe opinie z Google, skrocone do 1-2 zdan, z imieniem autora. Jesli brak, usun sekcje. -->
+<div class="grid">
+<div class="rev"><q>Montaż sprawny, panowie wszystko wytłumaczyli. Grzeje lepiej niż stary piec.</q><div>Anna, Google</div></div>
+<div class="rev"><q>Wycena w dwa dni, montaż w tydzień. Polecam.</q><div>Tomasz, Google</div></div>
+</div>
+</div>
+</section>
+
+<section class="contact" id="kontakt">
+<div class="wrap row">
+<div>
+<h2 class="d">Umów wycenę</h2>
+<p style="font-size:19px;margin-top:20px">Zostaw numer, oddzwonimy tego samego dnia.</p>
+<p>ul. Przykładowa 1, Piaseczno<br><a href="tel:+48600000000">600 000 000</a></p><!-- {{ADRES, TELEFON}} -->
+</div>
+<form onsubmit="event.preventDefault();this.querySelector('button').textContent='To tylko szkic, formularz zadziała po starcie strony';">
+<input type="text" placeholder="Imię" required>
+<input type="tel" placeholder="Telefon" required>
+<textarea rows="3" placeholder="Metraż domu albo krótko, czego potrzebujesz"></textarea>
+<button class="btn" type="submit">Poproś o wycenę</button>
+</form>
+</div>
+</section>
+
+<footer><div class="wrap">Ciepły Dom Klima · Szkic przygotowany przez <a href="../../">10 Format</a></div></footer>
+
+<script>
+(function(){
+  var intro=document.getElementById('intro'),closed=false;
+  function closeIntro(){if(closed)return;closed=true;intro.classList.add('hide');setTimeout(function(){intro.style.display='none';},700);}
+  document.getElementById('skip').addEventListener('click',closeIntro);
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){intro.style.display='none';closed=true;}
+  var c=document.getElementById('frost');
+  if(c&&!closed){
+    var x=c.getContext('2d'),W,H,tEl=document.getElementById('temp'),last=Date.now();
+    function size(){W=c.width=innerWidth;H=c.height=innerHeight;x.globalCompositeOperation='source-over';x.fillStyle='rgba(222,236,246,.97)';x.fillRect(0,0,W,H);
+      for(var i=0;i<1600;i++){x.fillStyle='rgba(255,255,255,'+(Math.random()*.6)+')';x.beginPath();x.arc(Math.random()*W,Math.random()*H,Math.random()*3+.5,0,7);x.fill();}
+      x.strokeStyle='rgba(255,255,255,.35)';for(var j=0;j<90;j++){var a=Math.random()*W,b=Math.random()*H;x.beginPath();x.moveTo(a,b);for(var k=0;k<5;k++){a+=Math.random()*60-30;b+=Math.random()*60-30;x.lineTo(a,b);}x.stroke();}}
+    size();
+    function wipe(px,py){x.globalCompositeOperation='destination-out';x.beginPath();x.arc(px,py,Math.max(60,W/14),0,7);x.fill();last=Date.now();}
+    c.addEventListener('pointermove',function(e){wipe(e.clientX,e.clientY);});
+    c.addEventListener('pointerdown',function(e){wipe(e.clientX,e.clientY);});
+    function ratio(){var d=x.getImageData(0,0,W,H).data,n=0,t=0;for(var i=3;i<d.length;i+=4*97){t++;if(d[i]<40)n++;}return n/t;}
+    var iv=setInterval(function(){var r=ratio();tEl.textContent=Math.round(-6+28*Math.min(1,r/0.55))+'°C';
+      if(r>0.55){clearInterval(iv);tEl.textContent='22°C';c.style.transition='opacity .5s';c.style.opacity=0;setTimeout(closeIntro,1300);}},250);
+    setTimeout(function autoW(){if(closed)return;if(Date.now()-last<2400){setTimeout(autoW,500);return;}
+      var t0=performance.now();(function step(t){var p=(t-t0)/1500;if(p>1||closed)return;var y=H*p,xx=W*(0.5+0.45*Math.sin(p*18));wipe(xx,y);wipe(W-xx,y);last=0;requestAnimationFrame(step);})(t0);},2600);
+  }
+  // kalkulator (szacunek: 70 kWh/m2/rok, 5 miesiecy grzania, pompa SCOP 3.5 przy 1.0 zl/kWh, gaz 0.35 zl/kWh)
+  var r=document.getElementById('m2');
+  if(r){function calc(){var m=+r.value,need=m*70,pump=need/3.5*1.0,gas=need*0.35;document.getElementById('m2v').textContent=m;
+    document.getElementById('o1').textContent=Math.round(pump/5);document.getElementById('o2').textContent=Math.max(0,Math.round((gas-pump)/5));}
+    r.addEventListener('input',calc);calc();}
+})();
+</script>
+</body>
+</html>

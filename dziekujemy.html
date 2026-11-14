@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Mamy Twoje zgłoszenie · 10 Format</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@900&family=Libre+Franklin:wght@400;600;700&display=swap">
+<style>
+body{margin:0;background:#EDEFF2;color:#11131A;font-family:'Libre Franklin',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+main{max-width:860px;margin:0 auto;padding:60px 22px 90px}
+h1{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(48px,8vw,104px);line-height:.95;margin:30px 0 24px;color:#1E2BD8}
+p{font-size:19px;max-width:640px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:40px 0}
+.steps div{background:#fff;border:1px solid #C9CDD6;padding:22px}
+.steps b{display:block;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:34px;text-transform:uppercase;color:#FF8A3D;line-height:1}
+.steps span{display:block;margin-top:8px;font-size:16px}
+a{color:#1E2BD8}
+.tick{width:84px;height:84px;border-radius:50%;background:#FF8A3D;display:flex;align-items:center;justify-content:center;animation:pop .5s cubic-bezier(.2,1.4,.4,1)}
+@keyframes pop{from{transform:scale(0)}}
+</style>
+</head>
+<body>
+<main>
+<a href="./">← Wróć na stronę</a>
+<div style="margin-top:40px" class="tick"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#11131A" stroke-width="5"><path d="M8 21l8 8 16-17"/></svg></div>
+<h1>Mamy Twoje zgłoszenie</h1>
+<p>Właśnie zaczynamy szkic Twojej strony. Wyślemy go na <strong id="em">Twój e-mail</strong> w ciągu 48 godzin. Jeśli nie zobaczysz go w skrzynce, zajrzyj do folderu Oferty albo Spam.</p>
+<div class="steps">
+<div><b>Do 48 h</b><span>Szkic strony z animacją w Twojej skrzynce.</span></div>
+<div><b>Ty decydujesz</b><span>Podoba się? 990 zł zaliczki i ruszamy. Nie? Na tym kończymy.</span></div>
+<div><b>7 dni</b><span>Tyle zajmuje gotowa strona od wpłaty zaliczki.</span></div>
+</div>
+<p style="font-size:16px">Pytania: <a href="mailto:tenformat@gmail.com">tenformat@gmail.com</a> albo <a href="tel:+48794016134">794 016 134</a>.</p>
+</main>
+<script>
+try{var e=new URLSearchParams(location.search).get('e');if(e)document.getElementById('em').textContent=e;}catch(_){}
+if(window.fbq) fbq('track','Lead');
+</script>
+</body>
+</html>
