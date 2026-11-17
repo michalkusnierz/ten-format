@@ -47,7 +47,7 @@ Jeśli zgłoszeń w cenie Black Week jest więcej niż wolnych miejsc, i tak ró
    - Pasek u góry z „Szkic strony przygotowany przez 10 Format dla firmy …” i przycisk „Chcę tę stronę” zostają. W mailto podmień nazwę firmy w temacie.
    - `<meta name="robots" content="noindex, nofollow">` zostaje.
 4. Sprawdź plik: poprawny HTML, brak `{{`, brak pustych `url('')` (usuń puste zdjęcia albo całą sekcję), polskie znaki.
-5. Commit i push do `main`: `git add szkic/<folder> && git commit -m "Szkic: <firma>" && git push`. Link: `https://michalkusnierz.github.io/ten-format/szkic/<folder>/` (GitHub Pages publikuje po ~1 minucie).
+5. Commit i push do `main`: `git add szkic/<folder> && git commit -m "Szkic: <firma>" && git push`. Link: `https://tenformat.pl/szkic/<folder>/` (GitHub Pages publikuje po ~1 minucie).
 6. Zrób szkic maila w Gmailu (create_draft, NIE wysyłaj) do adresu ze zgłoszenia. Deweloper nie podaje maila: wtedy pomiń ten krok, a w powiadomieniu dla Michała podaj telefon, link do szkicu i 3 rzeczy, które poprawiłbyś na ich obecnej stronie inwestycji, żeby miał o czym mówić przy telefonie.
    Dla zgłoszeń ze strony:
    - Temat: `Szkic strony dla <firma>`
