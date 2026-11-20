@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Dziękujemy za zakup · 10 Format</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@900&family=Libre+Franklin:wght@400;600;700&display=swap">
+<style>
+body{margin:0;background:#EDEFF2;color:#11131A;font-family:'Libre Franklin',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+main{max-width:860px;margin:0 auto;padding:60px 22px 90px}
+h1{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(48px,8vw,104px);line-height:.95;margin:30px 0 24px;color:#1E2BD8}
+p{font-size:19px;max-width:640px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:40px 0}
+.steps div{background:#fff;border:1px solid #C9CDD6;padding:22px}
+.steps b{display:block;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:34px;text-transform:uppercase;color:#FF8A3D;line-height:1}
+.steps span{display:block;margin-top:8px;font-size:16px}
+a{color:#1E2BD8}
+.tick{width:84px;height:84px;border-radius:50%;background:#FF8A3D;display:flex;align-items:center;justify-content:center;animation:pop .5s cubic-bezier(.2,1.4,.4,1)}
+@keyframes pop{from{transform:scale(0)}}
+
+form{max-width:640px;margin-top:40px}
+form h2{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;font-size:44px;line-height:1;margin:0 0 6px}
+label{display:block;font-weight:600;font-size:15px;margin:16px 0 6px}
+input[type=text],input[type=email],input[type=tel],input[type=url],select,textarea{width:100%;font:inherit;font-size:17px;padding:13px 14px;border:1px solid #C9CDD6;background:#fff;color:#11131A;border-radius:0}
+textarea{min-height:100px;resize:vertical}
+.agree{display:flex;gap:12px;align-items:flex-start;font-weight:400;font-size:14px;color:#4A4F5C;margin-top:20px}
+.agree input{margin-top:4px;width:18px;height:18px;flex:0 0 auto}
+button.btn{margin-top:24px;width:100%;min-height:60px;background:#FF8A3D;color:#11131A;border:0;font:inherit;font-weight:600;font-size:17px;cursor:pointer}
+#blad{display:none;color:#B3261E;margin-top:12px;font-size:15px}
+#ok{display:none;margin-top:40px;padding:26px;background:#fff;border:1px solid #C9CDD6;font-size:19px}
+.hp{position:absolute;left:-9999px}
+</style>
+</head>
+<body>
+<main>
+<a href="./">← Wróć na stronę</a>
+<div style="margin-top:40px" class="tick"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#11131A" stroke-width="5"><path d="M8 21l8 8 16-17"/></svg></div>
+<h1>Dziękujemy za zakup</h1>
+<p>Płatność dotarła. Fakturę dostaniesz na adres e-mail z płatności. Poniżej krótka ankieta, dzięki której ustalę termin zdjęć w styczniu.</p>
+<div class="steps">
+<div><b>Faktura</b><span>Na e-mail z płatności, na dane z Twojego NIP.</span></div>
+<div><b>Ankieta</b><span>Dwie minuty: adres, kontakt, dni w styczniu.</span></div>
+<div><b>3 dni robocze</b><span>Tyle czeka Cię na propozycję terminu zdjęć.</span></div>
+</div>
+
+<form id="f" novalidate>
+<h2>Ankieta o firmie</h2>
+<input type="hidden" name="access_key" value="98ae939e-91e1-4b2a-9ba0-9d97636dc1ca">
+<input type="hidden" name="subject" value="Ankieta po zakupie 10 Format">
+<input type="hidden" name="from_name" value="10 Format">
+<label for="produkt">Co kupiłeś</label>
+<select id="produkt" name="produkt"><option>Film na start 2027</option><option>Film ze stroną z animacją</option></select>
+<label for="firma">Nazwa firmy *</label><input type="text" id="firma" name="firma" autocomplete="organization">
+<label for="email">E-mail *</label><input type="email" id="email" name="email" autocomplete="email">
+<label for="telefon">Telefon</label><input type="tel" id="telefon" name="telefon" autocomplete="tel">
+<label for="adres">Adres miejsca zdjęć, piętro, parking *</label><input type="text" id="adres" name="adres">
+<label for="link">Link do wizytówki Google, strony albo Facebooka</label><input type="url" id="link" name="link" placeholder="https://">
+<label for="dni">Dni w styczniu, które Wam pasują</label><textarea id="dni" name="dni"></textarea>
+<label for="uwagi">Co najbardziej chcesz pokazać na filmie?</label><textarea id="uwagi" name="uwagi"></textarea>
+<input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
+<label class="agree"><input type="checkbox" id="zgoda" name="zgoda" value="tak"><span>Zgadzam się na przetwarzanie podanych danych w celu realizacji zamówienia, zgodnie z <a href="polityka-prywatnosci.html" target="_blank">polityką prywatności</a>.</span></label>
+<p id="blad" role="alert"></p>
+<button class="btn" type="submit">Wysyłam ankietę</button>
+</form>
+<div id="ok" role="status">Dziękuję, ankieta dotarła. Odpiszę w ciągu 3 dni roboczych.</div>
+<p style="font-size:16px;margin-top:40px">Pytania: <a href="mailto:tenformat@gmail.com">tenformat@gmail.com</a> albo <a href="tel:+48794016134">794 016 134</a>.</p>
+</main>
+<script>
+(function(){
+  var p=new URLSearchParams(location.search).get('p'), sel=document.getElementById('produkt');
+  if(p==='pakiet') sel.selectedIndex=1;
+  var f=document.getElementById('f'), blad=document.getElementById('blad');
+  f.addEventListener('submit',function(e){
+    e.preventDefault(); blad.style.display='none';
+    var v=function(n){return f.elements[n].value.trim();};
+    if(!v('firma')||!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v('email'))||!v('adres')||!f.elements.zgoda.checked){
+      blad.textContent='Uzupełnij nazwę firmy, e-mail, adres i zaznacz zgodę.'; blad.style.display='block'; return;
+    }
+    fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)})
+      .then(function(r){return r.json();})
+      .then(function(j){ if(!j.success) throw 0; f.style.display='none'; document.getElementById('ok').style.display='block'; if(window.fbq) fbq('track','Purchase'); })
+      .catch(function(){ blad.innerHTML='Nie udało się wysłać. Napisz na <a href="mailto:tenformat@gmail.com?subject=Ankieta%20po%20zakupie">tenformat@gmail.com</a>.'; blad.style.display='block'; });
+  });
+})();
+</script>
+</body>
+</html>
